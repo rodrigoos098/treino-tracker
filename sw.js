@@ -1,4 +1,4 @@
-const CACHE = 'tt-v3';
+const CACHE = 'tt-v5';
 const ASSETS = [
   './manifest.webmanifest',
   './icons/icon-192.png',

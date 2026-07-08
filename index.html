@@ -307,34 +307,6 @@
       font-weight: 700;
       box-shadow: 0 4px 16px var(--accent-glow);
     }
-    .day-chip.rest { opacity: 0.55; }
-    .rest-panel {
-      text-align: center;
-      padding: 48px 24px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-    }
-    .rest-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      color: var(--text-secondary);
-    }
-    .rest-panel h2 {
-      font-size: 1.125rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-    .rest-panel p { color: var(--text-secondary); font-size: 0.875rem; max-width: 28ch; margin: 0 auto; }
     nav {
       position: fixed;
       bottom: 0;
@@ -539,7 +511,7 @@
       position: fixed;
       bottom: calc(var(--nav-h) + var(--safe-b) + 16px);
       left: 50%;
-      transform: translateX(-50%) translateY(80px);
+      transform: translateX(-50%) translateY(24px);
       background: var(--surface);
       color: var(--text);
       padding: 12px 22px;
@@ -549,10 +521,30 @@
       border: 1px solid var(--border-strong);
       box-shadow: var(--shadow);
       z-index: 300;
-      transition: transform 0.35s var(--ease);
       white-space: nowrap;
+      max-width: calc(100vw - 32px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s;
     }
-    .toast.show { transform: translateX(-50%) translateY(0); }
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .plan-day-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .plan-day-header .plan-day-title { margin-bottom: 0; flex: 1; }
+    .plan-day-actions { display: flex; gap: 4px; flex-shrink: 0; }
     .empty-state {
       text-align: center;
       padding: 40px 20px;
@@ -668,8 +660,6 @@
 
 <script>
 const ICON_HISTORY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
-const ICON_REST = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
-
 function pageHeader(title, subtitle, badge) {
   let html = '<div class="page-header"><h1>' + title + '</h1>';
   if (subtitle) html += '<p class="subtitle">' + subtitle + '</p>';
@@ -678,14 +668,12 @@ function pageHeader(title, subtitle, badge) {
 }
 
 const KEYS = { plan: 'tt_plan_v1', logs: 'tt_logs_v1', cfg: 'tt_cfg_v1' };
-
-const WEEKDAYS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-const REST_DAYS = [3, 6];
+let toastTimer = null;
 
 const DEFAULT_PLAN = {
   days: [
     {
-      id: 'push', name: 'Push (Empurrar)', weekday: 0,
+      id: 'push', name: 'Push (Empurrar)',
       exercises: [
         { id: 'incline-db-press', name: 'Supino inclinado com halteres', sets: 4, reps: '8-12', alternatives: ['Supino inclinado barra', 'Supino inclinado máquina', 'Supino inclinado Smith'] },
         { id: 'flat-press', name: 'Supino reto na máquina ou halteres', sets: 3, reps: '8-12', alternatives: ['Supino reto barra', 'Crossover na polia', 'Voador / Peck deck'] },
@@ -696,7 +684,7 @@ const DEFAULT_PLAN = {
       ]
     },
     {
-      id: 'pull', name: 'Pull (Puxar)', weekday: 1,
+      id: 'pull', name: 'Pull (Puxar)',
       exercises: [
         { id: 'lat-pulldown', name: 'Puxada alta pegada aberta', sets: 4, reps: '8-12', alternatives: ['Barra fixa', 'Puxada Hammer', 'Puxada pegada neutra'] },
         { id: 'barbell-row', name: 'Remada curvada ou remada na máquina', sets: 4, reps: '8-12', alternatives: ['Remada cavalinho (T-bar)', 'Remada baixa polia', 'Remada serrote halter'] },
@@ -707,7 +695,7 @@ const DEFAULT_PLAN = {
       ]
     },
     {
-      id: 'legs', name: 'Legs (Pernas)', weekday: 2,
+      id: 'legs', name: 'Legs (Pernas)',
       exercises: [
         { id: 'squat', name: 'Agachamento livre ou Smith', sets: 4, reps: '6-10', alternatives: ['Hack squat', 'Leg press 45°', 'Agachamento goblet'] },
         { id: 'leg-press', name: 'Leg press', sets: 3, reps: '10-12', alternatives: ['Hack squat', 'Agachamento búlgaro', 'Leg press unilateral'] },
@@ -718,7 +706,7 @@ const DEFAULT_PLAN = {
       ]
     },
     {
-      id: 'upper', name: 'Upper (Superior)', weekday: 4,
+      id: 'upper', name: 'Upper (Superior)',
       exercises: [
         { id: 'upper-flat-press', name: 'Supino reto', sets: 3, reps: '8-12', alternatives: ['Supino máquina', 'Supino halteres', 'Crossover'] },
         { id: 'upper-row', name: 'Remada na máquina ou polia', sets: 3, reps: '8-12', alternatives: ['Remada cavalinho', 'Remada baixa', 'Remada Hammer'] },
@@ -730,7 +718,7 @@ const DEFAULT_PLAN = {
       ]
     },
     {
-      id: 'lower', name: 'Lower (Inferior)', weekday: 5,
+      id: 'lower', name: 'Lower (Inferior)',
       exercises: [
         { id: 'hack-squat', name: 'Hack squat ou Leg press', sets: 4, reps: '8-12', alternatives: ['Agachamento Smith', 'Leg press', 'Agachamento búlgaro'] },
         { id: 'lower-rdl', name: 'Stiff / Terra romeno', sets: 3, reps: '8-12', alternatives: ['Mesa flexora', 'Hip thrust', 'Good morning'] },
@@ -746,13 +734,32 @@ const DEFAULT_PLAN = {
 let state = {
   plan: null,
   logs: {},
-  cfg: { theme: 'dark', unit: 'kg' },
+  cfg: { theme: 'dark', unit: 'kg', lastWorkoutId: null },
   activeTab: 'hoje',
-  selectedDay: new Date().getDay(),
+  selectedWorkout: 'push',
   chartMetric: 'maxKg',
   chartExercise: null,
   draftSets: {}
 };
+
+function getRotation() {
+  return (state.plan?.days || []).map(d => d.id);
+}
+
+function nextWorkoutId(lastId) {
+  const rotation = getRotation();
+  if (!rotation.length) return null;
+  if (!lastId) return rotation[0];
+  const idx = rotation.indexOf(lastId);
+  if (idx < 0) return rotation[0];
+  return rotation[(idx + 1) % rotation.length];
+}
+
+function shortWorkoutName(day) {
+  if (!day) return '';
+  if (day.short) return day.short;
+  return (day.name || '').split(' ')[0] || day.name;
+}
 
 function loadState() {
   const savedPlan = localStorage.getItem(KEYS.plan);
@@ -761,6 +768,10 @@ function loadState() {
   state.logs = savedLogs ? JSON.parse(savedLogs) : {};
   const savedCfg = localStorage.getItem(KEYS.cfg);
   if (savedCfg) state.cfg = { ...state.cfg, ...JSON.parse(savedCfg) };
+  state.selectedWorkout = nextWorkoutId(state.cfg.lastWorkoutId);
+  if (!getWorkoutPlan(state.selectedWorkout) && state.plan.days.length) {
+    state.selectedWorkout = state.plan.days[0].id;
+  }
   document.documentElement.setAttribute('data-theme', state.cfg.theme);
 }
 
@@ -773,9 +784,16 @@ function saveCfg() {
 
 function toast(msg) {
   const el = document.getElementById('toast');
+  if (!el) return;
+  if (toastTimer) clearTimeout(toastTimer);
   el.textContent = msg;
+  el.classList.remove('show');
+  void el.offsetWidth;
   el.classList.add('show');
-  setTimeout(() => el.classList.remove('show'), 2200);
+  toastTimer = setTimeout(() => {
+    el.classList.remove('show');
+    toastTimer = null;
+  }, 2200);
 }
 
 function todayISO() {
@@ -793,8 +811,8 @@ function epley1RM(kg, reps) {
   return kg * (1 + reps / 30);
 }
 
-function getDayPlan(weekday) {
-  return state.plan.days.find(d => d.weekday === weekday) || null;
+function getWorkoutPlan(workoutId) {
+  return state.plan.days.find(d => d.id === workoutId) || null;
 }
 
 function getLastSession(exerciseId) {
@@ -837,21 +855,18 @@ function initDraftForDay(day) {
 
 function renderHoje() {
   const el = document.getElementById('screen-hoje');
-  const dayPlan = getDayPlan(state.selectedDay);
-  const isRest = REST_DAYS.includes(state.selectedDay);
+  const dayPlan = getWorkoutPlan(state.selectedWorkout);
 
-  let chips = WEEKDAYS.map((name, i) => {
-    const dp = getDayPlan(i);
-    const label = REST_DAYS.includes(i) ? name + ' · Descanso' : name + ' · ' + (dp?.name.split(' ')[0] || '');
-    return '<button class="day-chip' + (i === state.selectedDay ? ' active' : '') + (REST_DAYS.includes(i) ? ' rest' : '') + '" data-day="' + i + '">' + label + '</button>';
+  const chips = getRotation().map(id => {
+    const dp = getWorkoutPlan(id);
+    const label = shortWorkoutName(dp);
+    return '<button class="day-chip' + (id === state.selectedWorkout ? ' active' : '') + '" data-workout="' + id + '">' + esc(label) + '</button>';
   }).join('');
 
   let content = '';
-  if (isRest) {
-    content = '<div class="rest-panel"><div class="rest-icon">' + ICON_REST + '</div>' +
-      '<h2>Dia de descanso</h2>' +
-      '<p>Recuperação faz parte do treino. Escolha outro dia acima se quiser registrar algo.</p></div>';
-  } else if (dayPlan) {
+  if (!dayPlan) {
+    content = '<div class="empty-state">Nenhum plano cadastrado. Crie um na aba Plano.</div>';
+  } else {
     initDraftForDay(dayPlan);
     content = dayPlan.exercises.map(ex => {
       const key = getDraftKey(dayPlan.id, ex.id);
@@ -875,19 +890,24 @@ function renderHoje() {
   }
 
   const dateStr = new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
-  const badge = dayPlan && !isRest ? dayPlan.name : (isRest ? 'Descanso' : null);
-  el.innerHTML = pageHeader('Hoje', dateStr, badge) +
+  el.innerHTML = pageHeader('Hoje', dateStr, dayPlan ? dayPlan.name : null) +
     '<div class="day-picker-wrap"><div class="day-picker">' + chips + '</div></div>' + content;
 }
 
 function renderPlano() {
   const el = document.getElementById('screen-plano');
-  let html = pageHeader('Plano', 'Edite exercícios, séries e repetições');
+  let html = pageHeader('Plano', 'Edite treinos, exercícios, séries e repetições');
 
-  state.plan.days.forEach(day => {
+  state.plan.days.forEach((day, dayIdx) => {
     html += '<div class="plan-day" data-day-id="' + day.id + '">';
-    html += '<div class="plan-day-title">' + esc(day.name) + '</div>';
-    html += '<div class="plan-day-meta">' + WEEKDAYS[day.weekday] + ' · ' + day.exercises.length + ' exercícios</div>';
+    html += '<div class="plan-day-header"><div class="plan-day-title">' + esc(day.name) + '</div>' +
+      '<div class="plan-day-actions">' +
+      '<button class="icon-btn" data-action="plan-up" data-day="' + day.id + '" ' + (dayIdx === 0 ? 'disabled' : '') + ' title="Subir plano">↑</button>' +
+      '<button class="icon-btn" data-action="plan-down" data-day="' + day.id + '" ' + (dayIdx === state.plan.days.length - 1 ? 'disabled' : '') + ' title="Descer plano">↓</button>' +
+      '<button class="icon-btn" data-action="plan-edit" data-day="' + day.id + '" title="Editar plano">✎</button>' +
+      '<button class="icon-btn" data-action="plan-del" data-day="' + day.id + '" title="Remover plano">×</button>' +
+      '</div></div>';
+    html += '<div class="plan-day-meta">' + day.exercises.length + ' exercícios · ordem ' + (dayIdx + 1) + '</div>';
     day.exercises.forEach((ex, idx) => {
       html += '<div class="exercise-item" data-day="' + day.id + '" data-ex="' + ex.id + '">' +
         '<div class="exercise-info"><div class="exercise-name">' + esc(ex.name) + '</div>' +
@@ -904,6 +924,7 @@ function renderPlano() {
     html += '<button class="btn btn-secondary btn-sm btn-block" data-action="add" data-day="' + day.id + '" style="margin-top:12px">Adicionar exercício</button>';
     html += '</div>';
   });
+  html += '<button class="btn btn-primary btn-block" data-action="plan-add" style="margin-top:8px">Adicionar plano</button>';
   el.innerHTML = html;
 }
 
@@ -1139,7 +1160,7 @@ function closeModal() {
 }
 
 function saveSession() {
-  const dayPlan = getDayPlan(state.selectedDay);
+  const dayPlan = getWorkoutPlan(state.selectedWorkout);
   if (!dayPlan) return;
   const date = todayISO();
   let saved = 0;
@@ -1158,6 +1179,10 @@ function saveSession() {
     else state.logs[ex.id].push(entry);
     saved++;
   });
+  if (saved > 0) {
+    state.cfg.lastWorkoutId = dayPlan.id;
+    saveCfg();
+  }
   saveLogs();
   const indicator = document.getElementById('saved-indicator');
   if (indicator) {
@@ -1241,6 +1266,76 @@ function showAddExercise(dayId) {
   document.getElementById('add-cancel').onclick = closeModal;
 }
 
+function showAddPlan() {
+  openModal('<h3>Adicionar plano</h3>' +
+    '<div class="form-group"><label>Nome</label><input id="plan-name" placeholder="Ex: Full Body"></div>' +
+    '<div class="form-group"><label>Nome curto (opcional)</label><input id="plan-short" placeholder="Ex: Full"></div>' +
+    '<div class="btn-group"><button class="btn btn-primary" id="plan-save">Criar plano</button><button class="btn btn-secondary" id="plan-cancel">Cancelar</button></div>');
+  document.getElementById('plan-save').onclick = () => {
+    const name = document.getElementById('plan-name').value.trim();
+    if (!name) { toast('Informe o nome do plano'); return; }
+    const short = document.getElementById('plan-short').value.trim() || name.split(' ')[0];
+    const id = 'plan-' + Date.now();
+    state.plan.days.push({ id, name, short, exercises: [] });
+    savePlan();
+    if (!state.selectedWorkout) state.selectedWorkout = id;
+    closeModal();
+    render();
+    toast('Plano criado');
+  };
+  document.getElementById('plan-cancel').onclick = closeModal;
+}
+
+function showEditPlan(dayId) {
+  const day = state.plan.days.find(d => d.id === dayId);
+  if (!day) return;
+  openModal('<h3>Editar plano</h3>' +
+    '<div class="form-group"><label>Nome</label><input id="plan-name" value="' + escAttr(day.name) + '"></div>' +
+    '<div class="form-group"><label>Nome curto</label><input id="plan-short" value="' + escAttr(day.short || shortWorkoutName(day)) + '"></div>' +
+    '<div class="btn-group"><button class="btn btn-primary" id="plan-save">Salvar</button><button class="btn btn-secondary" id="plan-cancel">Cancelar</button></div>');
+  document.getElementById('plan-save').onclick = () => {
+    day.name = document.getElementById('plan-name').value.trim() || day.name;
+    day.short = document.getElementById('plan-short').value.trim() || day.name.split(' ')[0];
+    savePlan();
+    closeModal();
+    render();
+    toast('Plano atualizado');
+  };
+  document.getElementById('plan-cancel').onclick = closeModal;
+}
+
+function movePlan(dayId, dir) {
+  const idx = state.plan.days.findIndex(d => d.id === dayId);
+  const newIdx = idx + dir;
+  if (idx < 0 || newIdx < 0 || newIdx >= state.plan.days.length) return;
+  const tmp = state.plan.days[idx];
+  state.plan.days[idx] = state.plan.days[newIdx];
+  state.plan.days[newIdx] = tmp;
+  savePlan();
+  render();
+}
+
+function deletePlan(dayId) {
+  if (state.plan.days.length <= 1) {
+    toast('Mantenha pelo menos 1 plano');
+    return;
+  }
+  const day = state.plan.days.find(d => d.id === dayId);
+  if (!day) return;
+  if (!confirm('Remover o plano "' + day.name + '"?')) return;
+  state.plan.days = state.plan.days.filter(d => d.id !== dayId);
+  if (state.cfg.lastWorkoutId === dayId) {
+    state.cfg.lastWorkoutId = null;
+    saveCfg();
+  }
+  if (state.selectedWorkout === dayId) {
+    state.selectedWorkout = nextWorkoutId(state.cfg.lastWorkoutId);
+  }
+  savePlan();
+  render();
+  toast('Plano removido');
+}
+
 function moveExercise(dayId, exId, dir) {
   const day = state.plan.days.find(d => d.id === dayId);
   const idx = day.exercises.findIndex(e => e.id === exId);
@@ -1287,6 +1382,7 @@ function importBackup(file) {
       if (data.plan) { state.plan = data.plan; savePlan(); }
       if (data.logs) { state.logs = data.logs; saveLogs(); }
       if (data.cfg) { state.cfg = { ...state.cfg, ...data.cfg }; saveCfg(); }
+      state.selectedWorkout = nextWorkoutId(state.cfg.lastWorkoutId);
       state.draftSets = {};
       render();
       toast('Backup importado com sucesso');
@@ -1304,7 +1400,8 @@ function resetData() {
   localStorage.removeItem(KEYS.cfg);
   state.plan = structuredClone(DEFAULT_PLAN);
   state.logs = {};
-  state.cfg = { theme: 'dark', unit: 'kg' };
+  state.cfg = { theme: 'dark', unit: 'kg', lastWorkoutId: null };
+  state.selectedWorkout = 'push';
   state.draftSets = {};
   saveCfg();
   render();
@@ -1334,7 +1431,7 @@ document.getElementById('app').addEventListener('input', (e) => {
 document.getElementById('app').addEventListener('click', (e) => {
   const chip = e.target.closest('.day-chip');
   if (chip) {
-    state.selectedDay = parseInt(chip.dataset.day);
+    state.selectedWorkout = chip.dataset.workout;
     renderHoje();
     return;
   }
@@ -1358,6 +1455,11 @@ document.getElementById('screen-plano').addEventListener('click', (e) => {
   else if (action === 'del') deleteExercise(day, ex);
   else if (action === 'up') moveExercise(day, ex, -1);
   else if (action === 'down') moveExercise(day, ex, 1);
+  else if (action === 'plan-add') showAddPlan();
+  else if (action === 'plan-edit') showEditPlan(day);
+  else if (action === 'plan-del') deletePlan(day);
+  else if (action === 'plan-up') movePlan(day, -1);
+  else if (action === 'plan-down') movePlan(day, 1);
 });
 
 document.getElementById('screen-evolucao').addEventListener('change', (e) => {
