@@ -1,5 +1,20 @@
-const CACHE = 'tt-v5';
+const CACHE = 'tt-v7';
 const ASSETS = [
+  './',
+  './index.html',
+  './css/app.css',
+  './js/app.js',
+  './js/store.js',
+  './js/utils.js',
+  './js/defaults.js',
+  './js/plan.js',
+  './js/session.js',
+  './js/charts.js',
+  './js/ui/hoje.js',
+  './js/ui/plano.js',
+  './js/ui/evolucao.js',
+  './js/ui/historico.js',
+  './js/ui/config.js',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
@@ -10,7 +25,6 @@ self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(CACHE).then((cache) => cache.addAll(ASSETS))
   );
-  self.skipWaiting();
 });
 
 self.addEventListener('activate', (e) => {
@@ -20,6 +34,12 @@ self.addEventListener('activate', (e) => {
     )
   );
   self.clients.claim();
+});
+
+self.addEventListener('message', (e) => {
+  if (e.data && e.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 function isHtmlRequest(request) {
@@ -33,12 +53,19 @@ self.addEventListener('fetch', (e) => {
     e.respondWith(
       fetch(e.request)
         .then((res) => {
-          const clone = res.clone();
-          caches.open(CACHE).then((cache) => cache.put(e.request, clone));
+          if (res.ok) {
+            const clone = res.clone();
+            caches.open(CACHE).then((cache) => {
+              cache.put(e.request, clone);
+              cache.put('./index.html', clone.clone());
+            });
+          }
           return res;
         })
         .catch(() =>
-          caches.match(e.request).then((cached) => cached || caches.match('./index.html'))
+          caches.match(e.request).then((cached) =>
+            cached || caches.match('./index.html') || caches.match('./')
+          )
         )
     );
     return;

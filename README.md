@@ -1,91 +1,67 @@
 # Treino Tracker
 
-PWA pessoal para acompanhar o plano de treino PPL/UL. Registra reps e carga por exercício, salva tudo no `localStorage` do celular e mostra gráficos de evolução. Funciona offline após a primeira visita.
+PWA pessoal para acompanhar treinos (PPL/UL ou planos custom). Registra reps, carga, RPE e notas; salva no dispositivo (IndexedDB + localStorage) e mostra evolução. Funciona offline após a primeira visita.
 
-## Funcionalidades
+## Funcionalidades (v2)
 
-- **Hoje** — detecta o dia da semana e abre o treino correspondente (Push, Pull, Legs, Upper, Lower)
-- **Plano** — edite, adicione, remova, reordene exercícios e substitua por alternativas
-- **Evolução** — gráficos de carga máxima, e1RM estimado e volume total
-- **Config** — tema claro/escuro, exportar/importar backup JSON, reset de dados
+- **Hoje** — sessão ativa com timer de descanso, check por série, steppers +/−, warm-up, copiar série, PR toast e sugestão de progressão
+- **Plano** — CRUD de treinos e exercícios, reordenação e alternativas
+- **Evolução** — gráficos com filtro 30d / 90d / tudo e marcadores de PR
+- **Histórico** — lista de sessões com duração, volume e resumo semanal
+- **Config** — tema, descanso padrão, vibração, wake lock, backup JSON e lembrete semanal
 
-## Uso local (sem deploy)
+Rotação dinâmica: após salvar um treino, a próxima abertura sugere o próximo plano da sequência (não amarra a dia da semana).
 
-Abra `index.html` no navegador do celular ou use um servidor local:
+## Uso local
 
 ```bash
-# Python 3
 python -m http.server 8080
-
-# Node (npx)
+# ou
 npx serve .
 ```
 
-Acesse `http://localhost:8080` no celular (mesma rede Wi-Fi).
-
-> **Nota:** o service worker (modo offline) só funciona via HTTPS ou `localhost`.
+Acesse `http://localhost:8080`. O service worker só funciona em HTTPS ou `localhost`.
 
 ## Deploy no GitHub Pages
 
-1. Crie um repositório no GitHub (ex.: `treino-tracker`)
-2. Envie os arquivos:
+1. Push para `main`
+2. **Settings → Pages → Deploy from branch → main / (root)**
+3. URL: `https://SEU_USUARIO.github.io/treino-tracker/`
 
-```bash
-git add .
-git commit -m "feat: treino tracker PWA"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/treino-tracker.git
-git push -u origin main
-```
+## Instalar (PWA)
 
-3. No GitHub: **Settings → Pages → Source: Deploy from branch → main / (root)**
-4. Aguarde alguns minutos e acesse `https://SEU_USUARIO.github.io/treino-tracker/`
+- **Android:** menu → Adicionar à tela inicial / Instalar app
+- **iPhone:** Compartilhar → Adicionar à Tela de Início
 
-## Instalar na tela inicial (PWA)
+## Dados e backup
 
-### Android (Chrome)
-1. Abra a URL do app
-2. Toque no menu (⋮) → **Adicionar à tela inicial** ou **Instalar app**
+Chaves estáveis (`tt_plan_v1`, `tt_logs_v1`, `tt_cfg_v1`, `tt_sessions_v1`). Deploys do PWA **não** apagam o histórico.
 
-### iPhone (Safari)
-1. Abra a URL do app
-2. Toque em **Compartilhar** → **Adicionar à Tela de Início**
+Use **Config → Exportar backup** periodicamente. Há lembrete se o último export tiver mais de 7 dias.
 
-## Backup dos dados
+## Plano padrão
 
-Os dados ficam no `localStorage` do navegador. Se limpar os dados do site, perde tudo.
-
-Use **Config → Exportar backup (JSON)** periodicamente e guarde o arquivo. Para restaurar: **Config → Importar backup**.
-
-## Plano de treino incluído
-
-| Dia     | Treino              |
-|---------|---------------------|
-| Domingo | Push (Empurrar)     |
-| Segunda | Pull (Puxar)        |
-| Terça   | Legs (Pernas)       |
-| Quarta  | Descanso            |
-| Quinta  | Upper (Superior)    |
-| Sexta   | Lower (Inferior)    |
-| Sábado  | Descanso            |
-
-O plano é editável na aba **Plano**.
+Push → Pull → Legs → Upper → Lower (editável na aba Plano).
 
 ## Estrutura
 
 ```
 treino-tracker/
-├── index.html              # App completo (HTML + CSS + JS)
-├── manifest.webmanifest    # Metadados PWA
-├── sw.js                   # Service worker (cache offline)
+├── index.html
+├── css/app.css
+├── js/
+│   ├── app.js
+│   ├── store.js
+│   ├── plan.js
+│   ├── session.js
+│   ├── charts.js
+│   ├── defaults.js
+│   ├── utils.js
+│   └── ui/
+├── sw.js
+├── manifest.webmanifest
 ├── icons/
-│   ├── icon-192.png
-│   ├── icon-512.png
-│   └── icon-maskable-512.png
 └── README.md
 ```
 
-## Alternativas de deploy
-
-- **Vercel:** `npx vercel` na pasta do projeto
-- **Netlify Drop:** arraste a pasta em [app.netlify.com/drop](https://app.netlify.com/drop)
+Deploy estático (sem build). Módulos ES nativos.
