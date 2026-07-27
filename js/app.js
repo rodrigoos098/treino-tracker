@@ -1,5 +1,5 @@
 import { state, loadAll, saveMeta } from './store.js';
-import { nextWorkoutId, getWorkoutPlan } from './plan.js';
+import { getWorkoutPlan } from './plan.js';
 import { closeModal } from './utils.js';
 import { renderHoje, bindHojeEvents } from './ui/hoje.js';
 import { renderPlano, bindPlanoEvents } from './ui/plano.js';
@@ -89,9 +89,10 @@ async function registerSW() {
 
 async function init() {
   await loadAll();
-  state.selectedWorkout = nextWorkoutId(state.cfg.lastWorkoutId);
-  if (!getWorkoutPlan(state.selectedWorkout) && state.plan.days.length) {
-    state.selectedWorkout = state.plan.days[0].id;
+  state.selectedWorkout = state.cfg.currentDay || 'upper';
+  if (!getWorkoutPlan(state.selectedWorkout)) {
+    state.selectedWorkout = 'upper';
+    state.cfg.currentDay = 'upper';
   }
   if (state.meta && !state.meta.migratedAt) {
     state.meta.migratedAt = new Date().toISOString();

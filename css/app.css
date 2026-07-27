@@ -699,3 +699,36 @@ nav button svg { width: 22px; height: 22px; stroke-width: 1.75; }
 }
 .nav-5 button { font-size: 0.6rem; gap: 2px; padding: 8px 2px; }
 .nav-5 button svg { width: 20px; height: 20px; }
+
+/* BBTS program UI */
+.day-chip.current-day { box-shadow: inset 0 -2px 0 var(--accent); }
+.hoje-date { margin: -4px 0 12px; text-transform: capitalize; }
+.prescribed {
+  font-size: 0.75rem; color: var(--text-secondary); font-family: var(--mono);
+  margin-bottom: 8px; line-height: 1.4;
+}
+.ex-meta-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin: 0 0 8px; }
+.badge.inten {
+  background: rgba(248,113,113,0.12); color: #f87171;
+  border: 1px solid rgba(248,113,113,0.25);
+}
+.youtube-link { text-decoration: none; color: var(--accent); }
+.sub-tag {
+  font-size: 0.65rem; font-weight: 700; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.ex-notes {
+  margin: 8px 0 10px; font-size: 0.8125rem; color: var(--text-secondary);
+}
+.ex-notes summary { cursor: pointer; font-weight: 600; color: var(--text); }
+.ex-notes p { margin: 8px 0 0; line-height: 1.45; }
+.set-row-v2.last-working { border-color: rgba(52,211,153,0.4); }
+.set-rpe-target {
+  font-size: 0.6875rem; font-weight: 600; color: var(--accent);
+  font-family: var(--mono);
+}
+.rest-day-card { text-align: center; padding: 28px 18px; }
+.program-nav { margin-bottom: 14px; }
+.program-nav .session-meta { margin-bottom: 6px; }
+.exercise-item .badge { margin-left: 4px; vertical-align: middle; }
+.exercise-item .chip-btn { margin-left: 4px; }

@@ -18,7 +18,7 @@ export function renderEvolucao() {
   const hasLogs = exercises.some(ex => (state.logs[ex.id] || []).length > 0);
 
   if (!exercises.length) {
-    el.innerHTML = pageHeader('Evolução') + '<div class="empty-state">Nenhum exercício no plano.</div>';
+    el.innerHTML = pageHeader('Evolução') + '<div class="empty-state">Nenhum exercício no programa.</div>';
     return;
   }
 

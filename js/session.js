@@ -175,6 +175,13 @@ function sessionMetrics(sets, bodyweight) {
  */
 export function detectPRs(exerciseId, sets) {
   const ex = (() => {
+    const weeks = state.plan?.weeks || {};
+    for (const wk of Object.keys(weeks)) {
+      for (const dayId of ['upper', 'lower', 'pull', 'push', 'legs']) {
+        const found = (weeks[wk][dayId]?.exercises || []).find(e => e.id === exerciseId);
+        if (found) return found;
+      }
+    }
     for (const day of (state.plan?.days || [])) {
       const found = day.exercises.find(e => e.id === exerciseId);
       if (found) return found;
@@ -247,8 +254,8 @@ export function suggestProgression(exercise, sets) {
   };
 }
 
-export function buildSessionRecord({ workoutId, workoutName, startedAt, endedAt, exercises }) {
-  const day = getWorkoutPlan(workoutId);
+export function buildSessionRecord({ workoutId, workoutName, startedAt, endedAt, exercises, week, dayId, isRest }) {
+  const day = getWorkoutPlan(workoutId || dayId);
   const start = startedAt || Date.now();
   const end = endedAt || Date.now();
   const durationSec = Math.max(0, Math.floor((end - start) / 1000));
@@ -267,8 +274,11 @@ export function buildSessionRecord({ workoutId, workoutName, startedAt, endedAt,
   return {
     id: 'sess-' + start + '-' + Math.random().toString(36).slice(2, 8),
     date: todayISO(),
-    workoutId: workoutId || null,
+    workoutId: workoutId || dayId || null,
     workoutName: workoutName || (day ? (day.name || shortWorkoutName(day)) : ''),
+    week: week ?? state.cfg.currentWeek ?? null,
+    dayId: dayId || workoutId || null,
+    isRest: !!isRest,
     startedAt: start,
     endedAt: end,
     durationSec,
@@ -277,4 +287,10 @@ export function buildSessionRecord({ workoutId, workoutName, startedAt, endedAt,
     totalSets,
     exercises: exercises || []
   };
+}
+
+/** Rest seconds for an exercise (book mid-range) with cfg fallback. */
+export function restSecondsForExercise(ex) {
+  if (ex && typeof ex.restSeconds === 'number' && ex.restSeconds > 0) return ex.restSeconds;
+  return state.cfg.restSeconds || 90;
 }

@@ -1,4 +1,4 @@
-import { DEFAULT_PLAN } from './defaults.js';
+import { DEFAULT_PROGRAM } from './defaults.js';
 import { toast } from './utils.js';
 
 // Nunca renomeie essas chaves: deploys/atualizações do PWA devem preservar os dados do usuário.
@@ -14,6 +14,8 @@ const IDB_NAME = 'treino-tracker';
 const IDB_VERSION = 1;
 const IDB_STORE = 'kv';
 
+const DATA_VERSION = 3;
+
 const DEFAULT_CFG = {
   theme: 'dark',
   unit: 'kg',
@@ -21,11 +23,14 @@ const DEFAULT_CFG = {
   restSeconds: 90,
   vibrate: true,
   lastBackupAt: null,
-  wakeLock: true
+  wakeLock: true,
+  currentWeek: 1,
+  currentDay: 'upper',
+  programStartedAt: null
 };
 
 const DEFAULT_META = {
-  dataVersion: 2,
+  dataVersion: DATA_VERSION,
   migratedAt: null
 };
 
@@ -36,11 +41,15 @@ export const state = {
   sessions: [],
   meta: { ...DEFAULT_META },
   activeTab: 'hoje',
-  selectedWorkout: 'push',
+  selectedWorkout: 'upper',
+  browseWeek: 1,
+  browseDay: 'upper',
   chartMetric: 'maxKg',
   chartExercise: null,
   chartPeriod: 90,
-  draftSets: {}
+  draftSets: {},
+  /** session-only substitute override: { [exId]: substituteIndex|null } */
+  substituteChoice: {}
 };
 
 let dbPromise = null;
@@ -109,9 +118,34 @@ export async function idbDelete(key) {
   }
 }
 
-export function isValidPlan(plan) {
+function isValidExercise(ex) {
   return !!(
-    plan &&
+    ex &&
+    typeof ex.id === 'string' &&
+    typeof ex.name === 'string' &&
+    (typeof ex.workingSets === 'number' || typeof ex.sets === 'number') &&
+    typeof ex.reps === 'string'
+  );
+}
+
+export function isValidProgram(plan) {
+  if (!plan || typeof plan !== 'object') return false;
+  if (plan.id === 'bbts-beginner-2025' && plan.weeks && typeof plan.weeks === 'object') {
+    const days = ['upper', 'lower', 'pull', 'push', 'legs'];
+    for (let w = 1; w <= 12; w++) {
+      const week = plan.weeks[String(w)] || plan.weeks[w];
+      if (!week) return false;
+      for (const d of days) {
+        const day = week[d];
+        if (!day || !Array.isArray(day.exercises) || !day.exercises.every(isValidExercise)) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+  // Legacy flat plan (import backups only)
+  return !!(
     Array.isArray(plan.days) &&
     plan.days.every(d =>
       d &&
@@ -128,6 +162,9 @@ export function isValidPlan(plan) {
     )
   );
 }
+
+/** @deprecated Use isValidProgram */
+export const isValidPlan = isValidProgram;
 
 export function isValidLogs(logs) {
   return !!(logs && typeof logs === 'object' && !Array.isArray(logs));
@@ -177,6 +214,41 @@ async function readKey(key, fallback) {
   return value == null ? fallback : value;
 }
 
+function freshProgram() {
+  return structuredClone(DEFAULT_PROGRAM);
+}
+
+function migrateToV3(cfg, meta, plan) {
+  const nextCfg = { ...DEFAULT_CFG, ...(cfg && typeof cfg === 'object' ? cfg : {}) };
+  const nextMeta = {
+    ...DEFAULT_META,
+    ...(meta && typeof meta === 'object' ? meta : {})
+  };
+
+  const needsProgramSwap = !isValidProgram(plan) || plan?.id !== 'bbts-beginner-2025' || Array.isArray(plan?.days);
+  const nextPlan = needsProgramSwap ? freshProgram() : plan;
+
+  if (!nextCfg.currentWeek || nextCfg.currentWeek < 1 || nextCfg.currentWeek > 12) {
+    nextCfg.currentWeek = 1;
+  }
+  const schedule = nextPlan.schedule || ['upper', 'lower', 'rest', 'pull', 'push', 'legs'];
+  if (!nextCfg.currentDay || !schedule.includes(nextCfg.currentDay)) {
+    // Restore next day from last completed workout (legacy nextWorkoutId behavior)
+    if (nextCfg.lastWorkoutId && schedule.includes(nextCfg.lastWorkoutId)) {
+      const idx = schedule.indexOf(nextCfg.lastWorkoutId);
+      nextCfg.currentDay = idx >= schedule.length - 1 ? schedule[0] : schedule[idx + 1];
+    } else {
+      nextCfg.currentDay = 'upper';
+    }
+  }
+  if (!nextCfg.programStartedAt) {
+    nextCfg.programStartedAt = new Date().toISOString();
+  }
+
+  nextMeta.dataVersion = DATA_VERSION;
+  return { plan: nextPlan, cfg: nextCfg, meta: nextMeta };
+}
+
 export async function loadAll() {
   let plan = await idbGet(KEYS.plan);
   let logs = await idbGet(KEYS.logs);
@@ -193,7 +265,6 @@ export async function loadAll() {
     sessions = migrated[KEYS.sessions] ?? null;
     meta = migrated[KEYS.meta] ?? null;
   } else {
-    // Fill any missing keys from localStorage (partial migration)
     if (plan == null) plan = await readKey(KEYS.plan, null);
     if (logs == null) logs = await readKey(KEYS.logs, null);
     if (cfg == null) cfg = await readKey(KEYS.cfg, null);
@@ -201,21 +272,21 @@ export async function loadAll() {
     if (meta == null) meta = await readKey(KEYS.meta, null);
   }
 
-  state.plan = isValidPlan(plan) ? plan : structuredClone(DEFAULT_PLAN);
+  const migrated = migrateToV3(cfg, meta, plan);
+  state.plan = migrated.plan;
+  state.cfg = migrated.cfg;
+  state.meta = migrated.meta;
   state.logs = isValidLogs(logs) ? logs : {};
-  state.cfg = { ...DEFAULT_CFG, ...(cfg && typeof cfg === 'object' && !Array.isArray(cfg) ? cfg : {}) };
   state.sessions = Array.isArray(sessions) ? sessions : [];
-  state.meta = {
-    ...DEFAULT_META,
-    ...(meta && typeof meta === 'object' && !Array.isArray(meta) ? meta : {}),
-    dataVersion: 2
-  };
+  state.selectedWorkout = state.cfg.currentDay || 'upper';
+  state.browseWeek = state.cfg.currentWeek || 1;
+  state.browseDay = state.cfg.currentDay || 'upper';
+  state.substituteChoice = {};
 
-  if (!state.meta.migratedAt && idbEmpty) {
+  if (!state.meta.migratedAt) {
     state.meta.migratedAt = new Date().toISOString();
   }
 
-  // Ensure dual-write baseline so both stores stay in sync
   await Promise.all([
     dualWrite(KEYS.plan, state.plan),
     dualWrite(KEYS.logs, state.logs),
@@ -232,7 +303,7 @@ export async function savePlan() {
   try {
     await dualWrite(KEYS.plan, state.plan);
   } catch (err) {
-    toast('Não foi possível salvar o plano (armazenamento cheio?)');
+    toast('Não foi possível salvar o programa (armazenamento cheio?)');
     console.error(err);
   }
 }
@@ -272,3 +343,9 @@ export async function saveMeta() {
     console.error(err);
   }
 }
+
+export function getDefaultCfg() {
+  return { ...DEFAULT_CFG };
+}
+
+export { DATA_VERSION };

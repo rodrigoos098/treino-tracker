@@ -1,7 +1,7 @@
 {
-  "name": "Treino Tracker",
-  "short_name": "Treino",
-  "description": "Acompanhamento pessoal de treino PPL/UL",
+  "name": "BBTS Beginner Tracker",
+  "short_name": "BBTS",
+  "description": "Tracker do Bodybuilding Transformation System (Beginner) — Jeff Nippard",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#090b0f",

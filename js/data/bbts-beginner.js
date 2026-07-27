@@ -1,0 +1,9542 @@
+/** Auto-generated from BBTS Beginner PDF — do not hand-edit bulk data. */
+export const BBTS_BEGINNER = {
+  "id": "bbts-beginner-2025",
+  "name": "Bodybuilding Transformation System",
+  "level": "Beginner",
+  "weeksTotal": 12,
+  "schedule": [
+    "upper",
+    "lower",
+    "rest",
+    "pull",
+    "push",
+    "legs"
+  ],
+  "dayLabels": {
+    "upper": "Upper",
+    "lower": "Lower",
+    "rest": "Descanso",
+    "pull": "Pull",
+    "push": "Push",
+    "legs": "Legs"
+  },
+  "weeks": {
+    "1": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-barbell-press",
+            "name": "45° Incline Barbell Press",
+            "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "6-8",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline DB Press",
+                "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs"
+          },
+          {
+            "id": "cable-crossover-ladder",
+            "name": "Cable Crossover Ladder",
+            "youtubeUrl": "https://youtu.be/0TP9kVcWGic",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Pec Deck",
+                "youtubeUrl": "https://youtu.be/CI88L1VNvEs"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Do one set with low cable position, one set with medium-height cable position, and one height with a high cable position. If you only have one or two sets, choose the one or two cable positions you prefer."
+          },
+          {
+            "id": "wide-grip-pull-up",
+            "name": "Wide-Grip Pull-Up",
+            "youtubeUrl": "https://youtu.be/yGnp0HU8BnA",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Dual-Handle Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk"
+              }
+            ],
+            "notes": "1.5x shoulder width overhand grip. Slow 2-3 second negative. Feel your lats pulling apart on the way down."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "pendlay-deficit-row",
+            "name": "Pendlay Deficit Row",
+            "youtubeUrl": "https://youtu.be/MmuyHKYCLps",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "6-8",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Row",
+                "youtubeUrl": "https://youtu.be/Wmivm40AV3Q"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Stand on a bumper plate. Focus on getting a big stretch and touch your stomach/chest on each rep!"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-squat",
+            "name": "Smith Machine Squat",
+            "youtubeUrl": "https://www.youtube.com/watch?v=J2D2J7RO_tA",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "6-8",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Once you are under the bar, set up your feet as you would a normal squat and then bring them forward ~3-6 inches. This will cause you to lean back into the bar slightly, allowing for a more upright squat, while also placing more tension on the quads. If your heels are raising at the bottom, you may need to bring your feet more forward. If your feet feel like they are slipping or your lower back is rounding at the bottom, try bringing your feet back a bit."
+          },
+          {
+            "id": "barbell-rdl",
+            "name": "Barbell RDL",
+            "youtubeUrl": "https://youtu.be/ggFtGGYobE4",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "6-8",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "DB RDL",
+                "youtubeUrl": "https://www.youtube.com/watch?v=VRwSgUoj7uI"
+              },
+              {
+                "name": "Snatch-Grip RDL",
+                "youtubeUrl": "https://www.youtube.com/watch?v=b8fmEaXHapU"
+              }
+            ],
+            "notes": "To keep tension on the hamstrings, stop about 75% of the way to full lockout on each rep (i.e. stay in the bottom 3/4 of the range of motion)."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "6-8",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "cable-crunch",
+            "name": "Cable Crunch",
+            "youtubeUrl": "https://youtu.be/epBrpaGHMcg",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Machine Crunch",
+                "youtubeUrl": "https://youtu.be/K2yKEoazT3g"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "neutral-grip-lat-pulldown",
+            "name": "Neutral-Grip Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/lA4_1F9EAFU",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Neutral-Grip Pull- Up",
+                "youtubeUrl": "https://youtu.be/b0ypSz63UGo"
+              },
+              {
+                "name": "Dual-Handle Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk"
+              }
+            ],
+            "notes": "Do these pulldowns with the handle more out in front of you, more like a cross between pullover and a pulldown. Focus on feeling your lats working more than the weight you're using."
+          },
+          {
+            "id": "chest-supported-machine-row",
+            "name": "Chest-Supported Machine Row",
+            "youtubeUrl": "https://youtu.be/ijsSiWSzYw0",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported T-Bar Row",
+                "youtubeUrl": "https://youtu.be/q8qlHwcuOtc"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://www.youtube.com/watch?v=6G5DmVaocGM",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "machine-shrug",
+            "name": "Machine Shrug",
+            "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Paused Shrug-In",
+                "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Brief pause at the top of the bottom of ROM. Think about pulling your shoulders up to your ears!"
+          },
+          {
+            "id": "ez-bar-cable-curl",
+            "name": "EZ-Bar Cable Curl",
+            "youtubeUrl": "https://youtu.be/ck1zjNTnFew",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "EZ-Bar Curl",
+                "youtubeUrl": "https://youtu.be/WMrgn4GG7mI"
+              },
+              {
+                "name": "DB Curl",
+                "youtubeUrl": "https://youtu.be/XxGCRSJmgwY"
+              }
+            ],
+            "notes": "Set up the cable at the lowest position. Maintain constant tension on the biceps. Slow, controlled reps!"
+          },
+          {
+            "id": "machine-preacher-curl",
+            "name": "Machine Preacher Curl",
+            "youtubeUrl": "https://www.youtube.com/watch?v=R2iUnBxFtis",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "EZ-Bar Preacher Curl",
+                "youtubeUrl": "https://youtu.be/Dn7qgf9iSH8"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "barbell-bench-press",
+            "name": "Barbell Bench Press",
+            "youtubeUrl": "https://youtu.be/nQL5ieH39sw",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Machine Chest Press",
+                "youtubeUrl": "https://youtu.be/zDecGJLyVm8"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep."
+          },
+          {
+            "id": "machine-shoulder-press",
+            "name": "Machine Shoulder Press",
+            "youtubeUrl": "https://youtu.be/SCQVmN1gYsk",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Seated DB Shoulder Press",
+                "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-db-flye",
+            "name": "Bottom-Half DB Flye",
+            "youtubeUrl": "https://youtu.be/qJzc-iHKGdg",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half Seated Cable Flye",
+                "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "cable-triceps-kickback",
+            "name": "Cable Triceps Kickback",
+            "youtubeUrl": "https://youtu.be/oRxTKRtP8RE",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              },
+              {
+                "name": "Bench Dip",
+                "youtubeUrl": "https://youtu.be/3CaIq8jZe18"
+              }
+            ],
+            "notes": "There are two ways you can do this: upright or bent over. Choose the one that feels more comfortable for you. The main thing is that when you're in the full squeeze, your shoulder should be positioned back behind your torso."
+          },
+          {
+            "id": "lying-leg-raise",
+            "name": "Lying Leg Raise",
+            "youtubeUrl": "https://youtu.be/w86Ph4iQgBM",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-20",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Hanging Leg Raise",
+                "youtubeUrl": "https://youtu.be/rGqwkinWqYI"
+              },
+              {
+                "name": "Modified Candlestick",
+                "youtubeUrl": "https://youtu.be/-XVRl8KU7x0"
+              }
+            ],
+            "notes": "Perform these slowly, focus on keeping your lower back against the ground throughout the set"
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "leg-press",
+            "name": "Leg Press",
+            "youtubeUrl": "https://youtu.be/1yKAQLVV_XI",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Feet lower on the platform for more quad focus. Get as deep as you can without excessive back rounding. Control the negative and do a slight pause at the bottom of each rep."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "DB Step-Up",
+                "youtubeUrl": "https://youtu.be/3FNfi_PrP9Y"
+              },
+              {
+                "name": "Goblet Squat",
+                "youtubeUrl": "https://youtu.be/S2agsLlUSII"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Foundation Block",
+        "exercises": []
+      }
+    },
+    "2": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-barbell-press",
+            "name": "45° Incline Barbell Press",
+            "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "6-8",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline DB Press",
+                "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs."
+          },
+          {
+            "id": "cable-crossover-ladder",
+            "name": "Cable Crossover Ladder",
+            "youtubeUrl": "https://youtu.be/0TP9kVcWGic",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Pec Deck",
+                "youtubeUrl": "https://youtu.be/CI88L1VNvEs"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Do one set with low cable position, one set with medium-height cable position, and one height with a high cable position. If you only have one or two sets, choose the one or two cable positions you prefer."
+          },
+          {
+            "id": "wide-grip-pull-up",
+            "name": "Wide-Grip Pull-Up",
+            "youtubeUrl": "https://youtu.be/yGnp0HU8BnA",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Dual-Handle Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk"
+              }
+            ],
+            "notes": "1.5x shoulder width overhand grip. Slow 2-3 second negative. Feel your lats pulling apart on the way down."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "pendlay-deficit-row",
+            "name": "Pendlay Deficit Row",
+            "youtubeUrl": "https://youtu.be/MmuyHKYCLps",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "6-8",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Row",
+                "youtubeUrl": "https://youtu.be/Wmivm40AV3Q"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Stand on a bumper plate. Focus on getting a big stretch and touch your stomach/chest on each rep!"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-squat",
+            "name": "Smith Machine Squat",
+            "youtubeUrl": "https://www.youtube.com/watch?v=J2D2J7RO_tA",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "6-8",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Once you are under the bar, set up your feet as you would a normal squat and then bring them forward ~3-6 inches. This will cause you to lean back into the bar slightly, allowing for a more upright squat, while also placing more tension on the quads. If your heels are raising at the bottom, you may need to bring your feet more forward. If your feet feel like they are slipping or your lower back is rounding at the bottom, try bringing your feet back a bit."
+          },
+          {
+            "id": "barbell-rdl",
+            "name": "Barbell RDL",
+            "youtubeUrl": "https://youtu.be/ggFtGGYobE4",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "6-8",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "DB RDL",
+                "youtubeUrl": "https://www.youtube.com/watch?v=VRwSgUoj7uI"
+              },
+              {
+                "name": "Snatch-Grip RDL",
+                "youtubeUrl": "https://www.youtube.com/watch?v=b8fmEaXHapU"
+              }
+            ],
+            "notes": "To keep tension on the hamstrings, stop about 75% of the way to full lockout on each rep (i.e. stay in the bottom 3/4 of the range of motion)."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "6-8",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "cable-crunch",
+            "name": "Cable Crunch",
+            "youtubeUrl": "https://youtu.be/epBrpaGHMcg",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Machine Crunch",
+                "youtubeUrl": "https://youtu.be/K2yKEoazT3g"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "neutral-grip-lat-pulldown",
+            "name": "Neutral-Grip Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/lA4_1F9EAFU",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Neutral-Grip Pull- Up",
+                "youtubeUrl": "https://youtu.be/b0ypSz63UGo"
+              },
+              {
+                "name": "Dual-Handle Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk"
+              }
+            ],
+            "notes": "Do these pulldowns with the handle more out in front of you, more like a cross between pullover and a pulldown. Focus on feeling your lats working more than the weight you're using."
+          },
+          {
+            "id": "chest-supported-machine-row",
+            "name": "Chest-Supported Machine Row",
+            "youtubeUrl": "https://youtu.be/ijsSiWSzYw0",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported T-Bar Row",
+                "youtubeUrl": "https://youtu.be/q8qlHwcuOtc"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://www.youtube.com/watch?v=6G5DmVaocGM",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "machine-shrug",
+            "name": "Machine Shrug",
+            "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Paused Shrug-In",
+                "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Brief pause at the top of the bottom of ROM. Think about pulling your shoulders up to your ears!"
+          },
+          {
+            "id": "ez-bar-cable-curl",
+            "name": "EZ-Bar Cable Curl",
+            "youtubeUrl": "https://youtu.be/ck1zjNTnFew",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "EZ-Bar Curl",
+                "youtubeUrl": "https://youtu.be/WMrgn4GG7mI"
+              },
+              {
+                "name": "DB Curl",
+                "youtubeUrl": "https://youtu.be/XxGCRSJmgwY"
+              }
+            ],
+            "notes": "Set up the cable at the lowest position. Maintain constant tension on the biceps. Slow, controlled reps!"
+          },
+          {
+            "id": "machine-preacher-curl",
+            "name": "Machine Preacher Curl",
+            "youtubeUrl": "https://www.youtube.com/watch?v=R2iUnBxFtis",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "EZ-Bar Preacher Curl",
+                "youtubeUrl": "https://youtu.be/Dn7qgf9iSH8"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "barbell-bench-press",
+            "name": "Barbell Bench Press",
+            "youtubeUrl": "https://youtu.be/nQL5ieH39sw",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Machine Chest Press",
+                "youtubeUrl": "https://youtu.be/zDecGJLyVm8"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep."
+          },
+          {
+            "id": "machine-shoulder-press",
+            "name": "Machine Shoulder Press",
+            "youtubeUrl": "https://youtu.be/SCQVmN1gYsk",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Seated DB Shoulder Press",
+                "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-db-flye",
+            "name": "Bottom-Half DB Flye",
+            "youtubeUrl": "https://youtu.be/qJzc-iHKGdg",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half Seated Cable Flye",
+                "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep."
+          },
+          {
+            "id": "cable-triceps-kickback",
+            "name": "Cable Triceps Kickback",
+            "youtubeUrl": "https://youtu.be/oRxTKRtP8RE",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              },
+              {
+                "name": "Bench Dip",
+                "youtubeUrl": "https://youtu.be/3CaIq8jZe18"
+              }
+            ],
+            "notes": "There are two ways you can do this: upright or bent over. Choose the one that feels more comfortable for you. The main thing is that when you're in the full squeeze, your shoulder should be positioned back behind your torso."
+          },
+          {
+            "id": "lying-leg-raise",
+            "name": "Lying Leg Raise",
+            "youtubeUrl": "https://youtu.be/w86Ph4iQgBM",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-20",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Hanging Leg Raise",
+                "youtubeUrl": "https://youtu.be/rGqwkinWqYI"
+              },
+              {
+                "name": "Modified Candlestick",
+                "youtubeUrl": "https://youtu.be/-XVRl8KU7x0"
+              }
+            ],
+            "notes": "Perform these slowly, focus on keeping your lower back against the ground throughout the set."
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "leg-press",
+            "name": "Leg Press",
+            "youtubeUrl": "https://youtu.be/1yKAQLVV_XI",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Feet lower on the platform for more quad focus. Get as deep as you can without excessive back rounding. Control the negative and do a slight pause at the bottom of each rep."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "DB Step-Up",
+                "youtubeUrl": "https://youtu.be/3FNfi_PrP9Y"
+              },
+              {
+                "name": "Goblet Squat",
+                "youtubeUrl": "https://youtu.be/S2agsLlUSII"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Foundation Block",
+        "exercises": []
+      }
+    },
+    "3": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-barbell-press",
+            "name": "45° Incline Barbell Press",
+            "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline DB Press",
+                "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs."
+          },
+          {
+            "id": "cable-crossover-ladder",
+            "name": "Cable Crossover Ladder",
+            "youtubeUrl": "https://youtu.be/0TP9kVcWGic",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Pec Deck",
+                "youtubeUrl": "https://youtu.be/CI88L1VNvEs"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Do one set with low cable position, one set with medium-height cable position, and one height with a high cable position. If you only have one or two sets, choose the one or two cable positions you prefer."
+          },
+          {
+            "id": "wide-grip-pull-up",
+            "name": "Wide-Grip Pull-Up",
+            "youtubeUrl": "https://youtu.be/yGnp0HU8BnA",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Dual-Handle Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk"
+              }
+            ],
+            "notes": "1.5x shoulder width overhand grip. Slow 2-3 second negative. Feel your lats pulling apart on the way down."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "pendlay-deficit-row",
+            "name": "Pendlay Deficit Row",
+            "youtubeUrl": "https://youtu.be/MmuyHKYCLps",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Row",
+                "youtubeUrl": "https://youtu.be/Wmivm40AV3Q"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Stand on a bumper plate. Focus on getting a big stretch and touch your stomach/chest on each rep!"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-squat",
+            "name": "Smith Machine Squat",
+            "youtubeUrl": "https://www.youtube.com/watch?v=J2D2J7RO_tA",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Once you are under the bar, set up your feet as you would a normal squat and then bring them forward ~3-6 inches. This will cause you to lean back into the bar slightly, allowing for a more upright squat, while also placing more tension on the quads. If your heels are raising at the bottom, you may need to bring your feet more forward. If your feet feel like they are slipping or your lower back is rounding at the bottom, try bringing your feet back a bit."
+          },
+          {
+            "id": "barbell-rdl",
+            "name": "Barbell RDL",
+            "youtubeUrl": "https://youtu.be/ggFtGGYobE4",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "DB RDL",
+                "youtubeUrl": "https://www.youtube.com/watch?v=VRwSgUoj7uI"
+              },
+              {
+                "name": "Snatch-Grip RDL",
+                "youtubeUrl": "https://www.youtube.com/watch?v=b8fmEaXHapU"
+              }
+            ],
+            "notes": "To keep tension on the hamstrings, stop about 75% of the way to full lockout on each rep (i.e. stay in the bottom 3/4 of the range of motion)."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "cable-crunch",
+            "name": "Cable Crunch",
+            "youtubeUrl": "https://youtu.be/epBrpaGHMcg",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Machine Crunch",
+                "youtubeUrl": "https://youtu.be/K2yKEoazT3g"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "neutral-grip-lat-pulldown",
+            "name": "Neutral-Grip Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/lA4_1F9EAFU",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Neutral-Grip Pull- Up",
+                "youtubeUrl": "https://youtu.be/b0ypSz63UGo"
+              },
+              {
+                "name": "Dual-Handle Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk"
+              }
+            ],
+            "notes": "Do these pulldowns with the handle more out in front of you, more like a cross between pullover and a pulldown. Focus on feeling your lats working more than the weight you're using."
+          },
+          {
+            "id": "chest-supported-machine-row",
+            "name": "Chest-Supported Machine Row",
+            "youtubeUrl": "https://youtu.be/ijsSiWSzYw0",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported T-Bar Row",
+                "youtubeUrl": "https://youtu.be/q8qlHwcuOtc"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://www.youtube.com/watch?v=6G5DmVaocGM",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "machine-shrug",
+            "name": "Machine Shrug",
+            "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Paused Shrug-In",
+                "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Brief pause at the top of the bottom of ROM. Think about pulling your shoulders up to your ears!"
+          },
+          {
+            "id": "ez-bar-cable-curl",
+            "name": "EZ-Bar Cable Curl",
+            "youtubeUrl": "https://youtu.be/ck1zjNTnFew",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "EZ-Bar Curl",
+                "youtubeUrl": "https://youtu.be/WMrgn4GG7mI"
+              },
+              {
+                "name": "DB Curl",
+                "youtubeUrl": "https://youtu.be/XxGCRSJmgwY"
+              }
+            ],
+            "notes": "Set up the cable at the lowest position. Maintain constant tension on the biceps. Slow, controlled reps!"
+          },
+          {
+            "id": "machine-preacher-curl",
+            "name": "Machine Preacher Curl",
+            "youtubeUrl": "https://www.youtube.com/watch?v=R2iUnBxFtis",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "EZ-Bar Preacher Curl",
+                "youtubeUrl": "https://youtu.be/Dn7qgf9iSH8"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "barbell-bench-press",
+            "name": "Barbell Bench Press",
+            "youtubeUrl": "https://youtu.be/nQL5ieH39sw",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Machine Chest Press",
+                "youtubeUrl": "https://youtu.be/zDecGJLyVm8"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep."
+          },
+          {
+            "id": "machine-shoulder-press",
+            "name": "Machine Shoulder Press",
+            "youtubeUrl": "https://youtu.be/SCQVmN1gYsk",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Seated DB Shoulder Press",
+                "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-db-flye",
+            "name": "Bottom-Half DB Flye",
+            "youtubeUrl": "https://youtu.be/qJzc-iHKGdg",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half Seated Cable Flye",
+                "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep."
+          },
+          {
+            "id": "cable-triceps-kickback",
+            "name": "Cable Triceps Kickback",
+            "youtubeUrl": "https://youtu.be/oRxTKRtP8RE",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              },
+              {
+                "name": "Bench Dip",
+                "youtubeUrl": "https://youtu.be/3CaIq8jZe18"
+              }
+            ],
+            "notes": "There are two ways you can do this: upright or bent over. Choose the one that feels more comfortable for you. The main thing is that when you're in the full squeeze, your shoulder should be positioned back behind your torso."
+          },
+          {
+            "id": "lying-leg-raise",
+            "name": "Lying Leg Raise",
+            "youtubeUrl": "https://youtu.be/w86Ph4iQgBM",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-20",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Hanging Leg Raise",
+                "youtubeUrl": "https://youtu.be/rGqwkinWqYI"
+              },
+              {
+                "name": "Modified Candlestick",
+                "youtubeUrl": "https://youtu.be/-XVRl8KU7x0"
+              }
+            ],
+            "notes": "Perform these slowly, focus on keeping your lower back against the ground throughout the set."
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "leg-press",
+            "name": "Leg Press",
+            "youtubeUrl": "https://youtu.be/1yKAQLVV_XI",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Feet lower on the platform for more quad focus. Get as deep as you can without excessive back rounding. Control the negative and do a slight pause at the bottom of each rep."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "DB Step-Up",
+                "youtubeUrl": "https://youtu.be/3FNfi_PrP9Y"
+              },
+              {
+                "name": "Goblet Squat",
+                "youtubeUrl": "https://youtu.be/S2agsLlUSII"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Foundation Block",
+        "exercises": []
+      }
+    },
+    "4": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-barbell-press",
+            "name": "45° Incline Barbell Press",
+            "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline DB Press",
+                "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs."
+          },
+          {
+            "id": "cable-crossover-ladder",
+            "name": "Cable Crossover Ladder",
+            "youtubeUrl": "https://youtu.be/0TP9kVcWGic",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Pec Deck",
+                "youtubeUrl": "https://youtu.be/CI88L1VNvEs"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Do one set with low cable position, one set with medium-height cable position, and one height with a high cable position. If you only have one or two sets, choose the one or two cable positions you prefer."
+          },
+          {
+            "id": "wide-grip-pull-up",
+            "name": "Wide-Grip Pull-Up",
+            "youtubeUrl": "https://youtu.be/yGnp0HU8BnA",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Dual-Handle Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk"
+              }
+            ],
+            "notes": "1.5x shoulder width overhand grip. Slow 2-3 second negative. Feel your lats pulling apart on the way down."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "pendlay-deficit-row",
+            "name": "Pendlay Deficit Row",
+            "youtubeUrl": "https://youtu.be/MmuyHKYCLps",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Row",
+                "youtubeUrl": "https://youtu.be/Wmivm40AV3Q"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Stand on a bumper plate. Focus on getting a big stretch and touch your stomach/chest on each rep!"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-squat",
+            "name": "Smith Machine Squat",
+            "youtubeUrl": "https://www.youtube.com/watch?v=J2D2J7RO_tA",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Once you are under the bar, set up your feet as you would a normal squat and then bring them forward ~3-6 inches. This will cause you to lean back into the bar slightly, allowing for a more upright squat, while also placing more tension on the quads. If your heels are raising at the bottom, you may need to bring your feet more forward. If your feet feel like they are slipping or your lower back is rounding at the bottom, try bringing your feet back a bit."
+          },
+          {
+            "id": "barbell-rdl",
+            "name": "Barbell RDL",
+            "youtubeUrl": "https://youtu.be/ggFtGGYobE4",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "DB RDL",
+                "youtubeUrl": "https://www.youtube.com/watch?v=VRwSgUoj7uI"
+              },
+              {
+                "name": "Snatch-Grip RDL",
+                "youtubeUrl": "https://www.youtube.com/watch?v=b8fmEaXHapU"
+              }
+            ],
+            "notes": "To keep tension on the hamstrings, stop about 75% of the way to full lockout on each rep (i.e. stay in the bottom 3/4 of the range of motion)."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "cable-crunch",
+            "name": "Cable Crunch",
+            "youtubeUrl": "https://youtu.be/epBrpaGHMcg",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Machine Crunch",
+                "youtubeUrl": "https://youtu.be/K2yKEoazT3g"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "neutral-grip-lat-pulldown",
+            "name": "Neutral-Grip Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/lA4_1F9EAFU",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Neutral-Grip Pull- Up",
+                "youtubeUrl": "https://youtu.be/b0ypSz63UGo"
+              },
+              {
+                "name": "Dual-Handle Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk"
+              }
+            ],
+            "notes": "Do these pulldowns with the handle more out in front of you, more like a cross between pullover and a pulldown. Focus on feeling your lats working more than the weight you're using."
+          },
+          {
+            "id": "chest-supported-machine-row",
+            "name": "Chest-Supported Machine Row",
+            "youtubeUrl": "https://youtu.be/ijsSiWSzYw0",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported T-Bar Row",
+                "youtubeUrl": "https://youtu.be/q8qlHwcuOtc"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://www.youtube.com/watch?v=6G5DmVaocGM",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "machine-shrug",
+            "name": "Machine Shrug",
+            "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Paused Shrug-In",
+                "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Brief pause at the top of the bottom of ROM. Think about pulling your shoulders up to your ears!"
+          },
+          {
+            "id": "ez-bar-cable-curl",
+            "name": "EZ-Bar Cable Curl",
+            "youtubeUrl": "https://youtu.be/ck1zjNTnFew",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "EZ-Bar Curl",
+                "youtubeUrl": "https://youtu.be/WMrgn4GG7mI"
+              },
+              {
+                "name": "DB Curl",
+                "youtubeUrl": "https://youtu.be/XxGCRSJmgwY"
+              }
+            ],
+            "notes": "Set up the cable at the lowest position. Maintain constant tension on the biceps. Slow, controlled reps!"
+          },
+          {
+            "id": "machine-preacher-curl",
+            "name": "Machine Preacher Curl",
+            "youtubeUrl": "https://www.youtube.com/watch?v=R2iUnBxFtis",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "EZ-Bar Preacher Curl",
+                "youtubeUrl": "https://youtu.be/Dn7qgf9iSH8"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "barbell-bench-press",
+            "name": "Barbell Bench Press",
+            "youtubeUrl": "https://youtu.be/nQL5ieH39sw",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Machine Chest Press",
+                "youtubeUrl": "https://youtu.be/zDecGJLyVm8"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep."
+          },
+          {
+            "id": "machine-shoulder-press",
+            "name": "Machine Shoulder Press",
+            "youtubeUrl": "https://youtu.be/SCQVmN1gYsk",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Seated DB Shoulder Press",
+                "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-db-flye",
+            "name": "Bottom-Half DB Flye",
+            "youtubeUrl": "https://youtu.be/qJzc-iHKGdg",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half Seated Cable Flye",
+                "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep."
+          },
+          {
+            "id": "cable-triceps-kickback",
+            "name": "Cable Triceps Kickback",
+            "youtubeUrl": "https://youtu.be/oRxTKRtP8RE",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              },
+              {
+                "name": "Bench Dip",
+                "youtubeUrl": "https://youtu.be/3CaIq8jZe18"
+              }
+            ],
+            "notes": "There are two ways you can do this: upright or bent over. Choose the one that feels more comfortable for you. The main thing is that when you're in the full squeeze, your shoulder should be positioned back behind your torso."
+          },
+          {
+            "id": "lying-leg-raise",
+            "name": "Lying Leg Raise",
+            "youtubeUrl": "https://youtu.be/w86Ph4iQgBM",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-20",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Hanging Leg Raise",
+                "youtubeUrl": "https://youtu.be/rGqwkinWqYI"
+              },
+              {
+                "name": "Modified Candlestick",
+                "youtubeUrl": "https://youtu.be/-XVRl8KU7x0"
+              }
+            ],
+            "notes": "Perform these slowly, focus on keeping your lower back against the ground throughout the set."
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Foundation Block",
+        "exercises": [
+          {
+            "id": "leg-press",
+            "name": "Leg Press",
+            "youtubeUrl": "https://youtu.be/1yKAQLVV_XI",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Feet lower on the platform for more quad focus. Get as deep as you can without excessive back rounding. Control the negative and do a slight pause at the bottom of each rep."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "DB Step-Up",
+                "youtubeUrl": "https://youtu.be/3FNfi_PrP9Y"
+              },
+              {
+                "name": "Goblet Squat",
+                "youtubeUrl": "https://youtu.be/S2agsLlUSII"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Foundation Block",
+        "exercises": []
+      }
+    },
+    "5": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-barbell-press",
+            "name": "45° Incline Barbell Press",
+            "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline DB Press",
+                "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs."
+          },
+          {
+            "id": "cable-crossover-ladder",
+            "name": "Cable Crossover Ladder",
+            "youtubeUrl": "https://youtu.be/0TP9kVcWGic",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Pec Deck",
+                "youtubeUrl": "https://youtu.be/CI88L1VNvEs"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Do one set with low cable position, one set with medium-height cable position, and one height with a high cable position. If you only have one or two sets, choose the one or two cable positions you prefer."
+          },
+          {
+            "id": "wide-grip-pull-up",
+            "name": "Wide-Grip Pull-Up",
+            "youtubeUrl": "https://youtu.be/yGnp0HU8BnA",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Dual-Handle Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk"
+              }
+            ],
+            "notes": "1.5x shoulder width overhand grip. Slow 2-3 second negative. Feel your lats pulling apart on the way down."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "pendlay-deficit-row",
+            "name": "Pendlay Deficit Row",
+            "youtubeUrl": "https://youtu.be/MmuyHKYCLps",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Row",
+                "youtubeUrl": "https://youtu.be/Wmivm40AV3Q"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Stand on a bumper plate. Focus on getting a big stretch and touch your stomach/chest on each rep!"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-squat",
+            "name": "Smith Machine Squat",
+            "youtubeUrl": "https://www.youtube.com/watch?v=J2D2J7RO_tA",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Once you are under the bar, set up your feet as you would a normal squat and then bring them forward ~3-6 inches. This will cause you to lean back into the bar slightly, allowing for a more upright squat, while also placing more tension on the quads. If your heels are raising at the bottom, you may need to bring your feet more forward. If your feet feel like they are slipping or your lower back is rounding at the bottom, try bringing your feet back a bit."
+          },
+          {
+            "id": "barbell-rdl",
+            "name": "Barbell RDL",
+            "youtubeUrl": "https://youtu.be/ggFtGGYobE4",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "DB RDL",
+                "youtubeUrl": "https://www.youtube.com/watch?v=VRwSgUoj7uI"
+              },
+              {
+                "name": "Snatch-Grip RDL",
+                "youtubeUrl": "https://www.youtube.com/watch?v=b8fmEaXHapU"
+              }
+            ],
+            "notes": "To keep tension on the hamstrings, stop about 75% of the way to full lockout on each rep (i.e. stay in the bottom 3/4 of the range of motion)."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "6-8",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "cable-crunch",
+            "name": "Cable Crunch",
+            "youtubeUrl": "https://youtu.be/epBrpaGHMcg",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Machine Crunch",
+                "youtubeUrl": "https://youtu.be/K2yKEoazT3g"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "neutral-grip-lat-pulldown",
+            "name": "Neutral-Grip Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/lA4_1F9EAFU",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Neutral-Grip Pull- Up",
+                "youtubeUrl": "https://youtu.be/b0ypSz63UGo"
+              },
+              {
+                "name": "Dual-Handle Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk"
+              }
+            ],
+            "notes": "Do these pulldowns with the handle more out in front of you, more like a cross between pullover and a pulldown. Focus on feeling your lats working more than the weight you're using."
+          },
+          {
+            "id": "chest-supported-machine-row",
+            "name": "Chest-Supported Machine Row",
+            "youtubeUrl": "https://youtu.be/ijsSiWSzYw0",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported T-Bar Row",
+                "youtubeUrl": "https://youtu.be/q8qlHwcuOtc"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://www.youtube.com/watch?v=6G5DmVaocGM",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "machine-shrug",
+            "name": "Machine Shrug",
+            "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Paused Shrug-In",
+                "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Brief pause at the top of the bottom of ROM. Think about pulling your shoulders up to your ears!"
+          },
+          {
+            "id": "ez-bar-cable-curl",
+            "name": "EZ-Bar Cable Curl",
+            "youtubeUrl": "https://youtu.be/ck1zjNTnFew",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "EZ-Bar Curl",
+                "youtubeUrl": "https://youtu.be/WMrgn4GG7mI"
+              },
+              {
+                "name": "DB Curl",
+                "youtubeUrl": "https://youtu.be/XxGCRSJmgwY"
+              }
+            ],
+            "notes": "Set up the cable at the lowest position. Maintain constant tension on the biceps. Slow, controlled reps!"
+          },
+          {
+            "id": "machine-preacher-curl",
+            "name": "Machine Preacher Curl",
+            "youtubeUrl": "https://www.youtube.com/watch?v=R2iUnBxFtis",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "EZ-Bar Preacher Curl",
+                "youtubeUrl": "https://youtu.be/Dn7qgf9iSH8"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "barbell-bench-press",
+            "name": "Barbell Bench Press",
+            "youtubeUrl": "https://youtu.be/nQL5ieH39sw",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Machine Chest Press",
+                "youtubeUrl": "https://youtu.be/zDecGJLyVm8"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep."
+          },
+          {
+            "id": "machine-shoulder-press",
+            "name": "Machine Shoulder Press",
+            "youtubeUrl": "https://youtu.be/SCQVmN1gYsk",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Seated DB Shoulder Press",
+                "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-db-flye",
+            "name": "Bottom-Half DB Flye",
+            "youtubeUrl": "https://youtu.be/qJzc-iHKGdg",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half Seated Cable Flye",
+                "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep."
+          },
+          {
+            "id": "cable-triceps-kickback",
+            "name": "Cable Triceps Kickback",
+            "youtubeUrl": "https://youtu.be/oRxTKRtP8RE",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              },
+              {
+                "name": "Bench Dip",
+                "youtubeUrl": "https://youtu.be/3CaIq8jZe18"
+              }
+            ],
+            "notes": "There are two ways you can do this: upright or bent over. Choose the one that feels more comfortable for you. The main thing is that when you're in the full squeeze, your shoulder should be positioned back behind your torso."
+          },
+          {
+            "id": "lying-leg-raise",
+            "name": "Lying Leg Raise",
+            "youtubeUrl": "https://youtu.be/w86Ph4iQgBM",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-20",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Hanging Leg Raise",
+                "youtubeUrl": "https://youtu.be/rGqwkinWqYI"
+              },
+              {
+                "name": "Modified Candlestick",
+                "youtubeUrl": "https://youtu.be/-XVRl8KU7x0"
+              }
+            ],
+            "notes": "Perform these slowly, focus on keeping your lower back against the ground throughout the set."
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "leg-press",
+            "name": "Leg Press",
+            "youtubeUrl": "https://youtu.be/1yKAQLVV_XI",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Feet lower on the platform for more quad focus. Get as deep as you can without excessive back rounding. Control the negative and do a slight pause at the bottom of each rep."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7",
+            "lastSetRpe": "7",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "DB Step-Up",
+                "youtubeUrl": "https://youtu.be/3FNfi_PrP9Y"
+              },
+              {
+                "name": "Goblet Squat",
+                "youtubeUrl": "https://youtu.be/S2agsLlUSII"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Intensification Block",
+        "exercises": []
+      }
+    },
+    "6": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-db-press",
+            "name": "45° Incline DB Press",
+            "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline Barbell Press",
+                "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs"
+          },
+          {
+            "id": "pec-deck",
+            "name": "Pec Deck",
+            "youtubeUrl": "https://youtu.be/CI88L1VNvEs",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Crossover Ladder",
+                "youtubeUrl": "https://youtu.be/0TP9kVcWGic"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Focus on bringing your elbows together - not your hands"
+          },
+          {
+            "id": "dual-handle-lat-pulldown",
+            "name": "Dual-Handle Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Wide-Grip Pull-Up",
+                "youtubeUrl": "https://youtu.be/yGnp0HU8BnA"
+              }
+            ],
+            "notes": "Lean back by ~15° and drive your elbows down as you squeeze your shoulder blades together. This should feel like a mix of lats and mid-traps."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "smith-machine-row",
+            "name": "Smith Machine Row",
+            "youtubeUrl": "https://youtu.be/Wmivm40AV3Q",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Pendlay Deficit Row",
+                "youtubeUrl": "https://youtu.be/MmuyHKYCLps"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Focus on squeezing your shoulder blades together, keeping your elbows at a ~45° angle"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-static-lunge-w-elevated-front-foot",
+            "name": "Smith Machine Static Lunge w/ Elevated Front Foot",
+            "youtubeUrl": "https://youtu.be/GOqHdmshRKY",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Elevate your front foot on a small box. Minimize contribution from your back leg."
+          },
+          {
+            "id": "45deg-hyperextension",
+            "name": "45° Hyperextension",
+            "youtubeUrl": "https://youtu.be/lEeCPhlFZig",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Glute-Ham Raise",
+                "youtubeUrl": "https://youtu.be/9ksG-O0ZUto"
+              },
+              {
+                "name": "Cable Pull- Through",
+                "youtubeUrl": "https://youtu.be/eFsNZc69m10"
+              }
+            ],
+            "notes": "Squeeze your glutes hard at the top of each rep. Slow controlled reps on the way down, followed by an explosive positive."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "leg-press-calf-press",
+            "name": "Leg Press Calf Press",
+            "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "8-10",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Standing Calf Raise",
+                "youtubeUrl": "https://youtu.be/6lR2JdxUh7w"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "machine-crunch",
+            "name": "Machine Crunch",
+            "youtubeUrl": "https://youtu.be/K2yKEoazT3g",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Cable Crunch",
+                "youtubeUrl": "https://youtu.be/epBrpaGHMcg"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "lean-back-lat-pulldown",
+            "name": "Lean-Back Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/Zjzt4MRbAlc",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Lean-Back Machine Pulldown",
+                "youtubeUrl": "https://youtu.be/CrfvmSGfT2c"
+              },
+              {
+                "name": "Pull-Up",
+                "youtubeUrl": "https://youtu.be/5h_NehuTqe4"
+              }
+            ],
+            "notes": "Initiate the pulldown with a straight up posture. As you pull the bar down, lean back by about 15-30° to get the mid-back more involved. Softly touch the bar to your chest on every rep and, even though you're leaning back, still control the weight!"
+          },
+          {
+            "id": "chest-supported-t-bar-row",
+            "name": "Chest-Supported T-Bar Row",
+            "youtubeUrl": "https://youtu.be/q8qlHwcuOtc",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported Machine Row",
+                "youtubeUrl": "https://youtu.be/ijsSiWSzYw0"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://youtu.be/GhrVM-jPIEA",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "cable-paused-shrug-in",
+            "name": "Cable Paused Shrug-In",
+            "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Machine Shrug",
+                "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Shrug up and in. Think about shrugging \"up to your ears.\" 1-2 second pause in the squeeze (at the top) of each rep, then another 1-2 second pause in the stretch (at the bottom) of each rep."
+          },
+          {
+            "id": "cable-rope-hammer-curl",
+            "name": "Cable Rope Hammer Curl",
+            "youtubeUrl": "https://youtu.be/TTgICSfj1hY",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Hammer Curl",
+                "youtubeUrl": "https://youtu.be/xY3sQXYhk7A"
+              },
+              {
+                "name": "Hammer Preacher Curl",
+                "youtubeUrl": "https://youtu.be/dEdnC3ca-Yg"
+              }
+            ],
+            "notes": "Squeeze the rope hard as you curl the weight up. Smooth, controlled reps."
+          },
+          {
+            "id": "db-concentration-curl",
+            "name": "DB Concentration Curl",
+            "youtubeUrl": "https://youtu.be/Oq7gJuAuJh0",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "15-20",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Concentration Cable Curl",
+                "youtubeUrl": "https://youtu.be/BFZyW_7ld0c"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "machine-chest-press",
+            "name": "Machine Chest Press",
+            "youtubeUrl": "https://youtu.be/zDecGJLyVm8",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Barbell Bench Press",
+                "youtubeUrl": "https://youtu.be/nQL5ieH39sw"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs."
+          },
+          {
+            "id": "seated-db-shoulder-press",
+            "name": "Seated DB Shoulder Press",
+            "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Machine Shoulder Press",
+                "youtubeUrl": "https://youtu.be/SCQVmN1gYsk"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-seated-cable-flye",
+            "name": "Bottom-Half Seated Cable Flye",
+            "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "ez-bar-skull-crusher",
+            "name": "EZ-Bar Skull Crusher",
+            "youtubeUrl": "https://youtu.be/oDKGCsTjAk8",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              },
+              {
+                "name": "Katana Triceps Extension",
+                "youtubeUrl": "https://youtu.be/R7f45Mv7yyg"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep."
+          },
+          {
+            "id": "triceps-pressdown-bar",
+            "name": "Triceps Pressdown (Bar)",
+            "youtubeUrl": "https://youtu.be/o4eazahiXQw",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 1,
+            "reps": "15-20",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Triceps Pressdown (Rope)",
+                "youtubeUrl": "https://youtu.be/bCa036rGtVU"
+              },
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              }
+            ],
+            "notes": "Focus on squeezing your triceps to move the weight."
+          },
+          {
+            "id": "ab-wheel-rollout",
+            "name": "Ab Wheel Rollout",
+            "youtubeUrl": "https://youtu.be/gGTgyCU9gcg",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Swiss Ball Rollout",
+                "youtubeUrl": "https://youtu.be/FvekMyIs-yk"
+              },
+              {
+                "name": "Long-Lever Plank",
+                "youtubeUrl": "https://youtu.be/9rFS1gg0vJM"
+              }
+            ],
+            "notes": "Don't just bend at your hips, use your abs to lower yourself down under control and pull yourself back up. If you don't have the core strength to get all the way extended at the bottom, try to progressively increase the ROM week to week."
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "hack-squat",
+            "name": "Hack Squat",
+            "youtubeUrl": "https://youtu.be/TWUnnDK8rck",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Leg Press",
+                "youtubeUrl": "https://youtu.be/1yKAQLVV_XI"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Use a controlled negative (don't free fall) and then explode on the positive."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 1,
+            "reps": "10-12",
+            "earlySetRpe": null,
+            "lastSetRpe": "6",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Static Lunge",
+                "youtubeUrl": "https://youtu.be/hci6iKFtTkg"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 1,
+            "reps": "12-15",
+            "earlySetRpe": null,
+            "lastSetRpe": "7",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Intensification Block",
+        "exercises": []
+      }
+    },
+    "7": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-db-press",
+            "name": "45° Incline DB Press",
+            "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline Barbell Press",
+                "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs"
+          },
+          {
+            "id": "pec-deck",
+            "name": "Pec Deck",
+            "youtubeUrl": "https://youtu.be/CI88L1VNvEs",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Crossover Ladder",
+                "youtubeUrl": "https://youtu.be/0TP9kVcWGic"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Focus on bringing your elbows together - not your hands"
+          },
+          {
+            "id": "dual-handle-lat-pulldown",
+            "name": "Dual-Handle Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Wide-Grip Pull-Up",
+                "youtubeUrl": "https://youtu.be/yGnp0HU8BnA"
+              }
+            ],
+            "notes": "Lean back by ~15° and drive your elbows down as you squeeze your shoulder blades together. This should feel like a mix of lats and mid-traps."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "smith-machine-row",
+            "name": "Smith Machine Row",
+            "youtubeUrl": "https://youtu.be/Wmivm40AV3Q",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Pendlay Deficit Row",
+                "youtubeUrl": "https://youtu.be/MmuyHKYCLps"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Focus on squeezing your shoulder blades together, keeping your elbows at a ~45° angle"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-static-lunge-w-elevated-front-foot",
+            "name": "Smith Machine Static Lunge w/ Elevated Front Foot",
+            "youtubeUrl": "https://youtu.be/GOqHdmshRKY",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Elevate your front foot on a small box. Minimize contribution from your back leg."
+          },
+          {
+            "id": "45deg-hyperextension",
+            "name": "45° Hyperextension",
+            "youtubeUrl": "https://youtu.be/lEeCPhlFZig",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Glute-Ham Raise",
+                "youtubeUrl": "https://youtu.be/9ksG-O0ZUto"
+              },
+              {
+                "name": "Cable Pull- Through",
+                "youtubeUrl": "https://youtu.be/eFsNZc69m10"
+              }
+            ],
+            "notes": "Squeeze your glutes hard at the top of each rep. Slow controlled reps on the way down, followed by an explosive positive."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "leg-press-calf-press",
+            "name": "Leg Press Calf Press",
+            "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Standing Calf Raise",
+                "youtubeUrl": "https://youtu.be/6lR2JdxUh7w"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "machine-crunch",
+            "name": "Machine Crunch",
+            "youtubeUrl": "https://youtu.be/K2yKEoazT3g",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Cable Crunch",
+                "youtubeUrl": "https://youtu.be/epBrpaGHMcg"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "lean-back-lat-pulldown",
+            "name": "Lean-Back Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/Zjzt4MRbAlc",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Lean-Back Machine Pulldown",
+                "youtubeUrl": "https://youtu.be/CrfvmSGfT2c"
+              },
+              {
+                "name": "Pull-Up",
+                "youtubeUrl": "https://youtu.be/5h_NehuTqe4"
+              }
+            ],
+            "notes": "Initiate the pulldown with a straight up posture. As you pull the bar down, lean back by about 15-30° to get the mid-back more involved. Softly touch the bar to your chest on every rep and, even though you're leaning back, still control the weight!"
+          },
+          {
+            "id": "chest-supported-t-bar-row",
+            "name": "Chest-Supported T-Bar Row",
+            "youtubeUrl": "https://youtu.be/q8qlHwcuOtc",
+            "intensityTechnique": "Failure",
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported Machine Row",
+                "youtubeUrl": "https://youtu.be/ijsSiWSzYw0"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://www.youtube.com/watch?v=6G5DmVaocGM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "cable-paused-shrug-in",
+            "name": "Cable Paused Shrug-In",
+            "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Machine Shrug",
+                "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Shrug up and in. Think about shrugging \"up to your ears.\" 1-2 second pause in the squeeze (at the top) of each rep, then another 1-2 second pause in the stretch (at the bottom) of each rep."
+          },
+          {
+            "id": "cable-rope-hammer-curl",
+            "name": "Cable Rope Hammer Curl",
+            "youtubeUrl": "https://youtu.be/TTgICSfj1hY",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Hammer Curl",
+                "youtubeUrl": "https://youtu.be/xY3sQXYhk7A"
+              },
+              {
+                "name": "Hammer Preacher Curl",
+                "youtubeUrl": "https://youtu.be/dEdnC3ca-Yg"
+              }
+            ],
+            "notes": "Squeeze the rope hard as you curl the weight up. Smooth, controlled reps."
+          },
+          {
+            "id": "db-concentration-curl",
+            "name": "DB Concentration Curl",
+            "youtubeUrl": "https://youtu.be/Oq7gJuAuJh0",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Concentration Cable Curl",
+                "youtubeUrl": "https://youtu.be/BFZyW_7ld0c"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "machine-chest-press",
+            "name": "Machine Chest Press",
+            "youtubeUrl": "https://youtu.be/zDecGJLyVm8",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Barbell Bench Press",
+                "youtubeUrl": "https://youtu.be/nQL5ieH39sw"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs."
+          },
+          {
+            "id": "seated-db-shoulder-press",
+            "name": "Seated DB Shoulder Press",
+            "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Machine Shoulder Press",
+                "youtubeUrl": "https://youtu.be/SCQVmN1gYsk"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-seated-cable-flye",
+            "name": "Bottom-Half Seated Cable Flye",
+            "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "ez-bar-skull-crusher",
+            "name": "EZ-Bar Skull Crusher",
+            "youtubeUrl": "https://youtu.be/oDKGCsTjAk8",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              },
+              {
+                "name": "Katana Triceps Extension",
+                "youtubeUrl": "https://youtu.be/R7f45Mv7yyg"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep."
+          },
+          {
+            "id": "triceps-pressdown-bar",
+            "name": "Triceps Pressdown (Bar)",
+            "youtubeUrl": "https://youtu.be/o4eazahiXQw",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Triceps Pressdown (Rope)",
+                "youtubeUrl": "https://youtu.be/bCa036rGtVU"
+              },
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              }
+            ],
+            "notes": "Focus on squeezing your triceps to move the weight."
+          },
+          {
+            "id": "ab-wheel-rollout",
+            "name": "Ab Wheel Rollout",
+            "youtubeUrl": "https://youtu.be/gGTgyCU9gcg",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Swiss Ball Rollout",
+                "youtubeUrl": "https://youtu.be/FvekMyIs-yk"
+              },
+              {
+                "name": "Long-Lever Plank",
+                "youtubeUrl": "https://youtu.be/9rFS1gg0vJM"
+              }
+            ],
+            "notes": "Don't just bend at your hips, use your abs to lower yourself down under control and pull yourself back up. If you don't have the core strength to get all the way extended at the bottom, try to progressively increase the ROM week to week."
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "hack-squat",
+            "name": "Hack Squat",
+            "youtubeUrl": "https://youtu.be/TWUnnDK8rck",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Leg Press",
+                "youtubeUrl": "https://youtu.be/1yKAQLVV_XI"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Use a controlled negative (don't free fall) and then explode on the positive."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Static Lunge",
+                "youtubeUrl": "https://youtu.be/hci6iKFtTkg"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Intensification Block",
+        "exercises": []
+      }
+    },
+    "8": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-db-press",
+            "name": "45° Incline DB Press",
+            "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline Barbell Press",
+                "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs"
+          },
+          {
+            "id": "pec-deck",
+            "name": "Pec Deck",
+            "youtubeUrl": "https://youtu.be/CI88L1VNvEs",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Crossover Ladder",
+                "youtubeUrl": "https://youtu.be/0TP9kVcWGic"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Focus on bringing your elbows together - not your hands"
+          },
+          {
+            "id": "dual-handle-lat-pulldown",
+            "name": "Dual-Handle Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Wide-Grip Pull-Up",
+                "youtubeUrl": "https://youtu.be/yGnp0HU8BnA"
+              }
+            ],
+            "notes": "Lean back by ~15° and drive your elbows down as you squeeze your shoulder blades together. This should feel like a mix of lats and mid-traps."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "smith-machine-row",
+            "name": "Smith Machine Row",
+            "youtubeUrl": "https://youtu.be/Wmivm40AV3Q",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Pendlay Deficit Row",
+                "youtubeUrl": "https://youtu.be/MmuyHKYCLps"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Focus on squeezing your shoulder blades together, keeping your elbows at a ~45° angle"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-static-lunge-w-elevated-front-foot",
+            "name": "Smith Machine Static Lunge w/ Elevated Front Foot",
+            "youtubeUrl": "https://youtu.be/GOqHdmshRKY",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Elevate your front foot on a small box. Minimize contribution from your back leg."
+          },
+          {
+            "id": "45deg-hyperextension",
+            "name": "45° Hyperextension",
+            "youtubeUrl": "https://youtu.be/lEeCPhlFZig",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Glute-Ham Raise",
+                "youtubeUrl": "https://youtu.be/9ksG-O0ZUto"
+              },
+              {
+                "name": "Cable Pull- Through",
+                "youtubeUrl": "https://youtu.be/eFsNZc69m10"
+              }
+            ],
+            "notes": "Squeeze your glutes hard at the top of each rep. Slow controlled reps on the way down, followed by an explosive positive."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "leg-press-calf-press",
+            "name": "Leg Press Calf Press",
+            "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Standing Calf Raise",
+                "youtubeUrl": "https://youtu.be/6lR2JdxUh7w"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "machine-crunch",
+            "name": "Machine Crunch",
+            "youtubeUrl": "https://youtu.be/K2yKEoazT3g",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Cable Crunch",
+                "youtubeUrl": "https://youtu.be/epBrpaGHMcg"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "lean-back-lat-pulldown",
+            "name": "Lean-Back Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/Zjzt4MRbAlc",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Lean-Back Machine Pulldown",
+                "youtubeUrl": "https://youtu.be/CrfvmSGfT2c"
+              },
+              {
+                "name": "Pull-Up",
+                "youtubeUrl": "https://youtu.be/5h_NehuTqe4"
+              }
+            ],
+            "notes": "Initiate the pulldown with a straight up posture. As you pull the bar down, lean back by about 15-30° to get the mid-back more involved. Softly touch the bar to your chest on every rep and, even though you're leaning back, still control the weight!"
+          },
+          {
+            "id": "chest-supported-t-bar-row",
+            "name": "Chest-Supported T-Bar Row",
+            "youtubeUrl": "https://youtu.be/q8qlHwcuOtc",
+            "intensityTechnique": "Failure",
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported Machine Row",
+                "youtubeUrl": "https://youtu.be/ijsSiWSzYw0"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://www.youtube.com/watch?v=6G5DmVaocGM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "cable-paused-shrug-in",
+            "name": "Cable Paused Shrug-In",
+            "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Machine Shrug",
+                "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Shrug up and in. Think about shrugging \"up to your ears.\" 1-2 second pause in the squeeze (at the top) of each rep, then another 1-2 second pause in the stretch (at the bottom) of each rep."
+          },
+          {
+            "id": "cable-rope-hammer-curl",
+            "name": "Cable Rope Hammer Curl",
+            "youtubeUrl": "https://youtu.be/TTgICSfj1hY",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Hammer Curl",
+                "youtubeUrl": "https://youtu.be/xY3sQXYhk7A"
+              },
+              {
+                "name": "Hammer Preacher Curl",
+                "youtubeUrl": "https://youtu.be/dEdnC3ca-Yg"
+              }
+            ],
+            "notes": "Squeeze the rope hard as you curl the weight up. Smooth, controlled reps."
+          },
+          {
+            "id": "db-concentration-curl",
+            "name": "DB Concentration Curl",
+            "youtubeUrl": "https://youtu.be/Oq7gJuAuJh0",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Concentration Cable Curl",
+                "youtubeUrl": "https://youtu.be/BFZyW_7ld0c"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "machine-chest-press",
+            "name": "Machine Chest Press",
+            "youtubeUrl": "https://youtu.be/zDecGJLyVm8",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Barbell Bench Press",
+                "youtubeUrl": "https://youtu.be/nQL5ieH39sw"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs."
+          },
+          {
+            "id": "seated-db-shoulder-press",
+            "name": "Seated DB Shoulder Press",
+            "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Machine Shoulder Press",
+                "youtubeUrl": "https://youtu.be/SCQVmN1gYsk"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-seated-cable-flye",
+            "name": "Bottom-Half Seated Cable Flye",
+            "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "ez-bar-skull-crusher",
+            "name": "EZ-Bar Skull Crusher",
+            "youtubeUrl": "https://youtu.be/oDKGCsTjAk8",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              },
+              {
+                "name": "Katana Triceps Extension",
+                "youtubeUrl": "https://youtu.be/R7f45Mv7yyg"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep."
+          },
+          {
+            "id": "triceps-pressdown-bar",
+            "name": "Triceps Pressdown (Bar)",
+            "youtubeUrl": "https://youtu.be/o4eazahiXQw",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Triceps Pressdown (Rope)",
+                "youtubeUrl": "https://youtu.be/bCa036rGtVU"
+              },
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              }
+            ],
+            "notes": "Focus on squeezing your triceps to move the weight."
+          },
+          {
+            "id": "ab-wheel-rollout",
+            "name": "Ab Wheel Rollout",
+            "youtubeUrl": "https://youtu.be/gGTgyCU9gcg",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Swiss Ball Rollout",
+                "youtubeUrl": "https://youtu.be/FvekMyIs-yk"
+              },
+              {
+                "name": "Long-Lever Plank",
+                "youtubeUrl": "https://youtu.be/9rFS1gg0vJM"
+              }
+            ],
+            "notes": "Don't just bend at your hips, use your abs to lower yourself down under control and pull yourself back up. If you don't have the core strength to get all the way extended at the bottom, try to progressively increase the ROM week to week."
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Intensification Block",
+        "exercises": [
+          {
+            "id": "hack-squat",
+            "name": "Hack Squat",
+            "youtubeUrl": "https://youtu.be/TWUnnDK8rck",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Leg Press",
+                "youtubeUrl": "https://youtu.be/1yKAQLVV_XI"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Use a controlled negative (don't free fall) and then explode on the positive."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Static Lunge",
+                "youtubeUrl": "https://youtu.be/hci6iKFtTkg"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Intensification Block",
+        "exercises": []
+      }
+    },
+    "9": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-db-press",
+            "name": "45° Incline DB Press",
+            "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline Barbell Press",
+                "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs"
+          },
+          {
+            "id": "pec-deck",
+            "name": "Pec Deck",
+            "youtubeUrl": "https://youtu.be/CI88L1VNvEs",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Crossover Ladder",
+                "youtubeUrl": "https://youtu.be/0TP9kVcWGic"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Focus on bringing your elbows together - not your hands"
+          },
+          {
+            "id": "dual-handle-lat-pulldown",
+            "name": "Dual-Handle Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Wide-Grip Pull-Up",
+                "youtubeUrl": "https://youtu.be/yGnp0HU8BnA"
+              }
+            ],
+            "notes": "Lean back by ~15° and drive your elbows down as you squeeze your shoulder blades together. This should feel like a mix of lats and mid-traps."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "smith-machine-row",
+            "name": "Smith Machine Row",
+            "youtubeUrl": "https://youtu.be/Wmivm40AV3Q",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Pendlay Deficit Row",
+                "youtubeUrl": "https://youtu.be/MmuyHKYCLps"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Focus on squeezing your shoulder blades together, keeping your elbows at a ~45° angle"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-static-lunge-w-elevated-front-foot",
+            "name": "Smith Machine Static Lunge w/ Elevated Front Foot",
+            "youtubeUrl": "https://youtu.be/GOqHdmshRKY",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Elevate your front foot on a small box. Minimize contribution from your back leg."
+          },
+          {
+            "id": "45deg-hyperextension",
+            "name": "45° Hyperextension",
+            "youtubeUrl": "https://youtu.be/lEeCPhlFZig",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Glute-Ham Raise",
+                "youtubeUrl": "https://youtu.be/9ksG-O0ZUto"
+              },
+              {
+                "name": "Cable Pull- Through",
+                "youtubeUrl": "https://youtu.be/eFsNZc69m10"
+              }
+            ],
+            "notes": "Squeeze your glutes hard at the top of each rep. Slow controlled reps on the way down, followed by an explosive positive."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "leg-press-calf-press",
+            "name": "Leg Press Calf Press",
+            "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Standing Calf Raise",
+                "youtubeUrl": "https://youtu.be/6lR2JdxUh7w"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "machine-crunch",
+            "name": "Machine Crunch",
+            "youtubeUrl": "https://youtu.be/K2yKEoazT3g",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Cable Crunch",
+                "youtubeUrl": "https://youtu.be/epBrpaGHMcg"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "lean-back-lat-pulldown",
+            "name": "Lean-Back Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/Zjzt4MRbAlc",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Lean-Back Machine Pulldown",
+                "youtubeUrl": "https://youtu.be/CrfvmSGfT2c"
+              },
+              {
+                "name": "Pull-Up",
+                "youtubeUrl": "https://youtu.be/5h_NehuTqe4"
+              }
+            ],
+            "notes": "Initiate the pulldown with a straight up posture. As you pull the bar down, lean back by about 15-30° to get the mid-back more involved. Softly touch the bar to your chest on every rep and, even though you're leaning back, still control the weight!"
+          },
+          {
+            "id": "chest-supported-t-bar-row",
+            "name": "Chest-Supported T-Bar Row",
+            "youtubeUrl": "https://youtu.be/q8qlHwcuOtc",
+            "intensityTechnique": "Failure",
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported Machine Row",
+                "youtubeUrl": "https://youtu.be/ijsSiWSzYw0"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://www.youtube.com/watch?v=6G5DmVaocGM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "cable-paused-shrug-in",
+            "name": "Cable Paused Shrug-In",
+            "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Machine Shrug",
+                "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Shrug up and in. Think about shrugging \"up to your ears.\" 1-2 second pause in the squeeze (at the top) of each rep, then another 1-2 second pause in the stretch (at the bottom) of each rep."
+          },
+          {
+            "id": "cable-rope-hammer-curl",
+            "name": "Cable Rope Hammer Curl",
+            "youtubeUrl": "https://youtu.be/TTgICSfj1hY",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Hammer Curl",
+                "youtubeUrl": "https://youtu.be/xY3sQXYhk7A"
+              },
+              {
+                "name": "Hammer Preacher Curl",
+                "youtubeUrl": "https://youtu.be/dEdnC3ca-Yg"
+              }
+            ],
+            "notes": "Squeeze the rope hard as you curl the weight up. Smooth, controlled reps."
+          },
+          {
+            "id": "db-concentration-curl",
+            "name": "DB Concentration Curl",
+            "youtubeUrl": "https://youtu.be/Oq7gJuAuJh0",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Concentration Cable Curl",
+                "youtubeUrl": "https://youtu.be/BFZyW_7ld0c"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "machine-chest-press",
+            "name": "Machine Chest Press",
+            "youtubeUrl": "https://youtu.be/zDecGJLyVm8",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Barbell Bench Press",
+                "youtubeUrl": "https://youtu.be/nQL5ieH39sw"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs."
+          },
+          {
+            "id": "seated-db-shoulder-press",
+            "name": "Seated DB Shoulder Press",
+            "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Machine Shoulder Press",
+                "youtubeUrl": "https://youtu.be/SCQVmN1gYsk"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-seated-cable-flye",
+            "name": "Bottom-Half Seated Cable Flye",
+            "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "ez-bar-skull-crusher",
+            "name": "EZ-Bar Skull Crusher",
+            "youtubeUrl": "https://youtu.be/oDKGCsTjAk8",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              },
+              {
+                "name": "Katana Triceps Extension",
+                "youtubeUrl": "https://youtu.be/R7f45Mv7yyg"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep."
+          },
+          {
+            "id": "triceps-pressdown-bar",
+            "name": "Triceps Pressdown (Bar)",
+            "youtubeUrl": "https://youtu.be/o4eazahiXQw",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Triceps Pressdown (Rope)",
+                "youtubeUrl": "https://youtu.be/bCa036rGtVU"
+              },
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              }
+            ],
+            "notes": "Focus on squeezing your triceps to move the weight."
+          },
+          {
+            "id": "ab-wheel-rollout",
+            "name": "Ab Wheel Rollout",
+            "youtubeUrl": "https://youtu.be/gGTgyCU9gcg",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Swiss Ball Rollout",
+                "youtubeUrl": "https://youtu.be/FvekMyIs-yk"
+              },
+              {
+                "name": "Long-Lever Plank",
+                "youtubeUrl": "https://youtu.be/9rFS1gg0vJM"
+              }
+            ],
+            "notes": "Don't just bend at your hips, use your abs to lower yourself down under control and pull yourself back up. If you don't have the core strength to get all the way extended at the bottom, try to progressively increase the ROM week to week."
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "hack-squat",
+            "name": "Hack Squat",
+            "youtubeUrl": "https://youtu.be/TWUnnDK8rck",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Leg Press",
+                "youtubeUrl": "https://youtu.be/1yKAQLVV_XI"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Use a controlled negative (don't free fall) and then explode on the positive."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Static Lunge",
+                "youtubeUrl": "https://youtu.be/hci6iKFtTkg"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Peak Block",
+        "exercises": []
+      }
+    },
+    "10": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-db-press",
+            "name": "45° Incline DB Press",
+            "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline Barbell Press",
+                "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs"
+          },
+          {
+            "id": "pec-deck",
+            "name": "Pec Deck",
+            "youtubeUrl": "https://youtu.be/CI88L1VNvEs",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Crossover Ladder",
+                "youtubeUrl": "https://youtu.be/0TP9kVcWGic"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Focus on bringing your elbows together - not your hands"
+          },
+          {
+            "id": "dual-handle-lat-pulldown",
+            "name": "Dual-Handle Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Wide-Grip Pull-Up",
+                "youtubeUrl": "https://youtu.be/yGnp0HU8BnA"
+              }
+            ],
+            "notes": "Lean back by ~15° and drive your elbows down as you squeeze your shoulder blades together. This should feel like a mix of lats and mid-traps."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "smith-machine-row",
+            "name": "Smith Machine Row",
+            "youtubeUrl": "https://youtu.be/Wmivm40AV3Q",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Pendlay Deficit Row",
+                "youtubeUrl": "https://youtu.be/MmuyHKYCLps"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Focus on squeezing your shoulder blades together, keeping your elbows at a ~45° angle"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-static-lunge-w-elevated-front-foot",
+            "name": "Smith Machine Static Lunge w/ Elevated Front Foot",
+            "youtubeUrl": "https://youtu.be/GOqHdmshRKY",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Elevate your front foot on a small box. Minimize contribution from your back leg."
+          },
+          {
+            "id": "45deg-hyperextension",
+            "name": "45° Hyperextension",
+            "youtubeUrl": "https://youtu.be/lEeCPhlFZig",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Glute-Ham Raise",
+                "youtubeUrl": "https://youtu.be/9ksG-O0ZUto"
+              },
+              {
+                "name": "Cable Pull- Through",
+                "youtubeUrl": "https://youtu.be/eFsNZc69m10"
+              }
+            ],
+            "notes": "Squeeze your glutes hard at the top of each rep. Slow controlled reps on the way down, followed by an explosive positive."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "leg-press-calf-press",
+            "name": "Leg Press Calf Press",
+            "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Standing Calf Raise",
+                "youtubeUrl": "https://youtu.be/6lR2JdxUh7w"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "machine-crunch",
+            "name": "Machine Crunch",
+            "youtubeUrl": "https://youtu.be/K2yKEoazT3g",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Cable Crunch",
+                "youtubeUrl": "https://youtu.be/epBrpaGHMcg"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "lean-back-lat-pulldown",
+            "name": "Lean-Back Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/Zjzt4MRbAlc",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Lean-Back Machine Pulldown",
+                "youtubeUrl": "https://youtu.be/CrfvmSGfT2c"
+              },
+              {
+                "name": "Pull-Up",
+                "youtubeUrl": "https://youtu.be/5h_NehuTqe4"
+              }
+            ],
+            "notes": "Initiate the pulldown with a straight up posture. As you pull the bar down, lean back by about 15-30° to get the mid-back more involved. Softly touch the bar to your chest on every rep and, even though you're leaning back, still control the weight!"
+          },
+          {
+            "id": "chest-supported-t-bar-row",
+            "name": "Chest-Supported T-Bar Row",
+            "youtubeUrl": "https://youtu.be/q8qlHwcuOtc",
+            "intensityTechnique": "Failure",
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported Machine Row",
+                "youtubeUrl": "https://youtu.be/ijsSiWSzYw0"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://www.youtube.com/watch?v=6G5DmVaocGM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "cable-paused-shrug-in",
+            "name": "Cable Paused Shrug-In",
+            "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Machine Shrug",
+                "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Shrug up and in. Think about shrugging \"up to your ears.\" 1-2 second pause in the squeeze (at the top) of each rep, then another 1-2 second pause in the stretch (at the bottom) of each rep."
+          },
+          {
+            "id": "cable-rope-hammer-curl",
+            "name": "Cable Rope Hammer Curl",
+            "youtubeUrl": "https://youtu.be/TTgICSfj1hY",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Hammer Curl",
+                "youtubeUrl": "https://youtu.be/xY3sQXYhk7A"
+              },
+              {
+                "name": "Hammer Preacher Curl",
+                "youtubeUrl": "https://youtu.be/dEdnC3ca-Yg"
+              }
+            ],
+            "notes": "Squeeze the rope hard as you curl the weight up. Smooth, controlled reps."
+          },
+          {
+            "id": "db-concentration-curl",
+            "name": "DB Concentration Curl",
+            "youtubeUrl": "https://youtu.be/Oq7gJuAuJh0",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Concentration Cable Curl",
+                "youtubeUrl": "https://youtu.be/BFZyW_7ld0c"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "machine-chest-press",
+            "name": "Machine Chest Press",
+            "youtubeUrl": "https://youtu.be/zDecGJLyVm8",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Barbell Bench Press",
+                "youtubeUrl": "https://youtu.be/nQL5ieH39sw"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs."
+          },
+          {
+            "id": "seated-db-shoulder-press",
+            "name": "Seated DB Shoulder Press",
+            "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Machine Shoulder Press",
+                "youtubeUrl": "https://youtu.be/SCQVmN1gYsk"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-seated-cable-flye",
+            "name": "Bottom-Half Seated Cable Flye",
+            "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "ez-bar-skull-crusher",
+            "name": "EZ-Bar Skull Crusher",
+            "youtubeUrl": "https://youtu.be/oDKGCsTjAk8",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              },
+              {
+                "name": "Katana Triceps Extension",
+                "youtubeUrl": "https://youtu.be/R7f45Mv7yyg"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep."
+          },
+          {
+            "id": "triceps-pressdown-bar",
+            "name": "Triceps Pressdown (Bar)",
+            "youtubeUrl": "https://youtu.be/o4eazahiXQw",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Triceps Pressdown (Rope)",
+                "youtubeUrl": "https://youtu.be/bCa036rGtVU"
+              },
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              }
+            ],
+            "notes": "Focus on squeezing your triceps to move the weight."
+          },
+          {
+            "id": "ab-wheel-rollout",
+            "name": "Ab Wheel Rollout",
+            "youtubeUrl": "https://youtu.be/gGTgyCU9gcg",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Swiss Ball Rollout",
+                "youtubeUrl": "https://youtu.be/FvekMyIs-yk"
+              },
+              {
+                "name": "Long-Lever Plank",
+                "youtubeUrl": "https://youtu.be/9rFS1gg0vJM"
+              }
+            ],
+            "notes": "Don't just bend at your hips, use your abs to lower yourself down under control and pull yourself back up. If you don't have the core strength to get all the way extended at the bottom, try to progressively increase the ROM week to week."
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "hack-squat",
+            "name": "Hack Squat",
+            "youtubeUrl": "https://youtu.be/TWUnnDK8rck",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Leg Press",
+                "youtubeUrl": "https://youtu.be/1yKAQLVV_XI"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Use a controlled negative (don't free fall) and then explode on the positive."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Static Lunge",
+                "youtubeUrl": "https://youtu.be/hci6iKFtTkg"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Peak Block",
+        "exercises": []
+      }
+    },
+    "11": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-db-press",
+            "name": "45° Incline DB Press",
+            "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline Barbell Press",
+                "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs"
+          },
+          {
+            "id": "pec-deck",
+            "name": "Pec Deck",
+            "youtubeUrl": "https://youtu.be/CI88L1VNvEs",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Crossover Ladder",
+                "youtubeUrl": "https://youtu.be/0TP9kVcWGic"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Focus on bringing your elbows together - not your hands"
+          },
+          {
+            "id": "dual-handle-lat-pulldown",
+            "name": "Dual-Handle Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Wide-Grip Pull-Up",
+                "youtubeUrl": "https://youtu.be/yGnp0HU8BnA"
+              }
+            ],
+            "notes": "Lean back by ~15° and drive your elbows down as you squeeze your shoulder blades together. This should feel like a mix of lats and mid-traps."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "smith-machine-row",
+            "name": "Smith Machine Row",
+            "youtubeUrl": "https://youtu.be/Wmivm40AV3Q",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Pendlay Deficit Row",
+                "youtubeUrl": "https://youtu.be/MmuyHKYCLps"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Focus on squeezing your shoulder blades together, keeping your elbows at a ~45° angle"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-static-lunge-w-elevated-front-foot",
+            "name": "Smith Machine Static Lunge w/ Elevated Front Foot",
+            "youtubeUrl": "https://youtu.be/GOqHdmshRKY",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Elevate your front foot on a small box. Minimize contribution from your back leg."
+          },
+          {
+            "id": "45deg-hyperextension",
+            "name": "45° Hyperextension",
+            "youtubeUrl": "https://youtu.be/lEeCPhlFZig",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Glute-Ham Raise",
+                "youtubeUrl": "https://youtu.be/9ksG-O0ZUto"
+              },
+              {
+                "name": "Cable Pull- Through",
+                "youtubeUrl": "https://youtu.be/eFsNZc69m10"
+              }
+            ],
+            "notes": "Squeeze your glutes hard at the top of each rep. Slow controlled reps on the way down, followed by an explosive positive."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "leg-press-calf-press",
+            "name": "Leg Press Calf Press",
+            "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Standing Calf Raise",
+                "youtubeUrl": "https://youtu.be/6lR2JdxUh7w"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "machine-crunch",
+            "name": "Machine Crunch",
+            "youtubeUrl": "https://youtu.be/K2yKEoazT3g",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Cable Crunch",
+                "youtubeUrl": "https://youtu.be/epBrpaGHMcg"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "lean-back-lat-pulldown",
+            "name": "Lean-Back Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/Zjzt4MRbAlc",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Lean-Back Machine Pulldown",
+                "youtubeUrl": "https://youtu.be/CrfvmSGfT2c"
+              },
+              {
+                "name": "Pull-Up",
+                "youtubeUrl": "https://youtu.be/5h_NehuTqe4"
+              }
+            ],
+            "notes": "Initiate the pulldown with a straight up posture. As you pull the bar down, lean back by about 15-30° to get the mid-back more involved. Softly touch the bar to your chest on every rep and, even though you're leaning back, still control the weight!"
+          },
+          {
+            "id": "chest-supported-t-bar-row",
+            "name": "Chest-Supported T-Bar Row",
+            "youtubeUrl": "https://youtu.be/q8qlHwcuOtc",
+            "intensityTechnique": "Failure",
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported Machine Row",
+                "youtubeUrl": "https://youtu.be/ijsSiWSzYw0"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://www.youtube.com/watch?v=6G5DmVaocGM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "cable-paused-shrug-in",
+            "name": "Cable Paused Shrug-In",
+            "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Machine Shrug",
+                "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Shrug up and in. Think about shrugging \"up to your ears.\" 1-2 second pause in the squeeze (at the top) of each rep, then another 1-2 second pause in the stretch (at the bottom) of each rep."
+          },
+          {
+            "id": "cable-rope-hammer-curl",
+            "name": "Cable Rope Hammer Curl",
+            "youtubeUrl": "https://youtu.be/TTgICSfj1hY",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Hammer Curl",
+                "youtubeUrl": "https://youtu.be/xY3sQXYhk7A"
+              },
+              {
+                "name": "Hammer Preacher Curl",
+                "youtubeUrl": "https://youtu.be/dEdnC3ca-Yg"
+              }
+            ],
+            "notes": "Squeeze the rope hard as you curl the weight up. Smooth, controlled reps."
+          },
+          {
+            "id": "db-concentration-curl",
+            "name": "DB Concentration Curl",
+            "youtubeUrl": "https://youtu.be/Oq7gJuAuJh0",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Concentration Cable Curl",
+                "youtubeUrl": "https://youtu.be/BFZyW_7ld0c"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "machine-chest-press",
+            "name": "Machine Chest Press",
+            "youtubeUrl": "https://youtu.be/zDecGJLyVm8",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Barbell Bench Press",
+                "youtubeUrl": "https://youtu.be/nQL5ieH39sw"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs."
+          },
+          {
+            "id": "seated-db-shoulder-press",
+            "name": "Seated DB Shoulder Press",
+            "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Machine Shoulder Press",
+                "youtubeUrl": "https://youtu.be/SCQVmN1gYsk"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-seated-cable-flye",
+            "name": "Bottom-Half Seated Cable Flye",
+            "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "ez-bar-skull-crusher",
+            "name": "EZ-Bar Skull Crusher",
+            "youtubeUrl": "https://youtu.be/oDKGCsTjAk8",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              },
+              {
+                "name": "Katana Triceps Extension",
+                "youtubeUrl": "https://youtu.be/R7f45Mv7yyg"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep."
+          },
+          {
+            "id": "triceps-pressdown-bar",
+            "name": "Triceps Pressdown (Bar)",
+            "youtubeUrl": "https://youtu.be/o4eazahiXQw",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Triceps Pressdown (Rope)",
+                "youtubeUrl": "https://youtu.be/bCa036rGtVU"
+              },
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              }
+            ],
+            "notes": "Focus on squeezing your triceps to move the weight."
+          },
+          {
+            "id": "ab-wheel-rollout",
+            "name": "Ab Wheel Rollout",
+            "youtubeUrl": "https://youtu.be/gGTgyCU9gcg",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Swiss Ball Rollout",
+                "youtubeUrl": "https://youtu.be/FvekMyIs-yk"
+              },
+              {
+                "name": "Long-Lever Plank",
+                "youtubeUrl": "https://youtu.be/9rFS1gg0vJM"
+              }
+            ],
+            "notes": "Don't just bend at your hips, use your abs to lower yourself down under control and pull yourself back up. If you don't have the core strength to get all the way extended at the bottom, try to progressively increase the ROM week to week."
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "hack-squat",
+            "name": "Hack Squat",
+            "youtubeUrl": "https://youtu.be/TWUnnDK8rck",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Leg Press",
+                "youtubeUrl": "https://youtu.be/1yKAQLVV_XI"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Use a controlled negative (don't free fall) and then explode on the positive."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Static Lunge",
+                "youtubeUrl": "https://youtu.be/hci6iKFtTkg"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Peak Block",
+        "exercises": []
+      }
+    },
+    "12": {
+      "upper": {
+        "name": "Upper (Strength Focus)",
+        "short": "Upper",
+        "focus": "Strength Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "45deg-incline-db-press",
+            "name": "45° Incline DB Press",
+            "youtubeUrl": "https://www.youtube.com/watch?v=p2t9daxLpB8",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "45° Incline Barbell Press",
+                "youtubeUrl": "https://youtu.be/vqQ9ok0dEgk"
+              },
+              {
+                "name": "45° Incline Machine Press",
+                "youtubeUrl": "https://youtu.be/b8fYnZ-usP0"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs"
+          },
+          {
+            "id": "pec-deck",
+            "name": "Pec Deck",
+            "youtubeUrl": "https://youtu.be/CI88L1VNvEs",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Crossover Ladder",
+                "youtubeUrl": "https://youtu.be/0TP9kVcWGic"
+              },
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              }
+            ],
+            "notes": "Focus on bringing your elbows together - not your hands"
+          },
+          {
+            "id": "dual-handle-lat-pulldown",
+            "name": "Dual-Handle Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/NwQ5Ch5t5Vk",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Wide-Grip Lat Pulldown",
+                "youtubeUrl": "https://youtu.be/IYXRrYXfVLc"
+              },
+              {
+                "name": "Wide-Grip Pull-Up",
+                "youtubeUrl": "https://youtu.be/yGnp0HU8BnA"
+              }
+            ],
+            "notes": "Lean back by ~15° and drive your elbows down as you squeeze your shoulder blades together. This should feel like a mix of lats and mid-traps."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "smith-machine-row",
+            "name": "Smith Machine Row",
+            "youtubeUrl": "https://youtu.be/Wmivm40AV3Q",
+            "intensityTechnique": null,
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Pendlay Deficit Row",
+                "youtubeUrl": "https://youtu.be/MmuyHKYCLps"
+              },
+              {
+                "name": "Single-Arm DB Row",
+                "youtubeUrl": "https://youtu.be/roKtfQZbxzg"
+              }
+            ],
+            "notes": "Focus on squeezing your shoulder blades together, keeping your elbows at a ~45° angle"
+          },
+          {
+            "id": "overhead-cable-triceps-extension-bar",
+            "name": "Overhead Cable Triceps Extension (Bar)",
+            "youtubeUrl": "https://youtu.be/9_I1PqZAjdA",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Overhead Cable Triceps Extension (Rope)",
+                "youtubeUrl": "https://youtu.be/GYoUoVNlbGc"
+              },
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep"
+          },
+          {
+            "id": "bayesian-cable-curl",
+            "name": "Bayesian Cable Curl",
+            "youtubeUrl": "https://youtu.be/CWH5J_7kzjM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Super-Bayesian High Cable Curl",
+                "youtubeUrl": "https://youtu.be/jQ9rkfvAbIc"
+              },
+              {
+                "name": "Incline DB Stretch Curl",
+                "youtubeUrl": "https://youtu.be/Z0NIYS9nyoQ"
+              }
+            ],
+            "notes": "If you have a left-right bicep size imbalance, do these 1 arm at a time, starting with the weaker arm. Take the weaker arm to the listed RPE. Then match the reps with the other arm (stop once you've matched the reps, even if the RPE is lower). If you don't have a size imbalance, do these both arms at the same time."
+          }
+        ]
+      },
+      "lower": {
+        "name": "Lower (Strength Focus)",
+        "short": "Lower",
+        "focus": "Strength Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "lying-leg-curl",
+            "name": "Lying Leg Curl",
+            "youtubeUrl": "https://youtu.be/sX4tGtcc62k",
+            "intensityTechnique": null,
+            "warmupSets": "2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Leg Curl",
+                "youtubeUrl": "https://youtu.be/yv0aAY7M1mk"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Set the machine so that you get the biggest stretch possible at the bottom. Prevent your butt from popping up as you curl."
+          },
+          {
+            "id": "smith-machine-static-lunge-w-elevated-front-foot",
+            "name": "Smith Machine Static Lunge w/ Elevated Front Foot",
+            "youtubeUrl": "https://youtu.be/GOqHdmshRKY",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "DB Bulgarian Split Squat",
+                "youtubeUrl": "https://youtu.be/htDXu61MPio"
+              },
+              {
+                "name": "High-Bar Back Squat",
+                "youtubeUrl": "https://youtu.be/V-B_Y-OvOTQ"
+              }
+            ],
+            "notes": "Elevate your front foot on a small box. Minimize contribution from your back leg."
+          },
+          {
+            "id": "45deg-hyperextension",
+            "name": "45° Hyperextension",
+            "youtubeUrl": "https://youtu.be/lEeCPhlFZig",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "8-10",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Glute-Ham Raise",
+                "youtubeUrl": "https://youtu.be/9ksG-O0ZUto"
+              },
+              {
+                "name": "Cable Pull- Through",
+                "youtubeUrl": "https://youtu.be/eFsNZc69m10"
+              }
+            ],
+            "notes": "Squeeze your glutes hard at the top of each rep. Slow controlled reps on the way down, followed by an explosive positive."
+          },
+          {
+            "id": "leg-extension",
+            "name": "Leg Extension",
+            "youtubeUrl": "https://youtu.be/uFbNtqP966A",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Reverse Nordic",
+                "youtubeUrl": "https://youtu.be/D-kqUKEQZZ0"
+              },
+              {
+                "name": "Sissy Squat",
+                "youtubeUrl": "https://youtu.be/eWAjlO4FWPQ"
+              }
+            ],
+            "notes": "Set the seat back as far as it will go while still feeling comfortable. Grab the handles as hard as you can to pull your butt down into the seat. Use a 2-3 second negative. Feel your quads pulling apart on the negative."
+          },
+          {
+            "id": "leg-press-calf-press",
+            "name": "Leg Press Calf Press",
+            "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "8-10",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Standing Calf Raise",
+                "youtubeUrl": "https://youtu.be/6lR2JdxUh7w"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          },
+          {
+            "id": "machine-crunch",
+            "name": "Machine Crunch",
+            "youtubeUrl": "https://youtu.be/K2yKEoazT3g",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Decline Weighted Crunch",
+                "youtubeUrl": "https://youtu.be/ZheUsKqU81M"
+              },
+              {
+                "name": "Cable Crunch",
+                "youtubeUrl": "https://youtu.be/epBrpaGHMcg"
+              }
+            ],
+            "notes": "Round your lower back as you crunch. Maintain a mind-muscle connection with your 6-pack."
+          }
+        ]
+      },
+      "pull": {
+        "name": "Pull (Hypertrophy Focus)",
+        "short": "Pull",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "lean-back-lat-pulldown",
+            "name": "Lean-Back Lat Pulldown",
+            "youtubeUrl": "https://youtu.be/Zjzt4MRbAlc",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Lean-Back Machine Pulldown",
+                "youtubeUrl": "https://youtu.be/CrfvmSGfT2c"
+              },
+              {
+                "name": "Pull-Up",
+                "youtubeUrl": "https://youtu.be/5h_NehuTqe4"
+              }
+            ],
+            "notes": "Initiate the pulldown with a straight up posture. As you pull the bar down, lean back by about 15-30° to get the mid-back more involved. Softly touch the bar to your chest on every rep and, even though you're leaning back, still control the weight!"
+          },
+          {
+            "id": "chest-supported-t-bar-row",
+            "name": "Chest-Supported T-Bar Row",
+            "youtubeUrl": "https://youtu.be/q8qlHwcuOtc",
+            "intensityTechnique": "Failure",
+            "warmupSets": "2-3",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Chest-Supported Machine Row",
+                "youtubeUrl": "https://youtu.be/ijsSiWSzYw0"
+              },
+              {
+                "name": "Incline Chest- Supported DB Row",
+                "youtubeUrl": "https://youtu.be/okCWuhxJEvw"
+              }
+            ],
+            "notes": "Flare elbows out at roughly 45° and squeeze your shoulder blades together hard at the top of each rep."
+          },
+          {
+            "id": "1-arm-45deg-cable-rear-delt-flye",
+            "name": "1-Arm 45° Cable Rear Delt Flye",
+            "youtubeUrl": "https://www.youtube.com/watch?v=6G5DmVaocGM",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Rope Face Pull",
+                "youtubeUrl": "https://youtu.be/GhrVM-jPIEA"
+              },
+              {
+                "name": "Reverse Pec Deck",
+                "youtubeUrl": "https://youtu.be/Y8fb_rtEU_4"
+              }
+            ],
+            "notes": "Pause for 1-2 seconds in the squeeze of each rep. Contract the rear delts hard!"
+          },
+          {
+            "id": "cable-paused-shrug-in",
+            "name": "Cable Paused Shrug-In",
+            "youtubeUrl": "https://youtu.be/Hy6f1Lz_PiA",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Machine Shrug",
+                "youtubeUrl": "https://youtu.be/ua0XuKwKQ9M"
+              },
+              {
+                "name": "DB Shrug",
+                "youtubeUrl": "https://youtu.be/moFqLlptX7Q"
+              }
+            ],
+            "notes": "Shrug up and in. Think about shrugging \"up to your ears.\" 1-2 second pause in the squeeze (at the top) of each rep, then another 1-2 second pause in the stretch (at the bottom) of each rep."
+          },
+          {
+            "id": "cable-rope-hammer-curl",
+            "name": "Cable Rope Hammer Curl",
+            "youtubeUrl": "https://youtu.be/TTgICSfj1hY",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Hammer Curl",
+                "youtubeUrl": "https://youtu.be/xY3sQXYhk7A"
+              },
+              {
+                "name": "Hammer Preacher Curl",
+                "youtubeUrl": "https://youtu.be/dEdnC3ca-Yg"
+              }
+            ],
+            "notes": "Squeeze the rope hard as you curl the weight up. Smooth, controlled reps."
+          },
+          {
+            "id": "db-concentration-curl",
+            "name": "DB Concentration Curl",
+            "youtubeUrl": "https://youtu.be/Oq7gJuAuJh0",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Concentration Cable Curl",
+                "youtubeUrl": "https://youtu.be/BFZyW_7ld0c"
+              },
+              {
+                "name": "DB Preacher Curl",
+                "youtubeUrl": "https://youtu.be/WTkQLAethtg"
+              }
+            ],
+            "notes": "Smooth, controlled reps. Mind-muscle connection with the biceps."
+          }
+        ]
+      },
+      "push": {
+        "name": "Push (Hypertrophy Focus)",
+        "short": "Push",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "machine-chest-press",
+            "name": "Machine Chest Press",
+            "youtubeUrl": "https://youtu.be/zDecGJLyVm8",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "3-5 min",
+            "restSeconds": 240,
+            "substitutes": [
+              {
+                "name": "Barbell Bench Press",
+                "youtubeUrl": "https://youtu.be/nQL5ieH39sw"
+              },
+              {
+                "name": "DB Bench Press",
+                "youtubeUrl": "https://youtu.be/zGXvPjlgVkk"
+              }
+            ],
+            "notes": "1 second pause at the bottom of each rep while maintaining tension on the pecs."
+          },
+          {
+            "id": "seated-db-shoulder-press",
+            "name": "Seated DB Shoulder Press",
+            "youtubeUrl": "https://youtu.be/B8PB5RPhTWQ",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Cable Shoulder Press",
+                "youtubeUrl": "https://youtu.be/OfjncdW_Vyc"
+              },
+              {
+                "name": "Machine Shoulder Press",
+                "youtubeUrl": "https://youtu.be/SCQVmN1gYsk"
+              }
+            ],
+            "notes": "Ensure that your elbows break at least 90°. Mind-muscle connection with your delts. Smooth, controlled reps."
+          },
+          {
+            "id": "bottom-half-seated-cable-flye",
+            "name": "Bottom-Half Seated Cable Flye",
+            "youtubeUrl": "https://youtu.be/tsJMV9Gxw-o",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Bottom-Half DB Flye",
+                "youtubeUrl": "https://youtu.be/qJzc-iHKGdg"
+              },
+              {
+                "name": "Low-to-High Cable Crossover",
+                "youtubeUrl": "https://youtu.be/1LhGmhVFe2Y"
+              }
+            ],
+            "notes": "All reps and sets are to be performed in the bottom half of the ROM. Focus on feeling a deep stretch in your pecs at the bottom of each rep."
+          },
+          {
+            "id": "high-cable-lateral-raise",
+            "name": "High-Cable Lateral Raise",
+            "youtubeUrl": "https://youtu.be/MnMux3Wc0Ac",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "High-Cable Cuffed Lateral Raise",
+                "youtubeUrl": "https://youtu.be/8m2jNHBP580"
+              },
+              {
+                "name": "Lean-In DB Lateral Raise",
+                "youtubeUrl": "https://www.youtube.com/watch?v=BmYuAG2j2co"
+              }
+            ],
+            "notes": "Focus on squeezing your lateral delt to move the weight."
+          },
+          {
+            "id": "ez-bar-skull-crusher",
+            "name": "EZ-Bar Skull Crusher",
+            "youtubeUrl": "https://youtu.be/oDKGCsTjAk8",
+            "intensityTechnique": null,
+            "warmupSets": "1",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "8-9",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "DB Skull Crusher",
+                "youtubeUrl": "https://youtu.be/fbLTzgTKOR8"
+              },
+              {
+                "name": "Katana Triceps Extension",
+                "youtubeUrl": "https://youtu.be/R7f45Mv7yyg"
+              }
+            ],
+            "notes": "Optionally pause for 0.5-1 second in the stretched aspect of each rep."
+          },
+          {
+            "id": "triceps-pressdown-bar",
+            "name": "Triceps Pressdown (Bar)",
+            "youtubeUrl": "https://youtu.be/o4eazahiXQw",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1",
+            "workingSets": 2,
+            "reps": "15-20",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Triceps Pressdown (Rope)",
+                "youtubeUrl": "https://youtu.be/bCa036rGtVU"
+              },
+              {
+                "name": "DB Triceps Kickback",
+                "youtubeUrl": "https://youtu.be/YdUUYFgpA7g"
+              }
+            ],
+            "notes": "Focus on squeezing your triceps to move the weight."
+          },
+          {
+            "id": "ab-wheel-rollout",
+            "name": "Ab Wheel Rollout",
+            "youtubeUrl": "https://youtu.be/gGTgyCU9gcg",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Swiss Ball Rollout",
+                "youtubeUrl": "https://youtu.be/FvekMyIs-yk"
+              },
+              {
+                "name": "Long-Lever Plank",
+                "youtubeUrl": "https://youtu.be/9rFS1gg0vJM"
+              }
+            ],
+            "notes": "Don't just bend at your hips, use your abs to lower yourself down under control and pull yourself back up. If you don't have the core strength to get all the way extended at the bottom, try to progressively increase the ROM week to week."
+          }
+        ]
+      },
+      "legs": {
+        "name": "Legs (Hypertrophy Focus)",
+        "short": "Legs",
+        "focus": "Hypertrophy Focus",
+        "block": "Peak Block",
+        "exercises": [
+          {
+            "id": "hack-squat",
+            "name": "Hack Squat",
+            "youtubeUrl": "https://youtu.be/TWUnnDK8rck",
+            "intensityTechnique": null,
+            "warmupSets": "2-4",
+            "workingSets": 3,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Leg Press",
+                "youtubeUrl": "https://youtu.be/1yKAQLVV_XI"
+              },
+              {
+                "name": "DB Walking Lunge",
+                "youtubeUrl": "https://youtu.be/BC_eDtrB-M4"
+              }
+            ],
+            "notes": "Use a controlled negative (don't free fall) and then explode on the positive."
+          },
+          {
+            "id": "seated-leg-curl",
+            "name": "Seated Leg Curl",
+            "youtubeUrl": "https://youtu.be/yv0aAY7M1mk",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Lying Leg Curl",
+                "youtubeUrl": "https://youtu.be/sX4tGtcc62k"
+              },
+              {
+                "name": "Nordic Ham Curl",
+                "youtubeUrl": "https://youtu.be/fzpYiRtzmFA"
+              }
+            ],
+            "notes": "Lean forward over the machine to get a maximum stretch in your hamstrings."
+          },
+          {
+            "id": "walking-lunge",
+            "name": "Walking Lunge",
+            "youtubeUrl": "https://youtu.be/BC_eDtrB-M4",
+            "intensityTechnique": null,
+            "warmupSets": "2-3",
+            "workingSets": 2,
+            "reps": "10-12",
+            "earlySetRpe": "7-8",
+            "lastSetRpe": "7-8",
+            "rest": "2-3 min",
+            "restSeconds": 150,
+            "substitutes": [
+              {
+                "name": "Smith Machine Static Lunge",
+                "youtubeUrl": "https://youtu.be/SEjKxJGg_C8"
+              },
+              {
+                "name": "DB Static Lunge",
+                "youtubeUrl": "https://youtu.be/hci6iKFtTkg"
+              }
+            ],
+            "notes": "Take medium strides. Minimize contribution from the back leg."
+          },
+          {
+            "id": "machine-hip-abduction",
+            "name": "Machine Hip Abduction",
+            "youtubeUrl": "https://youtu.be/pozooPg6PBE",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 2,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Cable Hip Abduction",
+                "youtubeUrl": "https://youtu.be/552L1K3Rb_Q"
+              },
+              {
+                "name": "Lateral Band Walk",
+                "youtubeUrl": "https://youtu.be/sOYvvFPYdsU"
+              }
+            ],
+            "notes": "If possible, use pads to increase the range of motion on the machine. Lean forward and grab onto the machine rails to stretch the glutes further."
+          },
+          {
+            "id": "standing-calf-raise",
+            "name": "Standing Calf Raise",
+            "youtubeUrl": "https://youtu.be/6lR2JdxUh7w",
+            "intensityTechnique": "Failure",
+            "warmupSets": "1-2",
+            "workingSets": 3,
+            "reps": "12-15",
+            "earlySetRpe": "8-9",
+            "lastSetRpe": "10",
+            "rest": "1-2 min",
+            "restSeconds": 90,
+            "substitutes": [
+              {
+                "name": "Seated Calf Raise",
+                "youtubeUrl": "https://youtu.be/6pfj0G7VKdM"
+              },
+              {
+                "name": "Leg Press Calf Press",
+                "youtubeUrl": "https://youtu.be/S6DTPNZ_-F4"
+              }
+            ],
+            "notes": "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet."
+          }
+        ]
+      },
+      "rest": {
+        "name": "Descanso",
+        "short": "Rest",
+        "focus": null,
+        "block": "Peak Block",
+        "exercises": []
+      }
+    }
+  }
+};
+export default BBTS_BEGINNER;

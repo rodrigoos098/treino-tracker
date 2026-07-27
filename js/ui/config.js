@@ -1,9 +1,9 @@
 import {
   state, KEYS, savePlan, saveLogs, saveCfg, saveSessions, saveMeta,
-  isValidPlan, isValidLogs, idbDelete
+  isValidProgram, isValidLogs, idbDelete, getDefaultCfg, DATA_VERSION
 } from '../store.js';
-import { DEFAULT_PLAN } from '../defaults.js';
-import { nextWorkoutId, getWorkoutPlan } from '../plan.js';
+import { DEFAULT_PROGRAM } from '../defaults.js';
+import { jumpToWeekDay, getWorkoutPlan } from '../plan.js';
 import { pageHeader, toast, todayISO } from '../utils.js';
 
 const BACKUP_REMINDER_DAYS = 7;
@@ -26,14 +26,21 @@ export function renderConfig() {
   const reminder = needsBackupReminder()
     ? '<div class="backup-banner">Backup há mais de 7 dias (ou nunca). Exporte um JSON para não perder o histórico.</div>'
     : '';
+  const started = state.cfg.programStartedAt
+    ? new Date(state.cfg.programStartedAt).toLocaleDateString('pt-BR')
+    : '—';
 
   el.innerHTML = pageHeader('Configurações', 'Preferências e backup dos dados') +
     reminder +
+    '<div class="config-section"><h3>Programa</h3>' +
+    '<p class="about-text">BBTS Beginner · Semana ' + (state.cfg.currentWeek || 1) +
+    '/12 · Dia: ' + (state.cfg.currentDay || 'upper') +
+    '<br>Início: ' + started + '</p></div>' +
     '<div class="config-section"><h3>Aparência</h3>' +
     toggleHtml('toggle-theme', state.cfg.theme === 'light', 'Tema claro') +
     '</div>' +
     '<div class="config-section"><h3>Treino</h3>' +
-    '<div class="form-group"><label>Descanso padrão (segundos)</label>' +
+    '<div class="form-group"><label>Descanso padrão (fallback, segundos)</label>' +
     '<input type="number" id="cfg-rest" min="30" max="600" step="15" value="' + rest + '"></div>' +
     toggleHtml('toggle-vibrate', !!state.cfg.vibrate, 'Vibração no fim do descanso') +
     toggleHtml('toggle-wakelock', !!state.cfg.wakeLock, 'Manter tela ligada na sessão') +
@@ -46,13 +53,13 @@ export function renderConfig() {
     '<div class="btn-group"><button class="btn btn-secondary btn-block" id="import-backup">Importar backup</button></div>' +
     '<div class="btn-group"><button class="btn btn-danger btn-block" id="reset-data">Resetar dados</button></div></div>' +
     '<div class="config-section"><h3>Sobre</h3>' +
-    '<p class="about-text">Treino Tracker v2 · Rotação dinâmica de planos · Offline-first. Atualizações do PWA não apagam seu histórico.</p></div>';
+    '<p class="about-text">Treino Tracker v3 · Bodybuilding Transformation System (Beginner) · Offline-first. Atualizações do PWA não apagam seu histórico.</p></div>';
 }
 
 async function exportBackup() {
   const data = {
-    version: 2,
-    dataVersion: 2,
+    version: DATA_VERSION,
+    dataVersion: DATA_VERSION,
     exportedAt: new Date().toISOString(),
     plan: state.plan,
     logs: state.logs,
@@ -101,11 +108,13 @@ async function importBackup(file, onRenderAll) {
       if (!data || typeof data !== 'object') throw new Error('invalid');
 
       if (data.plan !== undefined) {
-        if (!isValidPlan(data.plan)) {
-          toast('Backup inválido: plano malformado');
-          return;
+        if (!isValidProgram(data.plan) || data.plan.id !== 'bbts-beginner-2025') {
+          // Always reinstall BBTS; keep logs if valid
+          state.plan = structuredClone(DEFAULT_PROGRAM);
+          toast('Plano antigo ignorado — programa BBTS reinstado');
+        } else {
+          state.plan = data.plan;
         }
-        state.plan = data.plan;
         await savePlan();
       }
       if (data.logs !== undefined) {
@@ -121,7 +130,8 @@ async function importBackup(file, onRenderAll) {
           toast('Backup inválido: config malformada');
           return;
         }
-        state.cfg = { ...state.cfg, ...data.cfg };
+        state.cfg = { ...getDefaultCfg(), ...data.cfg };
+        if (!state.cfg.programStartedAt) state.cfg.programStartedAt = new Date().toISOString();
         await saveCfg();
       }
       if (data.sessions !== undefined) {
@@ -133,15 +143,16 @@ async function importBackup(file, onRenderAll) {
         await saveSessions();
       }
       if (data.meta !== undefined && data.meta && typeof data.meta === 'object') {
-        state.meta = { ...state.meta, ...data.meta, dataVersion: 2 };
+        state.meta = { ...state.meta, ...data.meta, dataVersion: DATA_VERSION };
         await saveMeta();
       }
 
-      state.selectedWorkout = nextWorkoutId(state.cfg.lastWorkoutId);
-      if (!getWorkoutPlan(state.selectedWorkout) && state.plan.days.length) {
-        state.selectedWorkout = state.plan.days[0].id;
+      jumpToWeekDay(state.cfg.currentWeek || 1, state.cfg.currentDay || 'upper');
+      if (!getWorkoutPlan(state.selectedWorkout)) {
+        jumpToWeekDay(1, 'upper');
       }
       state.draftSets = {};
+      state.substituteChoice = {};
       onRenderAll();
       toast('Backup importado com sucesso');
     } catch {
@@ -152,29 +163,27 @@ async function importBackup(file, onRenderAll) {
 }
 
 async function resetData(onRenderAll) {
-  if (!confirm('Isso apaga plano, histórico e configurações. Deseja continuar?')) return;
+  if (!confirm('Isso apaga histórico e configurações e reinstala o BBTS Beginner. Continuar?')) return;
   for (const key of Object.values(KEYS)) {
     localStorage.removeItem(key);
     await idbDelete(key);
   }
-  state.plan = structuredClone(DEFAULT_PLAN);
+  state.plan = structuredClone(DEFAULT_PROGRAM);
   state.logs = {};
   state.cfg = {
-    theme: 'dark',
-    unit: 'kg',
-    lastWorkoutId: null,
-    restSeconds: 90,
-    vibrate: true,
-    lastBackupAt: null,
-    wakeLock: true
+    ...getDefaultCfg(),
+    programStartedAt: new Date().toISOString()
   };
   state.sessions = [];
-  state.meta = { dataVersion: 2, migratedAt: new Date().toISOString() };
-  state.selectedWorkout = 'push';
+  state.meta = { dataVersion: DATA_VERSION, migratedAt: new Date().toISOString() };
+  state.selectedWorkout = 'upper';
+  state.browseWeek = 1;
+  state.browseDay = 'upper';
   state.draftSets = {};
+  state.substituteChoice = {};
   await Promise.all([savePlan(), saveLogs(), saveCfg(), saveSessions(), saveMeta()]);
   onRenderAll();
-  toast('Dados resetados');
+  toast('Dados resetados · BBTS Beginner');
 }
 
 export function bindConfigEvents(root, { onRenderAll }) {

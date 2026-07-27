@@ -6,18 +6,22 @@ function localISO(d) {
   return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
 }
 
+function trainingSessions() {
+  return (state.sessions || []).filter(s => !s.isRest);
+}
+
 function weekSummary() {
   const start = new Date();
   start.setHours(0, 0, 0, 0);
   start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); // Monday
   const startISO = localISO(start);
-  const sessions = (state.sessions || []).filter(s => s.date >= startISO);
+  const sessions = trainingSessions().filter(s => s.date >= startISO);
   const volume = sessions.reduce((acc, s) => acc + (s.totalVolume || 0), 0);
   return { count: sessions.length, volume: Math.round(volume) };
 }
 
 function streakDays() {
-  const dates = [...new Set((state.sessions || []).map(s => s.date))].sort().reverse();
+  const dates = [...new Set(trainingSessions().map(s => s.date))].sort().reverse();
   if (!dates.length) return 0;
   let streak = 0;
   const cursor = new Date();
@@ -49,7 +53,10 @@ function showSessionDetail(session) {
     return '<div class="card" style="margin-bottom:8px"><div class="card-title">' + esc(ex.name) + '</div>' + lines + '</div>';
   }).join('');
   openModal('<h3>' + esc(session.workoutName || 'Sessão') + '</h3>' +
-    '<p class="subtitle" style="margin-bottom:12px">' + formatDate(session.date) + ' · ' +
+    '<p class="subtitle" style="margin-bottom:12px">' + formatDate(session.date) +
+    (session.week ? ' · Semana ' + session.week : '') +
+    (session.dayId ? ' · ' + session.dayId : '') +
+    ' · ' +
     (session.durationMin || Math.round((session.durationSec || 0) / 60)) + ' min · ' +
     (session.totalVolume || 0) + ' ' + (state.cfg.unit || 'kg') + '</p>' +
     (sets || '<div class="empty-state">Sem detalhes de exercícios</div>') +
@@ -69,9 +76,13 @@ export function renderHistorico() {
   } else {
     list = '<div class="card" style="padding:0">' + sessions.map(s =>
       '<div class="history-item" data-session="' + escAttr(s.id) + '">' +
-        '<div class="history-item-title">' + esc(s.workoutName || 'Treino') + '</div>' +
-        '<div class="history-item-meta">' + formatDate(s.date) + ' · ' +
-        formatDuration(s.durationSec || (s.durationMin || 0) * 60) + ' · ' +
+        '<div class="history-item-title">' + esc(s.workoutName || 'Treino') +
+        (s.isRest ? ' <span class="badge">Rest</span>' : '') +
+        '</div>' +
+        '<div class="history-item-meta">' + formatDate(s.date) +
+        (s.week ? ' · Semana ' + s.week : '') +
+        (s.dayId ? ' · ' + s.dayId : '') +
+        ' · ' + formatDuration(s.durationSec || (s.durationMin || 0) * 60) + ' · ' +
         (s.totalSets || 0) + ' séries · ' + (s.totalVolume || 0) + ' ' + (state.cfg.unit || 'kg') +
         '</div></div>'
     ).join('') + '</div>';

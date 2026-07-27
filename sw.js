@@ -1,4 +1,4 @@
-const CACHE = 'tt-v7';
+const CACHE = 'tt-v8';
 const ASSETS = [
   './',
   './index.html',
@@ -7,6 +7,7 @@ const ASSETS = [
   './js/store.js',
   './js/utils.js',
   './js/defaults.js',
+  './js/data/bbts-beginner.js',
   './js/plan.js',
   './js/session.js',
   './js/charts.js',
