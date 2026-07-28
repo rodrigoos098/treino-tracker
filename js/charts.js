@@ -141,12 +141,12 @@ export function renderChartSVG(data, unit, opts = {}) {
   data.forEach((d, i) => {
     if (i % step === 0 || i === data.length - 1) {
       const x = pad.l + (data.length === 1 ? cw / 2 : (i / (data.length - 1)) * cw);
-      labels += '<text x="' + x + '" y="' + (H - 6) + '" text-anchor="middle" fill="#9aa3b5" font-size="9" font-family="Plus Jakarta Sans,sans-serif">' + formatDate(d.date) + '</text>';
+      labels += '<text x="' + x + '" y="' + (H - 6) + '" text-anchor="middle" fill="#9aa3b5" font-size="9" font-family="Barlow,sans-serif">' + formatDate(d.date) + '</text>';
     }
   });
   const yLabels = [minV, minV + range / 2, maxV].map((v, i) => {
     const y = pad.t + ch - (i / 2) * ch;
-    return '<text x="' + (pad.l - 6) + '" y="' + (y + 4) + '" text-anchor="end" fill="#9aa3b5" font-size="9" font-family="JetBrains Mono,monospace">' + Math.round(v) + '</text>';
+    return '<text x="' + (pad.l - 6) + '" y="' + (y + 4) + '" text-anchor="end" fill="#9aa3b5" font-size="9" font-family="Barlow,sans-serif">' + Math.round(v) + '</text>';
   }).join('');
   const circles = pts.map(p => {
     if (markPRs && p.isPR) {
@@ -158,7 +158,7 @@ export function renderChartSVG(data, unit, opts = {}) {
     '<line x1="' + pad.l + '" y1="' + pad.t + '" x2="' + pad.l + '" y2="' + (pad.t + ch) + '" stroke="var(--border)" stroke-width="1"/>' +
     '<line x1="' + pad.l + '" y1="' + (pad.t + ch) + '" x2="' + (pad.l + cw) + '" y2="' + (pad.t + ch) + '" stroke="var(--border)" stroke-width="1"/>' +
     yLabels + labels +
-    '<polygon points="' + area + '" fill="rgba(52,211,153,0.08)"/>' +
+    '<polygon points="' + area + '" fill="rgba(249,115,22,0.10)"/>' +
     '<polyline points="' + polyline + '" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' +
     circles +
     '</svg>';

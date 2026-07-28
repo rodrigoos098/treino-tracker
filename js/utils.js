@@ -1,4 +1,4 @@
-export const ICON_HISTORY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+export const ICON_HISTORY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
 
 export let toastTimer = null;
 
@@ -21,6 +21,15 @@ export function toast(msg) {
     el.classList.remove('show');
     toastTimer = null;
   }, 2200);
+}
+
+/** Light haptic for important confirms (respects cfg.vibrate). */
+export function lightHaptic() {
+  try {
+    if (typeof navigator !== 'undefined' && navigator.vibrate) {
+      navigator.vibrate(10);
+    }
+  } catch { /* ignore */ }
 }
 
 export function todayISO() {

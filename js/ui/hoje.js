@@ -11,12 +11,18 @@ import {
   restSecondsForExercise
 } from '../session.js';
 import {
-  esc, escAttr, pageHeader, ICON_HISTORY, toast,
+  esc, escAttr, pageHeader, ICON_HISTORY, toast, lightHaptic,
   formatDate, todayISO
 } from '../utils.js';
 import { getExerciseStats } from '../charts.js';
 
 function unit() { return state.cfg.unit || 'kg'; }
+
+function hapticIfEnabled() {
+  if (state.cfg.vibrate) lightHaptic();
+}
+
+let lastStaggerWorkout = null;
 
 function ensureDraftSet(key, idx) {
   if (!state.draftSets[key]) state.draftSets[key] = [];
@@ -98,7 +104,7 @@ function prescribedMeta(ex) {
   return parts.join(' · ');
 }
 
-function exerciseCard(dayPlan, ex) {
+function exerciseCard(dayPlan, ex, stagger) {
   const key = getDraftKey(dayPlan.id, ex.id);
   const draft = (state.draftSets[key] || []).filter(s => !s.warmup);
   const display = resolveExerciseDisplay(ex);
@@ -130,7 +136,7 @@ function exerciseCard(dayPlan, ex) {
     ? '<details class="ex-notes"><summary>Notas do livro</summary><p>' + esc(ex.notes) + '</p></details>'
     : '';
 
-  return '<div class="card" data-exercise="' + escAttr(ex.id) + '">' +
+  return '<div class="card' + (stagger ? ' stagger-item' : '') + '" data-exercise="' + escAttr(ex.id) + '">' +
     '<div class="card-header">' +
       '<span class="card-title">' + esc(display.name) +
         (display.usingSubstitute ? ' <span class="sub-tag">sub</span>' : '') +
@@ -185,8 +191,12 @@ export function renderHoje() {
     content = (activeSession.startedAt ? sessionBarHtml(dayPlan) : '') + restDayHtml(dayPlan);
   } else {
     initDraftForDay(dayPlan);
+    const doStagger = lastStaggerWorkout !== state.selectedWorkout;
+    lastStaggerWorkout = state.selectedWorkout;
     content = sessionBarHtml(dayPlan);
-    content += dayPlan.exercises.map(ex => exerciseCard(dayPlan, ex)).join('');
+    content += '<div class="exercise-list">' +
+      dayPlan.exercises.map(ex => exerciseCard(dayPlan, ex, doStagger)).join('') +
+      '</div>';
     content += '<div class="save-wrap"><button class="btn btn-primary btn-block" id="save-session">Salvar sessão</button>' +
       '<div class="saved-indicator" id="saved-indicator">Sessão salva</div></div>';
   }
@@ -220,6 +230,7 @@ export async function handleStartSession() {
   if (typeof Notification !== 'undefined' && Notification.permission === 'default') {
     try { Notification.requestPermission(); } catch { /* ignore */ }
   }
+  hapticIfEnabled();
   toast('Sessão iniciada');
   renderHoje();
 }
@@ -248,6 +259,7 @@ export async function handleAdvanceRest() {
 
   const next = advanceSchedule();
   await saveCfg();
+  hapticIfEnabled();
   toast('Descanso registrado · próximo: ' + dayLabel(next.dayId));
   renderHoje();
 }
@@ -318,6 +330,7 @@ export async function handleSaveSession() {
     }
     await saveCfg();
     await saveLogs();
+    hapticIfEnabled();
   }
 
   const indicator = document.getElementById('saved-indicator');
