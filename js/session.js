@@ -105,10 +105,26 @@ export function formatDuration(totalSec) {
   return String(m).padStart(2, '0') + ':' + String(r).padStart(2, '0');
 }
 
+export function syncRestToast() {
+  const el = document.getElementById('rest-toast');
+  const valueEl = document.getElementById('rest-timer-value');
+  if (!el) return;
+  const rem = getRestRemainingSec();
+  if (valueEl) valueEl.textContent = formatDuration(rem);
+  if (rem > 0) {
+    el.hidden = false;
+    el.classList.add('show');
+  } else {
+    el.classList.remove('show');
+    el.hidden = true;
+  }
+}
+
 export function startRestTimer(seconds, onDone) {
   const secs = Math.max(1, Number(seconds) || state.cfg.restSeconds || 90);
   stopRestTimer(false);
   activeSession.restEndsAt = Date.now() + secs * 1000;
+  syncRestToast();
   activeSession.restIntervalId = setInterval(() => {
     const remaining = Math.max(0, Math.ceil((activeSession.restEndsAt - Date.now()) / 1000));
     if (restTickCallback) restTickCallback(remaining);
@@ -117,6 +133,7 @@ export function startRestTimer(seconds, onDone) {
     if (remaining <= 0) {
       stopRestTimer(false);
       activeSession.restEndsAt = null;
+      syncRestToast();
       notifyRestDone();
       if (restTickCallback) restTickCallback(0);
       if (typeof onDone === 'function') onDone();
@@ -128,6 +145,7 @@ export function startRestTimer(seconds, onDone) {
 
 export function skipRest() {
   stopRestTimer();
+  syncRestToast();
   if (restTickCallback) restTickCallback(0);
 }
 
@@ -137,6 +155,7 @@ export function stopRestTimer(clearEndsAt = true) {
     activeSession.restIntervalId = null;
   }
   if (clearEndsAt) activeSession.restEndsAt = null;
+  syncRestToast();
 }
 
 export function getRestRemainingSec() {

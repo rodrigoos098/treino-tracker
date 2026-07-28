@@ -56,6 +56,14 @@
     <div class="modal" id="modal-content"></div>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="rest-toast" class="rest-toast" role="status" aria-live="polite" hidden>
+    <div class="rest-toast-label">Descanso</div>
+    <div class="rest-toast-value" id="rest-timer-value">00:00</div>
+    <div class="rest-toast-actions">
+      <button type="button" class="btn btn-secondary btn-sm" id="skip-rest">Pular</button>
+      <button type="button" class="btn btn-secondary btn-sm" id="add-rest-30">+30s</button>
+    </div>
+  </div>
   <input type="file" id="import-file" accept=".json,application/json" hidden>
 
   <script type="module" src="js/app.js"></script>

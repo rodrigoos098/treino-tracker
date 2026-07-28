@@ -630,16 +630,52 @@ nav button svg { width: 22px; height: 22px; stroke-width: 1.75; }
   font-family: var(--mono); font-size: 1.25rem; font-weight: 700; color: var(--accent);
 }
 .session-meta { font-size: 0.75rem; color: var(--text-secondary); }
-.rest-timer-bar {
-  display: none; margin-bottom: 14px; padding: 14px;
-  background: var(--accent-glow); border: 1px solid rgba(52,211,153,0.25);
-  border-radius: var(--radius); text-align: center;
+.rest-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--nav-h) + var(--safe-b) + 16px);
+  transform: translateX(-50%) translateY(16px);
+  z-index: 280;
+  min-width: min(280px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
+  padding: 14px 18px 12px;
+  text-align: center;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  border-radius: 18px;
+  box-shadow: var(--shadow), 0 0 0 1px var(--accent-glow);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
 }
-.rest-timer-bar.active { display: block; }
-.rest-timer-value {
-  font-family: var(--mono); font-size: 2rem; font-weight: 700; color: var(--accent);
+.rest-toast.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
 }
-.rest-timer-actions { display: flex; gap: 8px; justify-content: center; margin-top: 10px; }
+.rest-toast-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.rest-toast-value {
+  font-family: var(--mono);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.15;
+  margin: 4px 0 10px;
+}
+.rest-toast-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
 
 /* Steppers */
 .stepper {

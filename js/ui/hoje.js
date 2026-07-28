@@ -6,8 +6,8 @@ import {
 } from '../plan.js';
 import {
   activeSession, startSession, endSession, getSessionDurationSec,
-  formatDuration, startRestTimer, skipRest,
-  getRestRemainingSec, detectPRs, suggestProgression, buildSessionRecord,
+  formatDuration, startRestTimer, skipRest, syncRestToast,
+  detectPRs, suggestProgression, buildSessionRecord,
   restSecondsForExercise
 } from '../session.js';
 import {
@@ -55,19 +55,17 @@ function renderStepper(key, setIdx, field, value, step, bodyweight) {
 
 function renderSetRow(ex, key, s, i, isLastWorking) {
   const done = !!s.done;
-  const warmup = !!s.warmup;
   const fieldsClass = ex.bodyweight ? 'set-row-fields bw' : 'set-row-fields';
-  const targetRpe = warmup ? '' : (isLastWorking && ex.lastSetRpe ? ex.lastSetRpe : (ex.earlySetRpe || ''));
-  return '<div class="set-row-v2' + (done ? ' done' : '') + (warmup ? ' warmup' : '') + (isLastWorking && !warmup ? ' last-working' : '') + '" data-key="' + key + '" data-set="' + i + '">' +
+  const targetRpe = isLastWorking && ex.lastSetRpe ? ex.lastSetRpe : (ex.earlySetRpe || '');
+  return '<div class="set-row-v2' + (done ? ' done' : '') + (isLastWorking ? ' last-working' : '') + '" data-key="' + key + '" data-set="' + i + '">' +
     '<div class="set-row-top">' +
-      '<span class="set-num">' + (i + 1) + (warmup ? ' W' : '') + (isLastWorking && !warmup ? ' · last' : '') + '</span>' +
+      '<span class="set-num">' + (i + 1) + (isLastWorking ? ' · last' : '') + '</span>' +
       '<div class="set-actions-row">' +
-        '<button type="button" class="chip-btn' + (warmup ? ' active' : '') + '" data-action="toggle-warmup" data-key="' + key + '" data-set="' + i + '">Warm-up</button>' +
         (i > 0 ? '<button type="button" class="chip-btn" data-action="copy-prev" data-key="' + key + '" data-set="' + i + '">Copiar ant.</button>' : '') +
         '<button type="button" class="set-check' + (done ? ' on' : '') + '" data-action="toggle-done" data-key="' + key + '" data-set="' + i + '" data-ex="' + escAttr(ex.id) + '" aria-label="Marcar série">' + (done ? '✓' : '') + '</button>' +
       '</div>' +
     '</div>' +
-    (targetRpe ? '<div class="set-rpe-target">Alvo RPE ' + esc(String(targetRpe)) + (isLastWorking && !warmup ? ' (última série)' : '') + '</div>' : '') +
+    (targetRpe ? '<div class="set-rpe-target">Alvo RPE ' + esc(String(targetRpe)) + (isLastWorking ? ' (última série)' : '') + '</div>' : '') +
     '<div class="' + fieldsClass + '">' +
       renderStepper(key, i, 'kg', s.kg, 2.5, ex.bodyweight) +
       renderStepper(key, i, 'reps', s.reps, 1, false) +
@@ -90,18 +88,6 @@ function sessionBarHtml(dayPlan) {
     '<button class="btn btn-secondary btn-sm" id="end-session-only">Encerrar</button></div>';
 }
 
-function restBarHtml() {
-  const rem = getRestRemainingSec();
-  const active = rem > 0;
-  return '<div class="rest-timer-bar' + (active ? ' active' : '') + '" id="rest-timer-bar" aria-live="polite">' +
-    '<div class="session-meta">Descanso</div>' +
-    '<div class="rest-timer-value" id="rest-timer-value">' + formatDuration(rem) + '</div>' +
-    '<div class="rest-timer-actions">' +
-      '<button class="btn btn-secondary btn-sm" id="skip-rest">Pular</button>' +
-      '<button class="btn btn-secondary btn-sm" id="add-rest-30">+30s</button>' +
-    '</div></div>';
-}
-
 function prescribedMeta(ex) {
   const parts = [];
   parts.push('WU ' + (ex.warmupSets || '—'));
@@ -114,12 +100,10 @@ function prescribedMeta(ex) {
 
 function exerciseCard(dayPlan, ex) {
   const key = getDraftKey(dayPlan.id, ex.id);
-  const draft = state.draftSets[key] || [];
+  const draft = (state.draftSets[key] || []).filter(s => !s.warmup);
   const display = resolveExerciseDisplay(ex);
   const restSec = restSecondsForExercise(ex);
-
-  const workingIdxs = draft.map((s, i) => (!s.warmup ? i : -1)).filter(i => i >= 0);
-  const lastWorkingIdx = workingIdxs.length ? workingIdxs[workingIdxs.length - 1] : -1;
+  const lastWorkingIdx = draft.length ? draft.length - 1 : -1;
 
   const setsHtml = draft.map((s, i) => renderSetRow(ex, key, s, i, i === lastWorkingIdx)).join('');
 
@@ -160,7 +144,6 @@ function exerciseCard(dayPlan, ex) {
     '<div class="last-session">' + ICON_HISTORY + ' ' + compareLine(ex) + '</div>' +
     '<div class="sets-grid">' + setsHtml + '</div>' +
     '<div class="set-actions-row" style="margin-top:8px">' +
-      '<button type="button" class="chip-btn" data-action="add-warmup" data-key="' + key + '" data-ex="' + escAttr(ex.id) + '">+ Warm-up</button>' +
       '<button type="button" class="chip-btn" data-action="start-rest" data-ex="' + escAttr(ex.id) + '">Descanso ' + restSec + 's</button>' +
     '</div>' +
     progressionHint(ex, draft) +
@@ -199,10 +182,10 @@ export function renderHoje() {
     content = '<div class="empty-state">Programa não carregado.</div>';
   } else if (dayPlan.isRest) {
     // Keep session controls visible if a workout session is still running
-    content = (activeSession.startedAt ? sessionBarHtml(dayPlan) + restBarHtml() : '') + restDayHtml(dayPlan);
+    content = (activeSession.startedAt ? sessionBarHtml(dayPlan) : '') + restDayHtml(dayPlan);
   } else {
     initDraftForDay(dayPlan);
-    content = sessionBarHtml(dayPlan) + restBarHtml();
+    content = sessionBarHtml(dayPlan);
     content += dayPlan.exercises.map(ex => exerciseCard(dayPlan, ex)).join('');
     content += '<div class="save-wrap"><button class="btn btn-primary btn-block" id="save-session">Salvar sessão</button>' +
       '<div class="saved-indicator" id="saved-indicator">Sessão salva</div></div>';
@@ -217,6 +200,8 @@ export function renderHoje() {
   el.innerHTML = pageHeader('Hoje', headerSub, focusLine) +
     '<p class="subtitle hoje-date">' + esc(dateStr) + '</p>' +
     '<div class="day-picker-wrap"><div class="day-picker">' + chips + '</div></div>' + content;
+
+  syncRestToast();
 
   if (activeSession.startedAt) {
     if (!window.__sessionClock) {
@@ -355,7 +340,32 @@ function findExInDay(dayPlan, exId) {
   return (dayPlan?.exercises || []).find(e => e.id === exId) || null;
 }
 
+function handleRestToastClick(e) {
+  if (e.target.id === 'skip-rest') {
+    skipRest();
+    syncRestToast();
+    return;
+  }
+  if (e.target.id === 'add-rest-30') {
+    if (activeSession.restEndsAt) {
+      activeSession.restEndsAt += 30000;
+      syncRestToast();
+    } else {
+      startRestTimer((state.cfg.restSeconds || 90) + 30, () => {
+        toast('Descanso finalizado');
+        syncRestToast();
+      });
+    }
+  }
+}
+
 export function bindHojeEvents(root, { onRenderAll }) {
+  const restToast = document.getElementById('rest-toast');
+  if (restToast && !restToast.dataset.bound) {
+    restToast.dataset.bound = '1';
+    restToast.addEventListener('click', handleRestToastClick);
+  }
+
   root.addEventListener('click', async (e) => {
     const chip = e.target.closest('.day-chip');
     if (chip) {
@@ -369,13 +379,6 @@ export function bindHojeEvents(root, { onRenderAll }) {
     if (e.target.id === 'end-session-only') {
       await endSession();
       toast('Sessão encerrada');
-      renderHoje();
-      return;
-    }
-    if (e.target.id === 'skip-rest') { skipRest(); renderHoje(); return; }
-    if (e.target.id === 'add-rest-30') {
-      if (activeSession.restEndsAt) activeSession.restEndsAt += 30000;
-      else startRestTimer((state.cfg.restSeconds || 90) + 30, () => renderHoje());
       renderHoje();
       return;
     }
@@ -415,24 +418,12 @@ export function bindHojeEvents(root, { onRenderAll }) {
       renderHoje();
       return;
     }
-    if (action === 'toggle-warmup' && key) {
-      const row = ensureDraftSet(key, setIdx);
-      row.warmup = !row.warmup;
-      renderHoje();
-      return;
-    }
     if (action === 'copy-prev' && key && setIdx > 0) {
       const prev = state.draftSets[key][setIdx - 1];
       const row = ensureDraftSet(key, setIdx);
       row.kg = prev.kg;
       row.reps = prev.reps;
       row.rpe = prev.rpe;
-      renderHoje();
-      return;
-    }
-    if (action === 'add-warmup' && key) {
-      if (!state.draftSets[key]) state.draftSets[key] = [];
-      state.draftSets[key].unshift({ reps: '', kg: '', done: false, warmup: true, rpe: '', note: '' });
       renderHoje();
       return;
     }

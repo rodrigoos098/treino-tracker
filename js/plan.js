@@ -181,22 +181,9 @@ export function pruneDrafts() {
   });
 }
 
-export function syncDraftLength(draft, targetSets, bodyweight, warmupCount = 0) {
-  let warmups = draft.filter(s => s.warmup);
+export function syncDraftLength(draft, targetSets, bodyweight) {
+  // Warm-ups are prescribed in the UI but not tracked — keep only working sets
   const working = draft.filter(s => !s.warmup);
-  while (warmups.length < warmupCount) {
-    warmups.push({
-      reps: '',
-      kg: '',
-      done: false,
-      warmup: true,
-      rpe: '',
-      note: ''
-    });
-  }
-  if (warmups.length > warmupCount && warmupCount > 0) {
-    warmups = warmups.slice(0, warmupCount);
-  }
   while (working.length < targetSets) {
     working.push({
       reps: '',
@@ -209,7 +196,7 @@ export function syncDraftLength(draft, targetSets, bodyweight, warmupCount = 0) 
   }
   if (working.length > targetSets) working.length = targetSets;
   draft.length = 0;
-  draft.push(...warmups, ...working);
+  draft.push(...working);
 }
 
 function getLastSession(exerciseId) {
@@ -225,34 +212,28 @@ export function initDraftForDay(day) {
   day.exercises.forEach(ex => {
     const key = getDraftKey(day.id, ex.id);
     const target = workingSetsCount(ex);
-    const wu = warmupSetsSuggested(ex);
     if (state.draftSets[key]) {
-      syncDraftLength(state.draftSets[key], target, ex.bodyweight, wu);
+      syncDraftLength(state.draftSets[key], target, ex.bodyweight);
       return;
     }
     const todayLog = (state.logs[ex.id] || []).find(s => s.date === date);
     if (todayLog) {
-      state.draftSets[key] = todayLog.sets.map(s => ({
-        reps: s.reps ?? '',
-        kg: s.kg ?? '',
-        done: !!s.done,
-        warmup: !!s.warmup,
-        rpe: s.rpe ?? '',
-        note: s.note ?? ''
-      }));
-      syncDraftLength(state.draftSets[key], target, ex.bodyweight, wu);
+      state.draftSets[key] = todayLog.sets
+        .filter(s => !s.warmup)
+        .map(s => ({
+          reps: s.reps ?? '',
+          kg: s.kg ?? '',
+          done: !!s.done,
+          warmup: false,
+          rpe: s.rpe ?? '',
+          note: s.note ?? ''
+        }));
+      syncDraftLength(state.draftSets[key], target, ex.bodyweight);
     } else {
       const last = getLastSession(ex.id);
-      const warmups = Array.from({ length: wu }, () => ({
-        reps: '',
-        kg: '',
-        done: false,
-        warmup: true,
-        rpe: '',
-        note: ''
-      }));
-      const working = Array.from({ length: target }, (_, i) => {
-        const prev = last?.sets?.filter(s => !s.warmup)?.[i];
+      const prevWorking = (last?.sets || []).filter(s => !s.warmup);
+      state.draftSets[key] = Array.from({ length: target }, (_, i) => {
+        const prev = prevWorking[i];
         return {
           reps: '',
           kg: ex.bodyweight ? '' : (prev?.kg ?? ''),
@@ -262,7 +243,6 @@ export function initDraftForDay(day) {
           note: ''
         };
       });
-      state.draftSets[key] = [...warmups, ...working];
     }
   });
 }
