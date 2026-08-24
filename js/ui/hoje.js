@@ -13,7 +13,8 @@ import {
 } from '../session.js';
 import {
   esc, escAttr, pageHeader, ICON_HISTORY, toast, lightHaptic,
-  formatDate, todayISO, openModal, closeModal
+  formatDate, todayISO, openModal, closeModal,
+  youtubeDropdownHtml, hydrateYoutubeEmbeds, bindYoutubeDropdown
 } from '../utils.js';
 import { workingSets } from '../performed.js';
 import { getExerciseStats } from '../charts.js';
@@ -162,9 +163,7 @@ function exerciseCard(dayPlan, ex, stagger) {
 
   const setsHtml = draft.map((s, i) => renderSetRow(ex, key, s, i, i === lastWorkingIdx)).join('');
 
-  const yt = display.youtubeUrl
-    ? '<a class="chip-btn youtube-link" href="' + escAttr(display.youtubeUrl) + '" target="_blank" rel="noopener">YouTube</a>'
-    : '';
+  const yt = youtubeDropdownHtml(display.youtubeUrl, 'hoje:' + ex.id);
 
   const inten = ex.intensityTechnique
     ? '<span class="badge inten">' + esc(ex.intensityTechnique) + '</span>'
@@ -207,8 +206,9 @@ function exerciseCard(dayPlan, ex, stagger) {
       '</span>' +
       '<span class="badge accent">' + workingSetsCount(ex) + '×' + esc(ex.reps) + '</span>' +
     '</div>' +
-    '<div class="ex-meta-row">' + inten + yt + '</div>' +
+    (inten ? '<div class="ex-meta-row">' + inten + '</div>' : '') +
     '<div class="prescribed">' + esc(prescribedMeta(ex)) + '</div>' +
+    yt +
     subs +
     notes +
     compareHtml +
@@ -275,6 +275,7 @@ export function renderHoje() {
     '<p class="subtitle hoje-date">' + esc(dateStr) + '</p>' +
     '<div class="day-picker-wrap"><div class="day-picker">' + chips + '</div></div>' + content;
 
+  hydrateYoutubeEmbeds(el);
   syncRestToast();
 
   if (activeSession.startedAt) {
@@ -450,6 +451,7 @@ function handleRestToastClick(e) {
 }
 
 export function bindHojeEvents(root, { onRenderAll }) {
+  bindYoutubeDropdown(root);
   const restToast = document.getElementById('rest-toast');
   if (restToast && !restToast.dataset.bound) {
     restToast.dataset.bound = '1';

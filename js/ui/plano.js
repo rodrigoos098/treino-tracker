@@ -2,7 +2,7 @@ import { state, saveCfg } from '../store.js';
 import {
   getDayWorkout, getSchedule, dayLabel, jumpToWeekDay, workingSetsCount, shortWorkoutName
 } from '../plan.js';
-import { esc, escAttr, pageHeader, toast } from '../utils.js';
+import { esc, pageHeader, toast, youtubeDropdownHtml, hydrateYoutubeEmbeds, bindYoutubeDropdown } from '../utils.js';
 
 export function renderPlano() {
   const el = document.getElementById('screen-plano');
@@ -39,21 +39,20 @@ export function renderPlano() {
         const inten = ex.intensityTechnique
           ? '<span class="badge inten">' + esc(ex.intensityTechnique) + '</span>'
           : '';
-        const yt = ex.youtubeUrl
-          ? '<a class="chip-btn youtube-link" href="' + escAttr(ex.youtubeUrl) + '" target="_blank" rel="noopener">YT</a>'
-          : '';
+        const yt = youtubeDropdownHtml(ex.youtubeUrl, 'plano:' + ex.id);
         const subs = (ex.substitutes || []).length
           ? '<div class="exercise-meta">Subs: ' + esc(ex.substitutes.map(s => s.name).join(' · ')) + '</div>'
           : '';
         return '<div class="exercise-item">' +
           '<div class="exercise-info">' +
-            '<div class="exercise-name">' + esc(ex.name) + ' ' + inten + ' ' + yt + '</div>' +
+            '<div class="exercise-name">' + esc(ex.name) + ' ' + inten + '</div>' +
             '<div class="exercise-meta">WU ' + esc(String(ex.warmupSets || '—')) +
               ' · ' + workingSetsCount(ex) + '×' + esc(ex.reps) +
               (ex.earlySetRpe ? ' · Early ' + esc(String(ex.earlySetRpe)) : '') +
               (ex.lastSetRpe ? ' · Last ' + esc(String(ex.lastSetRpe)) : '') +
               (ex.rest ? ' · ' + esc(ex.rest) : '') +
             '</div>' +
+            yt +
             subs +
             (ex.notes ? '<div class="exercise-meta">' + esc(ex.notes) + '</div>' : '') +
           '</div></div>';
@@ -72,9 +71,12 @@ export function renderPlano() {
       '<div class="day-picker-wrap"><div class="day-picker">' + dayChips + '</div></div>' +
     '</div>' +
     body + jumpBtn;
+
+  hydrateYoutubeEmbeds(el);
 }
 
 export function bindPlanoEvents(root, { onRenderAll }) {
+  bindYoutubeDropdown(root);
   root.addEventListener('click', async (e) => {
     const weekBtn = e.target.closest('[data-browse-week]');
     if (weekBtn) {
