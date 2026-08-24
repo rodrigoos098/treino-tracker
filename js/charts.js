@@ -1,20 +1,25 @@
 import { state } from './store.js';
 import { epley1RM, formatDate } from './utils.js';
-import { getExerciseById } from './plan.js';
+import { getAllExercises, getExerciseById } from './plan.js';
+import { collectLogSessions, analyzePerformedSessions } from './performed.js';
 
 function workingSets(sets) {
   return (sets || []).filter(s => !s.warmup);
 }
 
+function isBodyweightKey(performedKey) {
+  const ex = getExerciseById(performedKey);
+  if (ex) return !!ex.bodyweight;
+  return false;
+}
+
 export function getMetricsForExercise(exerciseId) {
-  const ex = getExerciseById(exerciseId);
-  return ex?.bodyweight ? ['maxReps', 'totalReps'] : ['maxKg', 'e1rm', 'volume'];
+  return isBodyweightKey(exerciseId) ? ['maxReps', 'totalReps'] : ['maxKg', 'e1rm', 'volume'];
 }
 
 export function getMetricLabels(exerciseId) {
   const unit = state.cfg.unit;
-  const ex = getExerciseById(exerciseId);
-  if (ex?.bodyweight) {
+  if (isBodyweightKey(exerciseId)) {
     return { maxReps: 'Reps máx.', totalReps: 'Reps totais' };
   }
   return {
@@ -25,39 +30,39 @@ export function getMetricLabels(exerciseId) {
 }
 
 export function getExerciseStats(exerciseId) {
-  const sessions = state.logs[exerciseId] || [];
+  const sessions = collectLogSessions(state.logs, exerciseId);
   if (!sessions.length) return null;
-  const ex = getExerciseById(exerciseId);
-  const last = sessions[sessions.length - 1];
+  return analyzePerformedSessions(sessions, isBodyweightKey(exerciseId));
+}
 
-  if (ex?.bodyweight) {
-    let bestReps = 0, bestTotalReps = 0;
-    sessions.forEach(s => {
-      let maxReps = 0, totalReps = 0;
-      workingSets(s.sets).forEach(set => {
-        maxReps = Math.max(maxReps, set.reps || 0);
-        totalReps += set.reps || 0;
-      });
-      if (maxReps > bestReps) bestReps = maxReps;
-      if (totalReps > bestTotalReps) bestTotalReps = totalReps;
+/** Unique movements for the Evolução picker (mains + any performed substitutes). */
+export function getChartExercises() {
+  const list = [];
+  const seen = new Set();
+  getAllExercises().forEach(ex => {
+    if (seen.has(ex.id)) return;
+    seen.add(ex.id);
+    list.push({
+      id: ex.id,
+      name: ex.name,
+      bodyweight: !!ex.bodyweight,
+      sessionCount: collectLogSessions(state.logs, ex.id).length
     });
-    return { bodyweight: true, bestReps, bestTotalReps, lastDate: last.date, sessionCount: sessions.length };
-  }
-
-  let bestKg = 0, bestE1RM = 0, bestVol = 0;
-  sessions.forEach(s => {
-    let maxKg = 0, vol = 0, maxE1 = 0;
-    workingSets(s.sets).forEach(set => {
-      if (set.kg > maxKg) maxKg = set.kg;
-      vol += (set.kg || 0) * (set.reps || 0);
-      const e1 = epley1RM(set.kg, set.reps);
-      if (e1 > maxE1) maxE1 = e1;
-    });
-    if (maxKg > bestKg) bestKg = maxKg;
-    if (maxE1 > bestE1RM) bestE1RM = maxE1;
-    if (vol > bestVol) bestVol = vol;
   });
-  return { bodyweight: false, bestKg, bestE1RM, bestVol, lastDate: last.date, sessionCount: sessions.length };
+  Object.keys(state.logs || {}).forEach(slotId => {
+    (state.logs[slotId] || []).forEach(entry => {
+      const key = entry.performedKey || slotId;
+      if (!key || seen.has(key)) return;
+      seen.add(key);
+      list.push({
+        id: key,
+        name: entry.performedName || key,
+        bodyweight: isBodyweightKey(key),
+        sessionCount: collectLogSessions(state.logs, key).length
+      });
+    });
+  });
+  return list;
 }
 
 function metricValue(sets, metric) {
@@ -91,7 +96,7 @@ function cutoffISO(periodDays) {
  */
 export function getChartData(exerciseId, metric, periodDays = null) {
   const cutoff = cutoffISO(periodDays);
-  let sessions = (state.logs[exerciseId] || []).slice().sort((a, b) => a.date.localeCompare(b.date));
+  let sessions = collectLogSessions(state.logs, exerciseId);
   if (cutoff) {
     sessions = sessions.filter(s => s.date >= cutoff);
   }

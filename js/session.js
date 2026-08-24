@@ -1,4 +1,5 @@
 import { state } from './store.js';
+import { collectLogSessions } from './performed.js';
 import { epley1RM, todayISO } from './utils.js';
 import { getWorkoutPlan, shortWorkoutName } from './plan.js';
 
@@ -192,7 +193,7 @@ function sessionMetrics(sets, bodyweight) {
  * Compare current working sets against previous log sessions (ignore warmup).
  * @returns {{ type: string, value: number, label: string }[]}
  */
-export function detectPRs(exerciseId, sets) {
+export function detectPRs(exerciseId, sets, performedKey) {
   const ex = (() => {
     const weeks = state.plan?.weeks || {};
     for (const wk of Object.keys(weeks)) {
@@ -209,7 +210,7 @@ export function detectPRs(exerciseId, sets) {
   })();
   const bodyweight = !!ex?.bodyweight;
   const current = sessionMetrics(sets, bodyweight);
-  const history = (state.logs[exerciseId] || []).slice();
+  const history = collectLogSessions(state.logs, performedKey || exerciseId);
   const prs = [];
 
   if (!workingSets(sets).length) return prs;

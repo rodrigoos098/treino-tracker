@@ -1,7 +1,6 @@
 import { state } from '../store.js';
-import { getAllExercises } from '../plan.js';
 import {
-  getMetricsForExercise, getMetricLabels, getExerciseStats,
+  getChartExercises, getMetricsForExercise, getMetricLabels, getExerciseStats,
   getChartData, renderChartSVG
 } from '../charts.js';
 import { pageHeader, formatDate, esc } from '../utils.js';
@@ -14,8 +13,8 @@ const PERIODS = [
 
 export function renderEvolucao() {
   const el = document.getElementById('screen-evolucao');
-  const exercises = getAllExercises();
-  const hasLogs = exercises.some(ex => (state.logs[ex.id] || []).length > 0);
+  const exercises = getChartExercises();
+  const hasLogs = exercises.some(ex => (ex.sessionCount || 0) > 0);
 
   if (!exercises.length) {
     el.innerHTML = pageHeader('Evolução') + '<div class="empty-state">Nenhum exercício no programa.</div>';
@@ -23,7 +22,7 @@ export function renderEvolucao() {
   }
 
   if (!state.chartExercise) {
-    const firstWithData = exercises.find(ex => (state.logs[ex.id] || []).length > 0);
+    const firstWithData = exercises.find(ex => (ex.sessionCount || 0) > 0);
     state.chartExercise = firstWithData?.id || exercises[0].id;
   }
 
@@ -41,7 +40,7 @@ export function renderEvolucao() {
   const metricLabels = getMetricLabels(state.chartExercise);
 
   const options = exercises.map(ex => {
-    const count = (state.logs[ex.id] || []).length;
+    const count = ex.sessionCount || 0;
     return '<option value="' + ex.id + '"' + (ex.id === state.chartExercise ? ' selected' : '') + '>' +
       esc(ex.name) + (count ? ' (' + count + ')' : '') + '</option>';
   }).join('');

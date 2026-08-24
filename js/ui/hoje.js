@@ -2,7 +2,8 @@ import { state, saveLogs, saveCfg, saveSessions } from '../store.js';
 import {
   getRotation, shortWorkoutName, getWorkoutPlan,
   getDraftKey, initDraftForDay, workingSetsCount,
-  advanceSchedule, resolveExerciseDisplay, dayLabel
+  advanceSchedule, resolveExerciseDisplay, dayLabel,
+  currentPerformed, lastPerformedLabel, isDraftUntouched, seedDraftFromLast
 } from '../plan.js';
 import {
   activeSession, startSession, endSession, getSessionDurationSec,
@@ -12,8 +13,9 @@ import {
 } from '../session.js';
 import {
   esc, escAttr, pageHeader, ICON_HISTORY, toast, lightHaptic,
-  formatDate, todayISO
+  formatDate, todayISO, openModal, closeModal
 } from '../utils.js';
+import { workingSets } from '../performed.js';
 import { getExerciseStats } from '../charts.js';
 
 function unit() { return state.cfg.unit || 'kg'; }
@@ -32,13 +34,60 @@ function ensureDraftSet(key, idx) {
   return state.draftSets[key][idx];
 }
 
+const ICON_CHEVRON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><polyline points="9 18 15 12 9 6"/></svg>';
+
 function compareLine(ex) {
-  const stats = getExerciseStats(ex.id);
+  const stats = getExerciseStats(currentPerformed(ex).key);
   if (!stats) return 'Sem histórico';
   if (stats.bodyweight) {
-    return 'Melhor: ' + stats.bestReps + ' reps · Último: ' + formatDate(stats.lastDate);
+    return 'Melhor: ' + stats.bestReps + ' reps';
   }
-  return 'Melhor: ' + stats.bestKg + unit() + ' · e1RM ' + Math.round(stats.bestE1RM) + unit() + ' · Último: ' + formatDate(stats.lastDate);
+  const set = stats.bestSet;
+  if (set && set.reps) {
+    return 'Melhor: ' + set.kg + unit() + ' × ' + set.reps + ' · e1RM ' + Math.round(set.e1rm) + unit();
+  }
+  return 'Melhor: ' + stats.bestKg + unit() + ' · e1RM ' + Math.round(stats.bestE1RM) + unit();
+}
+
+function formatCompareSets(sets, highlightIndex, bodyweight) {
+  return workingSets(sets).map((s, i) => {
+    const parts = ['#' + (i + 1)];
+    if (!bodyweight && s.kg != null && s.kg !== '') parts.push(s.kg + unit());
+    parts.push((s.reps || 0) + ' reps');
+    if (s.rpe != null && s.rpe !== '') parts.push('RPE ' + s.rpe);
+    if (s.note) parts.push('· ' + s.note);
+    return '<div class="compare-set' + (i === highlightIndex ? ' is-pr' : '') + '">' +
+      esc(parts.join(' · ')) +
+      (i === highlightIndex ? ' <span class="badge accent">PR</span>' : '') +
+      '</div>';
+  }).join('');
+}
+
+function compareBlock(title, session, highlightIndex, bodyweight) {
+  if (!session) return '';
+  return '<div class="compare-block">' +
+    '<div class="compare-block-kicker">' + esc(title) + '</div>' +
+    '<div class="compare-block-date">' + formatDate(session.date) + '</div>' +
+    (formatCompareSets(session.sets, highlightIndex, bodyweight) ||
+      '<div class="exercise-meta">Sem séries</div>') +
+    '</div>';
+}
+
+function showCompareModal(ex) {
+  const performed = currentPerformed(ex);
+  const stats = getExerciseStats(performed.key);
+  if (!stats) return;
+  const same = stats.bestSession?.date && stats.bestSession.date === stats.lastSession?.date;
+  const lastTitle = same ? 'Última sessão (também é a melhor)' : 'Última sessão';
+  openModal(
+    '<h3>' + esc(performed.name) + '</h3>' +
+    '<p class="subtitle" style="margin-bottom:12px">Melhor sessão vs última sessão</p>' +
+    compareBlock('Melhor sessão', stats.bestSession, stats.bestSet?.index ?? -1, stats.bodyweight) +
+    compareBlock(lastTitle, stats.lastSession, same ? (stats.bestSet?.index ?? -1) : -1, stats.bodyweight) +
+    '<button class="btn btn-secondary btn-block" id="compare-close" style="margin-top:12px">Fechar</button>'
+  );
+  const closeBtn = document.getElementById('compare-close');
+  if (closeBtn) closeBtn.onclick = closeModal;
 }
 
 function progressionHint(ex, draft) {
@@ -121,20 +170,35 @@ function exerciseCard(dayPlan, ex, stagger) {
     ? '<span class="badge inten">' + esc(ex.intensityTechnique) + '</span>'
     : '';
 
+  const lastLabel = lastPerformedLabel(ex);
+  const choice = state.substituteChoice[ex.id];
+  const bookSelected = choice == null || choice === '';
+  const markLast = (name) => lastLabel && lastLabel === name ? ' · última vez' : '';
   const subs = (ex.substitutes || []).length
-    ? '<div class="form-group" style="margin:8px 0 0"><label>Substitute</label>' +
+    ? '<div class="form-group sub-picker" style="margin:8px 0 0"><label>Substitute</label>' +
       '<select data-action="pick-sub" data-ex="' + escAttr(ex.id) + '">' +
-      '<option value="">' + esc(ex.name) + ' (livro)</option>' +
+      '<option value=""' + (bookSelected ? ' selected' : '') + '>' +
+        esc(ex.name) + ' (livro)' + markLast(ex.name) + '</option>' +
       ex.substitutes.map((s, i) =>
-        '<option value="' + i + '"' + (String(state.substituteChoice[ex.id]) === String(i) ? ' selected' : '') + '>' +
-        esc(s.name) + '</option>'
+        '<option value="' + i + '"' + (String(choice) === String(i) ? ' selected' : '') + '>' +
+        esc(s.name) + markLast(s.name) + '</option>'
       ).join('') +
-      '</select></div>'
+      '</select>' +
+      (lastLabel ? '<div class="last-variant-hint">Última vez: ' + esc(lastLabel) + '</div>' : '') +
+      '</div>'
     : '';
 
   const notes = ex.notes
     ? '<details class="ex-notes"><summary>Notas do livro</summary><p>' + esc(ex.notes) + '</p></details>'
     : '';
+
+  const hasStats = !!getExerciseStats(currentPerformed(ex).key);
+  const bestLine = compareLine(ex);
+  const compareHtml = hasStats
+    ? '<button type="button" class="last-session has-data" data-action="compare-best" data-ex="' +
+      escAttr(ex.id) + '" aria-label="' + escAttr(bestLine + '. Ver melhor e última sessão') + '">' +
+      ICON_HISTORY + ' <span>' + bestLine + '</span>' + ICON_CHEVRON + '</button>'
+    : '<div class="last-session">' + ICON_HISTORY + ' ' + bestLine + '</div>';
 
   return '<div class="card' + (stagger ? ' stagger-item' : '') + '" data-exercise="' + escAttr(ex.id) + '">' +
     '<div class="card-header">' +
@@ -147,7 +211,7 @@ function exerciseCard(dayPlan, ex, stagger) {
     '<div class="prescribed">' + esc(prescribedMeta(ex)) + '</div>' +
     subs +
     notes +
-    '<div class="last-session">' + ICON_HISTORY + ' ' + compareLine(ex) + '</div>' +
+    compareHtml +
     '<div class="sets-grid">' + setsHtml + '</div>' +
     '<div class="set-actions-row" style="margin-top:8px">' +
       '<button type="button" class="chip-btn" data-action="start-rest" data-ex="' + escAttr(ex.id) + '">Descanso ' + restSec + 's</button>' +
@@ -280,6 +344,7 @@ export async function handleSaveSession() {
     const draft = state.draftSets[key];
     if (!draft) return;
     const display = resolveExerciseDisplay(ex);
+    const performed = currentPerformed(ex);
     const sets = draft
       .filter(s => s.reps !== '' && s.reps !== undefined && Number(s.reps) > 0)
       .map(s => ({
@@ -292,7 +357,7 @@ export async function handleSaveSession() {
       }));
     if (!sets.length) return;
 
-    const prs = detectPRs(ex.id, sets);
+    const prs = detectPRs(ex.id, sets, performed.key);
     if (prs.length) prMessages.push(display.name.split(' ')[0] + ': ' + prs.map(p => p.label).join(', '));
 
     const prog = suggestProgression(ex, sets);
@@ -300,10 +365,22 @@ export async function handleSaveSession() {
 
     if (!state.logs[ex.id]) state.logs[ex.id] = [];
     const idx = state.logs[ex.id].findIndex(s => s.date === date);
-    const entry = { date, sets };
+    const entry = {
+      date,
+      sets,
+      performedName: performed.name,
+      performedKey: performed.key,
+      substituteIndex: performed.substituteIndex
+    };
     if (idx >= 0) state.logs[ex.id][idx] = entry;
     else state.logs[ex.id].push(entry);
-    exerciseSnapshots.push({ id: ex.id, name: display.name, sets });
+    exerciseSnapshots.push({
+      id: ex.id,
+      name: performed.name,
+      performedKey: performed.key,
+      substituteIndex: performed.substituteIndex,
+      sets
+    });
     saved++;
   });
 
@@ -418,6 +495,10 @@ export function bindHojeEvents(root, { onRenderAll }) {
     const dayPlan = getWorkoutPlan(state.selectedWorkout);
     const ex = exId ? findExInDay(dayPlan, exId) : null;
 
+    if (action === 'compare-best' && ex) {
+      showCompareModal(ex);
+      return;
+    }
     if (action === 'toggle-done' && key) {
       const row = ensureDraftSet(key, setIdx);
       row.done = !row.done;
@@ -455,8 +536,16 @@ export function bindHojeEvents(root, { onRenderAll }) {
     if (!sel) return;
     const exId = sel.dataset.ex;
     const val = sel.value;
-    if (val === '') delete state.substituteChoice[exId];
+    if (val === '') state.substituteChoice[exId] = null;
     else state.substituteChoice[exId] = Number(val);
+    const dayPlan = getWorkoutPlan(state.selectedWorkout);
+    const ex = findExInDay(dayPlan, exId);
+    if (ex && dayPlan) {
+      const draftKey = getDraftKey(dayPlan.id, ex.id);
+      if (isDraftUntouched(state.draftSets[draftKey])) {
+        seedDraftFromLast(dayPlan.id, ex);
+      }
+    }
     renderHoje();
   });
 

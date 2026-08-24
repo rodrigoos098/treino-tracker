@@ -1,5 +1,6 @@
 import { DEFAULT_PROGRAM } from './defaults.js';
 import { toast } from './utils.js';
+import { backfillPerformedMeta } from './performed.js';
 
 // Nunca renomeie essas chaves: deploys/atualizações do PWA devem preservar os dados do usuário.
 export const KEYS = {
@@ -14,7 +15,7 @@ const IDB_NAME = 'treino-tracker';
 const IDB_VERSION = 1;
 const IDB_STORE = 'kv';
 
-const DATA_VERSION = 3;
+const DATA_VERSION = 4;
 
 const DEFAULT_CFG = {
   theme: 'dark',
@@ -282,6 +283,7 @@ export async function loadAll() {
   state.browseWeek = state.cfg.currentWeek || 1;
   state.browseDay = state.cfg.currentDay || 'upper';
   state.substituteChoice = {};
+  backfillPerformedMeta(state.logs, state.sessions, state.plan);
 
   if (!state.meta.migratedAt) {
     state.meta.migratedAt = new Date().toISOString();

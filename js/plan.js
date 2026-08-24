@@ -1,5 +1,6 @@
 import { state } from './store.js';
 import { todayISO } from './utils.js';
+import { collectLogSessions, lastSlotLog, substituteIndexFromLog, performedFromChoice } from './performed.js';
 
 export const SCHEDULE = ['upper', 'lower', 'rest', 'pull', 'push', 'legs'];
 
@@ -199,51 +200,96 @@ export function syncDraftLength(draft, targetSets, bodyweight) {
   draft.push(...working);
 }
 
-function getLastSession(exerciseId) {
-  const sessions = state.logs[exerciseId];
-  if (!sessions || !sessions.length) return null;
+export function currentPerformed(ex) {
+  const choice = state.substituteChoice[ex.id];
+  return performedFromChoice(state.plan, ex, choice);
+}
+
+/** If the user hasn't picked a variant this session, restore last week's. */
+export function ensureSlotSubstitute(ex) {
+  if (!ex) return;
+  if (Object.prototype.hasOwnProperty.call(state.substituteChoice, ex.id)) return;
+  const last = lastSlotLog(state.logs, ex.id);
+  if (!last) {
+    state.substituteChoice[ex.id] = null;
+    return;
+  }
+  const idx = substituteIndexFromLog(ex, last);
+  state.substituteChoice[ex.id] = idx;
+}
+
+export function lastPerformedLabel(ex) {
+  const last = lastSlotLog(state.logs, ex.id);
+  if (!last) return null;
+  return last.performedName || null;
+}
+
+export function isDraftUntouched(draft) {
+  return (draft || []).every(s =>
+    !s.done &&
+    (s.reps === '' || s.reps === undefined || s.reps === null) &&
+    !s.note &&
+    (s.rpe === '' || s.rpe === undefined || s.rpe === null)
+  );
+}
+
+function lastSessionForPerformed(ex) {
+  const { key } = currentPerformed(ex);
+  const sessions = collectLogSessions(state.logs, key);
+  if (!sessions.length) return null;
   return sessions[sessions.length - 1];
+}
+
+export function seedDraftFromLast(dayId, ex) {
+  const key = getDraftKey(dayId, ex.id);
+  const target = workingSetsCount(ex);
+  const date = todayISO();
+  const { key: performedKey } = currentPerformed(ex);
+  const todayLog = (state.logs[ex.id] || []).find(s => s.date === date);
+  const todayKey = todayLog
+    ? (todayLog.performedKey || performedFromChoice(state.plan, ex, todayLog.substituteIndex).key)
+    : null;
+  if (todayLog && todayKey === performedKey) {
+    state.draftSets[key] = todayLog.sets
+      .filter(s => !s.warmup)
+      .map(s => ({
+        reps: s.reps ?? '',
+        kg: s.kg ?? '',
+        done: !!s.done,
+        warmup: false,
+        rpe: s.rpe ?? '',
+        note: s.note ?? ''
+      }));
+    syncDraftLength(state.draftSets[key], target, ex.bodyweight);
+    return;
+  }
+  const last = lastSessionForPerformed(ex);
+  const prevWorking = (last?.sets || []).filter(s => !s.warmup);
+  state.draftSets[key] = Array.from({ length: target }, (_, i) => {
+    const prev = prevWorking[i];
+    return {
+      reps: '',
+      kg: ex.bodyweight ? '' : (prev?.kg ?? ''),
+      done: false,
+      warmup: false,
+      rpe: '',
+      note: ''
+    };
+  });
 }
 
 export function initDraftForDay(day) {
   if (!day || day.isRest) return;
   pruneDrafts();
-  const date = todayISO();
   day.exercises.forEach(ex => {
+    ensureSlotSubstitute(ex);
     const key = getDraftKey(day.id, ex.id);
     const target = workingSetsCount(ex);
     if (state.draftSets[key]) {
       syncDraftLength(state.draftSets[key], target, ex.bodyweight);
       return;
     }
-    const todayLog = (state.logs[ex.id] || []).find(s => s.date === date);
-    if (todayLog) {
-      state.draftSets[key] = todayLog.sets
-        .filter(s => !s.warmup)
-        .map(s => ({
-          reps: s.reps ?? '',
-          kg: s.kg ?? '',
-          done: !!s.done,
-          warmup: false,
-          rpe: s.rpe ?? '',
-          note: s.note ?? ''
-        }));
-      syncDraftLength(state.draftSets[key], target, ex.bodyweight);
-    } else {
-      const last = getLastSession(ex.id);
-      const prevWorking = (last?.sets || []).filter(s => !s.warmup);
-      state.draftSets[key] = Array.from({ length: target }, (_, i) => {
-        const prev = prevWorking[i];
-        return {
-          reps: '',
-          kg: ex.bodyweight ? '' : (prev?.kg ?? ''),
-          done: false,
-          warmup: false,
-          rpe: '',
-          note: ''
-        };
-      });
-    }
+    seedDraftFromLast(day.id, ex);
   });
 }
 

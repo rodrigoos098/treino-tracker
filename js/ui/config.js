@@ -5,6 +5,7 @@ import {
 import { DEFAULT_PROGRAM } from '../defaults.js';
 import { jumpToWeekDay, getWorkoutPlan } from '../plan.js';
 import { pageHeader, toast, todayISO } from '../utils.js';
+import { backfillPerformedMeta } from '../performed.js';
 
 const BACKUP_REMINDER_DAYS = 7;
 
@@ -53,7 +54,7 @@ export function renderConfig() {
     '<div class="btn-group"><button class="btn btn-secondary btn-block" id="import-backup">Importar backup</button></div>' +
     '<div class="btn-group"><button class="btn btn-danger btn-block" id="reset-data">Resetar dados</button></div></div>' +
     '<div class="config-section"><h3>Sobre</h3>' +
-    '<p class="about-text">Treino Tracker v3 · Bodybuilding Transformation System (Beginner) · Offline-first. Atualizações do PWA não apagam seu histórico.</p></div>';
+    '<p class="about-text">Treino Tracker v4 · Bodybuilding Transformation System (Beginner) · Offline-first. Atualizações do PWA não apagam seu histórico.</p></div>';
 }
 
 async function exportBackup() {
@@ -150,6 +151,9 @@ async function importBackup(file, onRenderAll) {
       jumpToWeekDay(state.cfg.currentWeek || 1, state.cfg.currentDay || 'upper');
       if (!getWorkoutPlan(state.selectedWorkout)) {
         jumpToWeekDay(1, 'upper');
+      }
+      if (backfillPerformedMeta(state.logs, state.sessions, state.plan)) {
+        await saveLogs();
       }
       state.draftSets = {};
       state.substituteChoice = {};
