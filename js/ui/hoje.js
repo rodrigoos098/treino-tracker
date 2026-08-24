@@ -74,6 +74,40 @@ function compareBlock(title, session, highlightIndex, bodyweight) {
     '</div>';
 }
 
+const ICON_TROPHY = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 6h2a2 2 0 0 1 0 4h-2"/><path d="M7 6H5a2 2 0 0 0 0 4h2"/></svg>';
+
+function showPrRecap(hits) {
+  const total = hits.reduce((n, h) => n + h.prs.length, 0);
+  const subtitle = total === 1 ? '1 recorde batido nesta sessão' : total + ' recordes batidos nesta sessão';
+  const cards = hits.map(hit => {
+    const rows = hit.prs.map(pr => {
+      const prev = pr.previousDisplay
+        ? '<span class="pr-recap-prev">' + esc(pr.previousDisplay) + '</span><span class="pr-recap-arrow">→</span>'
+        : '';
+      return '<div class="pr-recap-row">' +
+        '<span class="pr-recap-name">' + esc(pr.name) + '</span>' +
+        '<span class="pr-recap-values">' + prev +
+          '<span class="pr-recap-new">' + esc(pr.display) + '</span></span></div>';
+    }).join('');
+    return '<div class="pr-recap-card">' +
+      '<div class="pr-recap-ex">' + esc(hit.name) + '</div>' + rows +
+      '</div>';
+  }).join('');
+  openModal(
+    '<div class="pr-recap">' +
+      '<div class="pr-recap-hero">' +
+        '<div class="pr-recap-icon" aria-hidden="true">' + ICON_TROPHY + '</div>' +
+        '<h3>PRs da sessão</h3>' +
+        '<p class="subtitle">' + esc(subtitle) + '</p>' +
+      '</div>' +
+      cards +
+      '<button class="btn btn-primary btn-block" id="pr-recap-close" style="margin-top:8px">Continuar</button>' +
+    '</div>'
+  );
+  const closeBtn = document.getElementById('pr-recap-close');
+  if (closeBtn) closeBtn.onclick = closeModal;
+}
+
 function showCompareModal(ex) {
   const performed = currentPerformed(ex);
   const stats = getExerciseStats(performed.key);
@@ -334,7 +368,7 @@ export async function handleSaveSession() {
   if (!dayPlan || dayPlan.isRest) return;
   const date = todayISO();
   let saved = 0;
-  const prMessages = [];
+  const prHits = [];
   const progressMessages = [];
   const exerciseSnapshots = [];
 
@@ -359,7 +393,7 @@ export async function handleSaveSession() {
     if (!sets.length) return;
 
     const prs = detectPRs(ex.id, sets, performed.key);
-    if (prs.length) prMessages.push(display.name.split(' ')[0] + ': ' + prs.map(p => p.label).join(', '));
+    if (prs.length) prHits.push({ name: performed.name, prs });
 
     const prog = suggestProgression(ex, sets);
     if (prog) progressMessages.push(display.name.split(' ')[0] + ': ' + prog.suggestedKg + unit());
@@ -409,6 +443,9 @@ export async function handleSaveSession() {
     await saveCfg();
     await saveLogs();
     hapticIfEnabled();
+    if (prHits.length && state.cfg.vibrate && navigator.vibrate) {
+      try { navigator.vibrate([40, 50, 80]); } catch { /* ignore */ }
+    }
   }
 
   const indicator = document.getElementById('saved-indicator');
@@ -417,14 +454,18 @@ export async function handleSaveSession() {
     setTimeout(() => indicator.classList.remove('show'), 2000);
   }
 
-  if (prMessages.length) toast('PR! ' + prMessages.join(' · '));
-  else if (progressMessages.length) toast('Progressão: ' + progressMessages.join(' · '));
-  else toast(saved ? 'Sessão salva (' + saved + ' exercícios)' : 'Nenhum dado para salvar');
-
   Object.keys(state.draftSets).forEach(k => {
     if (k.includes('::' + dayPlan.id + '::')) delete state.draftSets[k];
   });
   renderHoje();
+
+  if (prHits.length) {
+    showPrRecap(prHits);
+  } else if (progressMessages.length) {
+    toast('Sessão salva · Progressão: ' + progressMessages.join(' · '));
+  } else {
+    toast(saved ? 'Sessão salva (' + saved + ' exercícios)' : 'Nenhum dado para salvar');
+  }
 }
 
 function findExInDay(dayPlan, exId) {

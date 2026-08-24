@@ -189,9 +189,19 @@ function sessionMetrics(sets, bodyweight) {
   return { maxKg, maxReps, volume, maxE1RM, totalReps };
 }
 
+function unitLabel() {
+  return state.cfg.unit || 'kg';
+}
+
+function prEntry(type, name, value, previous, display, previousDisplay) {
+  const prev = previous > 0 ? previousDisplay : null;
+  const label = prev ? (name + ': ' + prev + ' → ' + display) : ('PR ' + name + ': ' + display);
+  return { type, name, value, previous, display, previousDisplay: prev, label };
+}
+
 /**
  * Compare current working sets against previous log sessions (ignore warmup).
- * @returns {{ type: string, value: number, label: string }[]}
+ * @returns {{ type: string, name: string, value: number, previous: number, display: string, previousDisplay: string|null, label: string }[]}
  */
 export function detectPRs(exerciseId, sets, performedKey) {
   const ex = (() => {
@@ -212,6 +222,7 @@ export function detectPRs(exerciseId, sets, performedKey) {
   const current = sessionMetrics(sets, bodyweight);
   const history = collectLogSessions(state.logs, performedKey || exerciseId);
   const prs = [];
+  const u = unitLabel();
 
   if (!workingSets(sets).length) return prs;
 
@@ -224,10 +235,12 @@ export function detectPRs(exerciseId, sets, performedKey) {
       bestTotal = Math.max(bestTotal, m.totalReps);
     });
     if (current.maxReps > bestReps) {
-      prs.push({ type: 'maxReps', value: current.maxReps, label: 'PR reps: ' + current.maxReps });
+      prs.push(prEntry('maxReps', 'Melhor série', current.maxReps, bestReps,
+        current.maxReps + ' reps', bestReps + ' reps'));
     }
     if (current.totalReps > bestTotal) {
-      prs.push({ type: 'totalReps', value: current.totalReps, label: 'PR total reps: ' + current.totalReps });
+      prs.push(prEntry('totalReps', 'Total de reps', current.totalReps, bestTotal,
+        String(current.totalReps), String(bestTotal)));
     }
   } else {
     let bestKg = 0;
@@ -240,13 +253,18 @@ export function detectPRs(exerciseId, sets, performedKey) {
       bestVol = Math.max(bestVol, m.volume);
     });
     if (current.maxKg > bestKg) {
-      prs.push({ type: 'maxKg', value: current.maxKg, label: 'PR carga: ' + current.maxKg + (state.cfg.unit || 'kg') });
+      prs.push(prEntry('maxKg', 'Carga', current.maxKg, bestKg,
+        current.maxKg + u, bestKg + u));
     }
     if (current.maxE1RM > bestE1) {
-      prs.push({ type: 'e1rm', value: Math.round(current.maxE1RM * 10) / 10, label: 'PR e1RM: ' + Math.round(current.maxE1RM) + (state.cfg.unit || 'kg') });
+      const now = Math.round(current.maxE1RM);
+      const prev = Math.round(bestE1);
+      prs.push(prEntry('e1rm', 'e1RM', Math.round(current.maxE1RM * 10) / 10, bestE1,
+        now + u, prev + u));
     }
     if (current.volume > bestVol) {
-      prs.push({ type: 'volume', value: current.volume, label: 'PR volume: ' + Math.round(current.volume) });
+      prs.push(prEntry('volume', 'Volume', current.volume, bestVol,
+        String(Math.round(current.volume)), String(Math.round(bestVol))));
     }
   }
   return prs;
