@@ -92,8 +92,13 @@ export function advanceSchedule() {
   const { weekDelta, dayId } = nextDayInSchedule(curDay);
   let nextWeek = curWeek + weekDelta;
   if (nextWeek > weeksTotal()) {
-    nextWeek = 1; // loop program
+    state.cfg.awaitingCycleRestart = true;
+    state.selectedWorkout = curDay;
+    state.browseWeek = curWeek;
+    state.browseDay = curDay;
+    return { week: curWeek, dayId: curDay, awaitingRestart: true };
   }
+  state.cfg.awaitingCycleRestart = false;
   state.cfg.currentWeek = nextWeek;
   state.cfg.currentDay = dayId;
   state.cfg.lastWorkoutId = curDay;
@@ -109,9 +114,27 @@ export function jumpToWeekDay(week, dayId) {
   const d = schedule.includes(dayId) ? dayId : schedule[0];
   state.cfg.currentWeek = w;
   state.cfg.currentDay = d;
+  state.cfg.awaitingCycleRestart = false;
   state.selectedWorkout = d;
   state.browseWeek = w;
   state.browseDay = d;
+}
+
+/** Caderno: 1 semana de deload a cada 6 a 8 semanas, sem número fixo. */
+export function isDeloadWeek(weekNum) {
+  const week = Number(weekNum || state.cfg.currentWeek || 1);
+  return Number(state.cfg.deloadWeek) === week;
+}
+
+export function workingSetsForWeek(ex, weekNum) {
+  const base = workingSetsCount(ex);
+  if (!isDeloadWeek(weekNum)) return base;
+  return Math.max(1, Math.round(base * 0.5));
+}
+
+export function restartCycle() {
+  state.cfg.deloadWeek = null;
+  jumpToWeekDay(1, defaultDayId());
 }
 
 export function findDay(dayId) {
@@ -253,7 +276,7 @@ function lastSessionForPerformed(ex) {
 
 export function seedDraftFromLast(dayId, ex) {
   const key = getDraftKey(dayId, ex.id);
-  const target = workingSetsCount(ex);
+  const target = workingSetsForWeek(ex);
   const date = todayISO();
   const { key: performedKey } = currentPerformed(ex);
   const todayLog = (state.logs[ex.id] || []).find(s => s.date === date);
@@ -295,7 +318,7 @@ export function initDraftForDay(day) {
   day.exercises.forEach(ex => {
     ensureSlotSubstitute(ex);
     const key = getDraftKey(day.id, ex.id);
-    const target = workingSetsCount(ex);
+    const target = workingSetsForWeek(ex, day.week);
     if (state.draftSets[key]) {
       syncDraftLength(state.draftSets[key], target, ex.bodyweight);
       return;

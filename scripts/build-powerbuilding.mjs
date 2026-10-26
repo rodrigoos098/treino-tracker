@@ -169,6 +169,12 @@ export const POWERBUILDING_4D = {
   "name": ${JSON.stringify(program.name)},
   "level": ${JSON.stringify(program.level)},
   "weeksTotal": 12,
+  "deload": {
+    "when": "A cada 6 a 8 semanas, faça 1 semana de deload",
+    "sets": "50% das séries",
+    "effort": "3–4 RIR",
+    "load": "A carga não muda"
+  },
   "schedule": ${JSON.stringify(program.schedule)},
   "dayLabels": ${JSON.stringify(program.dayLabels, null, 2)},
   "weeks": Object.fromEntries(Array.from({ length: 12 }, (_, i) => [String(i + 1), structuredClone(WEEK)]))

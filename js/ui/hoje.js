@@ -1,8 +1,8 @@
 import { state, saveLogs, saveCfg, saveSessions } from '../store.js';
 import {
   getRotation, shortWorkoutName, getWorkoutPlan,
-  getDraftKey, initDraftForDay, workingSetsCount,
-  advanceSchedule, resolveExerciseDisplay, dayLabel, weeksTotal,
+  getDraftKey, initDraftForDay, workingSetsForWeek, isDeloadWeek,
+  advanceSchedule, restartCycle, resolveExerciseDisplay, dayLabel, weeksTotal,
   currentPerformed, lastPerformedLabel, isDraftUntouched, seedDraftFromLast
 } from '../plan.js';
 import {
@@ -19,6 +19,7 @@ import {
   exerciseDetailsButton, planBadgesHtml, setsRepsLabel, showExerciseDetails, substituteOptionLabel
 } from './exercise-details.js';
 import { workingSets } from '../performed.js';
+import { deloadCardHtml, restartCardHtml } from './cycle.js';
 import { getExerciseStats } from '../charts.js';
 
 function unit() { return state.cfg.unit || 'kg'; }
@@ -180,13 +181,14 @@ function sessionBarHtml(dayPlan) {
     '<button class="btn btn-secondary btn-sm" id="end-session-only">Encerrar</button></div>';
 }
 
-function prescribedMeta(ex) {
+function prescribedMeta(ex, week) {
   const parts = [];
   parts.push('Aquecimento ' + (ex.warmupSets || '—'));
-  parts.push(setsRepsLabel(ex, workingSetsCount));
+  parts.push(setsRepsLabel(ex, workingSetsForWeek(ex, week)));
   if (ex.rest) parts.push(ex.rest);
   let html = esc(parts.join(' · '));
-  if (ex.effort) html += '<br>' + esc(ex.effort);
+  if (isDeloadWeek(week)) html += '<br>' + esc('Deload: ' + (state.plan?.deload?.effort || '3–4 RIR'));
+  else if (ex.effort) html += '<br>' + esc(ex.effort);
   return html;
 }
 
@@ -239,11 +241,11 @@ function exerciseCard(dayPlan, ex, stagger) {
       '<span class="card-title">' + esc(display.name) +
         (display.usingSubstitute ? ' <span class="sub-tag">sub</span>' : '') +
       '</span>' +
-      '<span class="badge accent">' + esc(setsRepsLabel(ex, workingSetsCount)) + '</span>' +
+      '<span class="badge accent">' + esc(setsRepsLabel(ex, workingSetsForWeek(ex, dayPlan.week))) + '</span>' +
     '</div>' +
     en +
     planBadgesHtml(ex) +
-    '<div class="prescribed">' + prescribedMeta(ex) + '</div>' +
+    '<div class="prescribed">' + prescribedMeta(ex, dayPlan.week) + '</div>' +
     detailsBtn +
     subs +
     notes +
@@ -268,7 +270,9 @@ function restDayHtml(dayPlan) {
     '<p class="subtitle" style="margin-bottom:16px">Semana ' + (state.cfg.currentWeek || 1) +
     '/' + weeksTotal() + ' · ' + esc(dayPlan.note || 'Recupere bem.') +
     ' Próximo: <strong>' + esc(next) + '</strong>.</p>' +
-    '<button class="btn btn-primary btn-block" id="advance-rest">Avançar para ' + esc(next) + '</button>' +
+    (state.cfg.awaitingCycleRestart
+      ? ''
+      : '<button class="btn btn-primary btn-block" id="advance-rest">Avançar para ' + esc(next) + '</button>') +
   '</div>';
 }
 
@@ -310,6 +314,8 @@ export function renderHoje() {
 
   el.innerHTML = pageHeader('Hoje', headerSub, focusLine) +
     '<p class="subtitle hoje-date">' + esc(dateStr) + '</p>' +
+    restartCardHtml() +
+    deloadCardHtml(week) +
     '<div class="day-picker-wrap"><div class="day-picker">' + chips + '</div></div>' +
     (dayPlan && !dayPlan.isRest && dayPlan.note
       ? '<p class="subtitle day-note">' + esc(dayPlan.note) + '</p>'
@@ -365,7 +371,9 @@ export async function handleAdvanceRest() {
   const next = advanceSchedule();
   await saveCfg();
   hapticIfEnabled();
-  toast('Descanso registrado · próximo: ' + dayLabel(next.dayId));
+  toast(next.awaitingRestart
+    ? 'Ciclo concluído. Você pode voltar para a semana 1.'
+    : 'Descanso registrado · próximo: ' + dayLabel(next.dayId));
   renderHoje();
 }
 
@@ -442,7 +450,8 @@ export async function handleSaveSession() {
 
     // Only advance if saving the scheduled current day
     if (dayPlan.id === state.cfg.currentDay) {
-      advanceSchedule();
+      const next = advanceSchedule();
+      if (next.awaitingRestart) toast('Ciclo concluído. Você pode voltar para a semana 1.');
     } else {
       state.cfg.lastWorkoutId = dayPlan.id;
     }
@@ -505,6 +514,22 @@ export function bindHojeEvents(root, { onRenderAll }) {
   }
 
   root.addEventListener('click', async (e) => {
+    const restartBtn = e.target.closest('[data-action="restart-cycle"]');
+    if (restartBtn) {
+      restartCycle();
+      await saveCfg();
+      toast('Semana 1');
+      onRenderAll?.();
+      return;
+    }
+    const deloadBtn = e.target.closest('[data-action="toggle-deload"]');
+    if (deloadBtn) {
+      const week = Number(deloadBtn.dataset.week);
+      state.cfg.deloadWeek = Number(state.cfg.deloadWeek) === week ? null : week;
+      await saveCfg();
+      onRenderAll?.();
+      return;
+    }
     const detailsBtn = e.target.closest('[data-action="ex-details"]');
     if (detailsBtn) {
       const dayPlan = getWorkoutPlan(state.selectedWorkout);

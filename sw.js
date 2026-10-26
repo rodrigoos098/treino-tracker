@@ -1,4 +1,4 @@
-const CACHE = 'tt-v15';
+const CACHE = 'tt-v16';
 const ASSETS = [
   './',
   './index.html',
@@ -16,6 +16,7 @@ const ASSETS = [
   './js/ui/plano.js',
   './js/ui/consulta.js',
   './js/ui/exercise-details.js',
+  './js/ui/cycle.js',
   './js/ui/evolucao.js',
   './js/ui/historico.js',
   './js/ui/config.js',

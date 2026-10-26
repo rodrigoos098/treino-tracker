@@ -1,9 +1,11 @@
 import { state, saveCfg } from '../store.js';
 import {
-  getDayWorkout, getSchedule, dayLabel, jumpToWeekDay, workingSetsCount, shortWorkoutName, weeksTotal
+  getDayWorkout, getSchedule, dayLabel, jumpToWeekDay, workingSetsForWeek, isDeloadWeek,
+  shortWorkoutName, weeksTotal, restartCycle
 } from '../plan.js';
 import { esc, pageHeader, toast } from '../utils.js';
 import { exerciseDetailsButton, planBadgesHtml, setsRepsLabel, showExerciseDetails } from './exercise-details.js';
+import { deloadCardHtml, restartCardHtml } from './cycle.js';
 
 export function renderPlano() {
   const el = document.getElementById('screen-plano');
@@ -16,8 +18,11 @@ export function renderPlano() {
   const weekChips = Array.from({ length: totalWeeks }, (_, i) => {
     const w = i + 1;
     const isProg = w === (state.cfg.currentWeek || 1);
+    const deload = isDeloadWeek(w);
     return '<button type="button" class="day-chip' + (w === week ? ' active' : '') +
-      (isProg ? ' current-day' : '') + '" data-browse-week="' + w + '">' + w + '</button>';
+      (isProg ? ' current-day' : '') + (deload ? ' deload-week' : '') +
+      '" data-browse-week="' + w + '"' +
+      (deload ? ' aria-label="Semana ' + w + ', deload"' : '') + '>' + w + '</button>';
   }).join('');
 
   const dayChips = schedule.map(id => {
@@ -49,10 +54,12 @@ export function renderPlano() {
             en +
             planBadgesHtml(ex) +
             '<div class="exercise-meta">Aquecimento ' + esc(String(ex.warmupSets || '—')) +
-              ' · ' + esc(setsRepsLabel(ex, workingSetsCount)) +
+              ' · ' + esc(setsRepsLabel(ex, workingSetsForWeek(ex, week))) +
               (ex.rest ? ' · ' + esc(ex.rest) : '') +
             '</div>' +
-            (ex.effort ? '<div class="exercise-meta">' + esc(ex.effort) + '</div>' : '') +
+            (isDeloadWeek(week)
+              ? '<div class="exercise-meta">Deload: ' + esc(state.plan?.deload?.effort || '3–4 RIR') + '</div>'
+              : (ex.effort ? '<div class="exercise-meta">' + esc(ex.effort) + '</div>' : '')) +
             exerciseDetailsButton(ex) +
             subs +
           '</div></div>';
@@ -64,6 +71,8 @@ export function renderPlano() {
     'Treinar este dia (ir para Semana ' + week + ' · ' + esc(dayLabel(dayId)) + ')</button>';
 
   el.innerHTML = pageHeader('Programa', (state.plan?.name || 'Powerbuilding · 4 dias') + ' · somente leitura') +
+    restartCardHtml() +
+    deloadCardHtml(week) +
     '<button type="button" class="btn btn-secondary btn-block consulta-entry" id="open-consulta">Consulta do caderno</button>' +
     '<div class="program-nav">' +
       '<div class="session-meta">Semana</div>' +
@@ -86,6 +95,22 @@ export function bindPlanoEvents(root, { onRenderAll }) {
     }
     if (e.target.id === 'open-consulta') {
       document.querySelector('#nav button[data-tab="consulta"]')?.click();
+      return;
+    }
+    const restartBtn = e.target.closest('[data-action="restart-cycle"]');
+    if (restartBtn) {
+      restartCycle();
+      await saveCfg();
+      toast('Semana 1');
+      onRenderAll?.();
+      return;
+    }
+    const deloadBtn = e.target.closest('[data-action="toggle-deload"]');
+    if (deloadBtn) {
+      const marked = Number(deloadBtn.dataset.week);
+      state.cfg.deloadWeek = Number(state.cfg.deloadWeek) === marked ? null : marked;
+      await saveCfg();
+      onRenderAll?.();
       return;
     }
     const weekBtn = e.target.closest('[data-browse-week]');
