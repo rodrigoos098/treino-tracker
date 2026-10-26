@@ -2,20 +2,29 @@ import { state } from './store.js';
 import { todayISO } from './utils.js';
 import { collectLogSessions, lastSlotLog, substituteIndexFromLog, performedFromChoice } from './performed.js';
 
-export const SCHEDULE = ['upper', 'lower', 'rest', 'pull', 'push', 'legs'];
+export const SCHEDULE = ['legs', 'push', 'pull', 'rest-qui', 'power', 'rest-sab', 'rest-dom'];
 
 export function getSchedule() {
   return state.plan?.schedule || SCHEDULE;
 }
 
+export function defaultDayId() {
+  return getSchedule()[0] || 'legs';
+}
+
+export function weeksTotal() {
+  return state.plan?.weeksTotal || 12;
+}
+
 export function dayLabel(dayId) {
   const labels = state.plan?.dayLabels || {
-    upper: 'Upper',
-    lower: 'Lower',
-    rest: 'Descanso',
-    pull: 'Pull',
+    legs: 'Legs',
     push: 'Push',
-    legs: 'Legs'
+    pull: 'Pull',
+    'rest-qui': 'Qui',
+    power: 'Power',
+    'rest-sab': 'Sáb',
+    'rest-dom': 'Dom'
   };
   return labels[dayId] || dayId;
 }
@@ -37,14 +46,15 @@ export function getDayWorkout(weekNum, dayId) {
     short: day.short || dayLabel(dayId),
     focus: day.focus || null,
     block: day.block || null,
+    note: day.note || null,
     exercises: day.exercises || [],
-    isRest: dayId === 'rest' || !(day.exercises || []).length
+    isRest: dayId === 'rest' || day.isRest === true || !(day.exercises || []).length
   };
 }
 
 /** Current program day (from cfg). */
 export function getCurrentDayPlan() {
-  return getDayWorkout(state.cfg.currentWeek || 1, state.cfg.currentDay || 'upper');
+  return getDayWorkout(state.cfg.currentWeek || 1, state.cfg.currentDay || defaultDayId());
 }
 
 /** Selected day in Hoje (may browse within current week chips). */
@@ -77,11 +87,11 @@ export function nextDayInSchedule(dayId) {
 
 /** Advance cfg after completing a workout or rest day. */
 export function advanceSchedule() {
-  const curDay = state.cfg.currentDay || 'upper';
+  const curDay = state.cfg.currentDay || defaultDayId();
   const curWeek = state.cfg.currentWeek || 1;
   const { weekDelta, dayId } = nextDayInSchedule(curDay);
   let nextWeek = curWeek + weekDelta;
-  if (nextWeek > (state.plan?.weeksTotal || 12)) {
+  if (nextWeek > weeksTotal()) {
     nextWeek = 1; // loop program
   }
   state.cfg.currentWeek = nextWeek;
@@ -94,7 +104,7 @@ export function advanceSchedule() {
 }
 
 export function jumpToWeekDay(week, dayId) {
-  const w = Math.max(1, Math.min(12, Number(week) || 1));
+  const w = Math.max(1, Math.min(weeksTotal(), Number(week) || 1));
   const schedule = getSchedule();
   const d = schedule.includes(dayId) ? dayId : schedule[0];
   state.cfg.currentWeek = w;
@@ -119,7 +129,8 @@ export function getAllExercises() {
   const weeks = state.plan?.weeks || {};
   Object.keys(weeks).forEach(wk => {
     const week = weeks[wk];
-    ['upper', 'lower', 'pull', 'push', 'legs'].forEach(dayId => {
+    const dayIds = getSchedule().length ? getSchedule() : Object.keys(week || {});
+    dayIds.forEach(dayId => {
       const day = week[dayId];
       (day?.exercises || []).forEach(ex => {
         if (!seen.has(ex.id)) {
@@ -308,7 +319,7 @@ export function resolveExerciseDisplay(ex) {
 
 // Legacy no-ops kept so old imports don't crash during transition
 export function nextWorkoutId(lastId) {
-  if (!lastId) return state.cfg.currentDay || 'upper';
+  if (!lastId) return state.cfg.currentDay || defaultDayId();
   return nextDayInSchedule(lastId).dayId;
 }
 
