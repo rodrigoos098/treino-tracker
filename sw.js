@@ -1,4 +1,4 @@
-const CACHE = 'tt-v14';
+const CACHE = 'tt-v16';
 const ASSETS = [
   './',
   './index.html',
@@ -7,16 +7,20 @@ const ASSETS = [
   './js/store.js',
   './js/utils.js',
   './js/defaults.js',
-  './js/data/bbts-beginner.js',
+  './js/data/powerbuilding-4d.js',
   './js/plan.js',
   './js/session.js',
   './js/charts.js',
   './js/performed.js',
   './js/ui/hoje.js',
   './js/ui/plano.js',
+  './js/ui/consulta.js',
+  './js/ui/exercise-details.js',
+  './js/ui/cycle.js',
   './js/ui/evolucao.js',
   './js/ui/historico.js',
   './js/ui/config.js',
+  './consulta/plano-treino.html',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',

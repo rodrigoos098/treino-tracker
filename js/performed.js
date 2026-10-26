@@ -1,6 +1,11 @@
 import { epley1RM } from './utils.js';
 
-const DAY_IDS = ['upper', 'lower', 'pull', 'push', 'legs'];
+function dayIdsOf(plan) {
+  if (Array.isArray(plan?.schedule) && plan.schedule.length) return plan.schedule;
+  const weeks = plan?.weeks || {};
+  const firstKey = Object.keys(weeks)[0];
+  return firstKey ? Object.keys(weeks[firstKey] || {}) : [];
+}
 
 function workingSets(sets) {
   return (sets || []).filter(s => !s.warmup);
@@ -28,7 +33,7 @@ export function buildNameCatalog(plan) {
   const weeks = plan?.weeks || {};
   Object.keys(weeks).forEach(wk => {
     const week = weeks[wk];
-    DAY_IDS.forEach(dayId => {
+    dayIdsOf(plan).forEach(dayId => {
       (week?.[dayId]?.exercises || []).forEach(ex => {
         const n = normExerciseName(ex.name);
         if (n && !byName.has(n)) byName.set(n, ex.id);
@@ -37,7 +42,7 @@ export function buildNameCatalog(plan) {
   });
   Object.keys(weeks).forEach(wk => {
     const week = weeks[wk];
-    DAY_IDS.forEach(dayId => {
+    dayIdsOf(plan).forEach(dayId => {
       (week?.[dayId]?.exercises || []).forEach(ex => {
         (ex.substitutes || []).forEach(sub => {
           const n = normExerciseName(sub.name);
@@ -78,7 +83,7 @@ export function performedFromChoice(plan, ex, choice) {
 function findSlotInPlan(plan, slotId) {
   const weeks = plan?.weeks || {};
   for (const wk of Object.keys(weeks)) {
-    for (const dayId of DAY_IDS) {
+    for (const dayId of dayIdsOf(plan)) {
       const found = (weeks[wk][dayId]?.exercises || []).find(e => e.id === slotId);
       if (found) return found;
     }

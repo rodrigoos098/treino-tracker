@@ -1,11 +1,12 @@
 import { state, loadAll, saveMeta } from './store.js';
-import { getWorkoutPlan } from './plan.js';
+import { getWorkoutPlan, getSchedule } from './plan.js';
 import { closeModal } from './utils.js';
 import { renderHoje, bindHojeEvents } from './ui/hoje.js';
 import { renderPlano, bindPlanoEvents } from './ui/plano.js';
 import { renderEvolucao, bindEvolucaoEvents } from './ui/evolucao.js';
 import { renderHistorico, bindHistoricoEvents } from './ui/historico.js';
 import { renderConfig, bindConfigEvents } from './ui/config.js';
+import { renderConsulta } from './ui/consulta.js';
 
 function renderAll() {
   renderHoje();
@@ -28,6 +29,7 @@ function setActiveTab(tab) {
   if (tab === 'config') renderConfig();
   if (tab === 'hoje') renderHoje();
   if (tab === 'plano') renderPlano();
+  if (tab === 'consulta') renderConsulta();
 }
 
 function bindNav() {
@@ -89,10 +91,11 @@ async function registerSW() {
 
 async function init() {
   await loadAll();
-  state.selectedWorkout = state.cfg.currentDay || 'upper';
+  const firstDay = getSchedule()[0] || 'legs';
+  state.selectedWorkout = state.cfg.currentDay || firstDay;
   if (!getWorkoutPlan(state.selectedWorkout)) {
-    state.selectedWorkout = 'upper';
-    state.cfg.currentDay = 'upper';
+    state.selectedWorkout = firstDay;
+    state.cfg.currentDay = firstDay;
   }
   if (state.meta && !state.meta.migratedAt) {
     state.meta.migratedAt = new Date().toISOString();
@@ -110,6 +113,7 @@ async function init() {
   bindConfigEvents(document.getElementById('screen-config'), { onRenderAll });
 
   renderAll();
+  renderConsulta();
   setActiveTab(state.activeTab || 'hoje');
   registerSW();
 }

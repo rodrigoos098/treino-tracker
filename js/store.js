@@ -1,4 +1,4 @@
-import { DEFAULT_PROGRAM } from './defaults.js';
+import { DEFAULT_PROGRAM, PROGRAM_ID } from './defaults.js';
 import { toast } from './utils.js';
 import { backfillPerformedMeta } from './performed.js';
 
@@ -15,7 +15,7 @@ const IDB_NAME = 'treino-tracker';
 const IDB_VERSION = 1;
 const IDB_STORE = 'kv';
 
-const DATA_VERSION = 4;
+const DATA_VERSION = 5;
 
 const DEFAULT_CFG = {
   theme: 'dark',
@@ -26,7 +26,7 @@ const DEFAULT_CFG = {
   lastBackupAt: null,
   wakeLock: true,
   currentWeek: 1,
-  currentDay: 'upper',
+  currentDay: 'legs',
   programStartedAt: null
 };
 
@@ -42,9 +42,9 @@ export const state = {
   sessions: [],
   meta: { ...DEFAULT_META },
   activeTab: 'hoje',
-  selectedWorkout: 'upper',
+  selectedWorkout: 'legs',
   browseWeek: 1,
-  browseDay: 'upper',
+  browseDay: 'legs',
   chartMetric: 'maxKg',
   chartExercise: null,
   chartPeriod: 90,
@@ -131,37 +131,20 @@ function isValidExercise(ex) {
 
 export function isValidProgram(plan) {
   if (!plan || typeof plan !== 'object') return false;
-  if (plan.id === 'bbts-beginner-2025' && plan.weeks && typeof plan.weeks === 'object') {
-    const days = ['upper', 'lower', 'pull', 'push', 'legs'];
-    for (let w = 1; w <= 12; w++) {
-      const week = plan.weeks[String(w)] || plan.weeks[w];
-      if (!week) return false;
-      for (const d of days) {
-        const day = week[d];
-        if (!day || !Array.isArray(day.exercises) || !day.exercises.every(isValidExercise)) {
-          return false;
-        }
+  if (plan.id !== PROGRAM_ID || !plan.weeks || typeof plan.weeks !== 'object') return false;
+  if (!Array.isArray(plan.schedule) || !plan.schedule.length) return false;
+  const total = plan.weeksTotal || 12;
+  for (let w = 1; w <= total; w++) {
+    const week = plan.weeks[String(w)] || plan.weeks[w];
+    if (!week) return false;
+    for (const d of plan.schedule) {
+      const day = week[d];
+      if (!day || !Array.isArray(day.exercises) || !day.exercises.every(isValidExercise)) {
+        return false;
       }
     }
-    return true;
   }
-  // Legacy flat plan (import backups only)
-  return !!(
-    Array.isArray(plan.days) &&
-    plan.days.every(d =>
-      d &&
-      typeof d.id === 'string' &&
-      typeof d.name === 'string' &&
-      Array.isArray(d.exercises) &&
-      d.exercises.every(ex =>
-        ex &&
-        typeof ex.id === 'string' &&
-        typeof ex.name === 'string' &&
-        typeof ex.sets === 'number' &&
-        typeof ex.reps === 'string'
-      )
-    )
-  );
+  return true;
 }
 
 /** @deprecated Use isValidProgram */
@@ -226,24 +209,27 @@ function migrateToV3(cfg, meta, plan) {
     ...(meta && typeof meta === 'object' ? meta : {})
   };
 
-  const needsProgramSwap = !isValidProgram(plan) || plan?.id !== 'bbts-beginner-2025' || Array.isArray(plan?.days);
-  const nextPlan = needsProgramSwap ? freshProgram() : plan;
+  const swapped = !isValidProgram(plan);
+  const nextPlan = swapped ? freshProgram() : plan;
+  const schedule = nextPlan.schedule || ['legs'];
+  const firstDay = schedule[0] || 'legs';
 
-  if (!nextCfg.currentWeek || nextCfg.currentWeek < 1 || nextCfg.currentWeek > 12) {
+  if (swapped) {
     nextCfg.currentWeek = 1;
-  }
-  const schedule = nextPlan.schedule || ['upper', 'lower', 'rest', 'pull', 'push', 'legs'];
-  if (!nextCfg.currentDay || !schedule.includes(nextCfg.currentDay)) {
-    // Restore next day from last completed workout (legacy nextWorkoutId behavior)
-    if (nextCfg.lastWorkoutId && schedule.includes(nextCfg.lastWorkoutId)) {
-      const idx = schedule.indexOf(nextCfg.lastWorkoutId);
-      nextCfg.currentDay = idx >= schedule.length - 1 ? schedule[0] : schedule[idx + 1];
-    } else {
-      nextCfg.currentDay = 'upper';
-    }
-  }
-  if (!nextCfg.programStartedAt) {
+    nextCfg.currentDay = firstDay;
+    nextCfg.lastWorkoutId = null;
     nextCfg.programStartedAt = new Date().toISOString();
+  } else {
+    const total = nextPlan.weeksTotal || 12;
+    if (!nextCfg.currentWeek || nextCfg.currentWeek < 1 || nextCfg.currentWeek > total) {
+      nextCfg.currentWeek = 1;
+    }
+    if (!nextCfg.currentDay || !schedule.includes(nextCfg.currentDay)) {
+      nextCfg.currentDay = firstDay;
+    }
+    if (!nextCfg.programStartedAt) {
+      nextCfg.programStartedAt = new Date().toISOString();
+    }
   }
 
   nextMeta.dataVersion = DATA_VERSION;
@@ -279,9 +265,9 @@ export async function loadAll() {
   state.meta = migrated.meta;
   state.logs = isValidLogs(logs) ? logs : {};
   state.sessions = Array.isArray(sessions) ? sessions : [];
-  state.selectedWorkout = state.cfg.currentDay || 'upper';
+  state.selectedWorkout = state.cfg.currentDay || 'legs';
   state.browseWeek = state.cfg.currentWeek || 1;
-  state.browseDay = state.cfg.currentDay || 'upper';
+  state.browseDay = state.cfg.currentDay || 'legs';
   state.substituteChoice = {};
   backfillPerformedMeta(state.logs, state.sessions, state.plan);
 

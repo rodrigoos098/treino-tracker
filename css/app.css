@@ -982,11 +982,78 @@ nav button svg { width: 22px; height: 22px; stroke-width: 1.75; }
   background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.25);
   color: #fbbf24; font-size: 0.8125rem;
 }
-.nav-5 button { font-size: 0.6rem; gap: 2px; padding: 8px 2px; }
-.nav-5 button svg { width: 20px; height: 20px; stroke-width: 1.75; }
+.nav-5 button, .nav-6 button { font-size: 0.55rem; gap: 2px; padding: 8px 1px; }
+.nav-5 button svg, .nav-6 button svg { width: 18px; height: 18px; stroke-width: 1.75; }
 
-/* BBTS program UI */
+.consulta-entry { margin-bottom: 14px; }
+.consulta-frame {
+  display: block;
+  width: 100%;
+  height: calc(100dvh - var(--nav-h) - var(--safe-b) - 148px);
+  min-height: 70dvh;
+  border: 0;
+  border-radius: var(--radius);
+  background: #e2dccf;
+}
+.day-note { margin: 0 0 12px; }
+.exercise-en {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 2px;
+}
+.ex-details-btn {
+  margin: 8px 0 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  min-height: 40px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: background 0.15s var(--ease), color 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+.ex-details-btn:active { transform: scale(0.97); }
+.exercise-item .ex-details-btn { margin: 8px 0 2px; }
+.detail-en { margin: -10px 0 14px; font-style: italic; }
+.detail-section { margin-bottom: 16px; }
+.detail-section h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.detail-section p,
+.detail-section li {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+.detail-section ul { padding-left: 1.15rem; margin: 0; }
+.detail-section li + li { margin-top: 6px; }
+.detail-links { margin-top: 8px; font-size: 0.8125rem; }
+.detail-links a { color: var(--accent); }
+.sub-tier-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+.modal h3.detail-title { margin-bottom: 4px; }
+
+/* Program UI */
 .day-chip.current-day { box-shadow: inset 0 -2px 0 var(--accent); }
+.day-chip.deload-week { color: #e0a912; }
+.cycle-card { margin-bottom: 14px; }
+.cycle-card .subtitle + .subtitle { margin-top: 6px; }
+.cycle-card .btn { margin-top: 12px; }
 .day-chip.current-day.active { box-shadow: 0 4px 16px var(--accent-glow); }
 .hoje-date { margin: -4px 0 12px; text-transform: capitalize; }
 .prescribed {

@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caderno Anual · Plano de Treino Powerbuilding Science-Based</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif:wght@400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #e2dccf;
+  --surface: #d4cbb9;
+  --surface-alt: #c8beaa;
+  --ink: #220d0c;
+  --muted: #4e3631;
+  --accent: #35586c;
+  --accent-ink: #ffffff;
+  --field-red: #c81926;
+  --field-red-ink: #ffffff;
+  --field-maroon: #7d1f1e;
+  --field-maroon-ink: #ffffff;
+  --field-mustard: #e0a912;
+  --field-mustard-ink: #220d0c;
+  --field-dark: #1d0c0b;
+  --field-dark-alt: #291311;
+  --field-dark-ink: #ffffff;
+  --field-dark-muted: #d2cdc6;
+
+  --font-display: "Young Serif", Georgia, serif;
+  --font-text: "Source Serif 4", Georgia, serif;
+
+  --step-small: 0.875rem;
+  --step-body: 1.125rem;
+  --step-lead: 1.25rem;
+  --step-head: clamp(1.85rem, 1.35rem + 1.8vw, 2.85rem);
+  --step-display: clamp(2.5rem, 5.2vw, 4.75rem);
+
+  --pad: 28px;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --pad: 20px;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--step-body);
+  line-height: 1.55;
+  background-color: var(--bg);
+  color: var(--ink);
+  overflow-x: clip;
+  font-variant-numeric: tabular-nums lining-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  transition: opacity 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a:hover {
+  opacity: 0.78;
+}
+
+button, input, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.96;
+  color: inherit;
+}
+
+h1 {
+  font-size: var(--step-display);
+  letter-spacing: -0.03em;
+  line-height: 0.94;
+}
+
+h2 {
+  font-size: var(--step-head);
+}
+
+h3 {
+  font-size: var(--step-lead);
+  font-family: var(--font-text);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+p {
+  font-size: var(--step-body);
+  line-height: 1.55;
+  max-width: 62ch;
+}
+
+.lead-copy {
+  font-size: var(--step-lead);
+  line-height: 1.45;
+  max-width: 58ch;
+}
+
+.small-copy {
+  font-size: var(--step-small);
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+/* EDITORIAL 42% AXIS GRID */
+.ed-grid {
+  display: grid;
+  grid-template-columns: 38fr 62fr;
+  column-gap: 32px;
+  padding-inline: var(--pad);
+  align-items: start;
+}
+
+.ed-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.ed-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .ed-grid {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+}
+
+/* HEADER BAR */
+header.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  padding-inline: var(--pad);
+  padding-top: 16px;
+  background-color: var(--bg);
+  gap: 12px;
+}
+
+.brand-mark {
+  background-color: var(--ink);
+  color: var(--bg);
+  padding: 10px 16px;
+  font-family: var(--font-display);
+  font-size: var(--step-body);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+nav.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+  background-color: var(--surface);
+  padding: 8px 18px;
+  flex: 1 1 auto;
+}
+
+nav.main-nav a {
+  text-decoration: none;
+  font-size: var(--step-small);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+nav.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.btn-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 20px;
+  background-color: var(--accent);
+  color: var(--accent-ink);
+  font-size: var(--step-small);
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1), opacity 160ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-main:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-main:active {
+  transform: scale(0.98);
+}
+
+/* HERO MOSAIC MASTHEAD */
+.hero-section {
+  padding-top: 16px;
+  padding-bottom: 64px;
+}
+
+.mosaic-wrap {
+  padding-inline: var(--pad);
+  margin-bottom: 36px;
+}
+
+.mosaic-band {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, minmax(128px, 18svh));
+  gap: 0;
+  width: 100%;
+  background-color: var(--ink);
+}
+
+.m-cell {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.m-tile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.m-photo {
+  padding: 0;
+}
+
+.m-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.m-photo:hover img {
+  transform: scale(1.04);
+}
+
+.m-span-col {
+  grid-column: span 2;
+}
+
+.m-span-row {
+  grid-row: span 2;
+}
+
+.m-red {
+  background-color: var(--field-red);
+  color: var(--field-red-ink);
+}
+
+.m-mustard {
+  background-color: var(--field-mustard);
+  color: var(--field-mustard-ink);
+}
+
+.m-slate {
+  background-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.m-maroon {
+  background-color: var(--field-maroon);
+  color: var(--field-maroon-ink);
+}
+
+.m-figure {
+  font-family: var(--font-display);
+  font-size: var(--step-head);
+  line-height: 1;
+}
+
+.m-caption {
+  font-size: var(--step-lead);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .mosaic-band {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(126px, auto));
+  }
+  .m-span-col, .m-span-row {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .m-hide-mobile {
+    display: none;
+  }
+  .hero-axis-row .ed-col-right {
+    order: -1;
+  }
+}
+
+.hero-axis-row {
+  align-items: end;
+}
+
+.hero-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background-color: var(--surface);
+  width: 100%;
+}
+
+/* SECTIONS */
+.ed-section {
+  padding-block: 76px;
+}
+
+.ed-section-surface {
+  background-color: var(--surface);
+}
+
+.ed-section-dark {
+  background-color: var(--field-dark);
+  color: var(--field-dark-ink);
+}
+
+.ed-section-dark .small-copy {
+  color: var(--field-dark-muted);
+}
+
+.ed-section-red {
+  background-color: var(--field-red);
+  color: var(--field-red-ink);
+}
+
+.ed-section-mustard {
+  background-color: var(--field-mustard);
+  color: var(--field-mustard-ink);
+}
+
+@media (max-width: 600px) {
+  .ed-section {
+    padding-block: 52px;
+  }
+}
+
+/* EDITORIAL PHOTO BLOCKS */
+.ed-figure {
+  width: 100%;
+  background-color: var(--surface);
+}
+
+.ed-figure img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.ed-figure figcaption {
+  padding: 10px 14px;
+  font-size: var(--step-small);
+  color: var(--muted);
+  background-color: var(--surface);
+}
+
+/* TABLES */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table.ed-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--step-body);
+  background-color: var(--surface);
+}
+
+.ed-section-surface table.ed-table {
+  background-color: var(--bg);
+}
+
+table.ed-table th,
+table.ed-table td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--surface-alt);
+  vertical-align: top;
+}
+
+table.ed-table th:first-child,
+table.ed-table td:first-child {
+  padding-left: 12px;
+}
+
+table.ed-table th:last-child,
+table.ed-table td:last-child {
+  padding-right: 0;
+}
+
+table.ed-table th {
+  font-size: var(--step-small);
+  font-weight: 600;
+  color: var(--muted);
+  background-color: var(--surface-alt);
+}
+
+table.ed-table td.num-col,
+table.ed-table th.num-col {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+table.ed-table tr.clickable-row {
+  cursor: pointer;
+  transition: background-color 150ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+table.ed-table tr.clickable-row:hover {
+  background-color: var(--surface-alt);
+}
+
+/* FLAT CALLOUT BLOCKS (NO HAIRLINES OR OUTLINED BOXES) */
+.tone-block {
+  padding: 22px 24px;
+  background-color: var(--surface);
+  color: var(--ink);
+  width: 100%;
+}
+
+.ed-section-surface .tone-block {
+  background-color: var(--bg);
+}
+
+.tone-block-maroon {
+  padding: 22px 24px;
+  background-color: var(--field-maroon);
+  color: var(--field-maroon-ink);
+  width: 100%;
+}
+
+.tone-block-mustard {
+  padding: 22px 24px;
+  background-color: var(--field-mustard);
+  color: var(--field-mustard-ink);
+  width: 100%;
+}
+
+/* DARK ROWS LIST (PRINCIPLES & TECHNIQUES & PROGRESSION) */
+.stack-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  list-style: none;
+}
+
+.stack-row {
+  display: grid;
+  grid-template-columns: 34fr 66fr;
+  gap: 20px;
+  padding-block: 10px;
+  background-color: transparent;
+  color: inherit;
+}
+
+.row-title {
+  font-size: var(--step-lead);
+  font-weight: 600;
+  line-height: 1.3;
+  display: block;
+}
+
+.row-sub {
+  font-size: var(--step-small);
+  color: var(--field-dark-muted);
+  margin-top: 6px;
+  display: block;
+}
+
+.paper-rows .row-sub,
+.surface-rows .row-sub {
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .stack-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 18px;
+  }
+}
+
+/* INTERACTIVE WARMUP CALCULATOR (DATA-UI) */
+.calc-widget {
+  background-color: var(--ink);
+  color: var(--field-dark-ink);
+  padding: 22px;
+  width: 100%;
+}
+
+.calc-controls {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 12px;
+  margin-top: 14px;
+  margin-bottom: 16px;
+}
+
+.calc-controls select,
+.calc-controls input {
+  background-color: var(--field-dark-alt);
+  color: var(--field-dark-ink);
+  border: 1px solid #573b37;
+  padding: 10px 12px;
+  font-size: var(--step-small);
+  width: 100%;
+}
+
+.calc-out {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: var(--step-small);
+}
+
+.calc-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background-color: var(--field-dark-alt);
+}
+
+/* WORKOUT VIEWER TABS & EXERCISE CARDS */
+.day-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.day-tab {
+  background-color: var(--surface);
+  color: var(--ink);
+  border: none;
+  padding: 12px 18px;
+  font-size: var(--step-small);
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+  transition: transform 150ms cubic-bezier(0.22, 1, 0.36, 1), background-color 150ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.day-tab:hover {
+  background-color: var(--surface-alt);
+}
+
+.day-tab.active {
+  background-color: var(--field-red);
+  color: var(--field-red-ink);
+}
+
+.day-banner {
+  background-color: var(--ink);
+  color: var(--field-dark-ink);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.day-banner-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.day-banner-title {
+  font-size: var(--step-lead);
+  font-weight: 600;
+}
+
+.day-stats-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: var(--step-small);
+  color: var(--field-dark-muted);
+}
+
+.ex-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.ex-item {
+  background-color: transparent;
+  color: var(--ink);
+  width: 100%;
+}
+
+.ex-head {
+  width: 100%;
+  background-color: var(--bg);
+  border: none;
+  text-align: left;
+  padding: 18px 0 18px 20px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.ex-head:hover {
+  background-color: var(--surface-alt);
+}
+
+.ex-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ex-name-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--step-lead);
+  font-weight: 600;
+}
+
+.ex-en {
+  font-size: var(--step-small);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: var(--step-small);
+  font-weight: 600;
+  font-style: normal;
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+.tag-s {
+  background-color: var(--field-red);
+  color: var(--field-red-ink);
+}
+
+.tag-must {
+  background-color: var(--field-mustard);
+  color: var(--field-mustard-ink);
+}
+
+.tag-adv {
+  background-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.ex-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.metric-box {
+  background-color: var(--bg);
+  padding: 6px 12px;
+  text-align: right;
+}
+
+.metric-box b {
+  display: block;
+  font-size: var(--step-body);
+  font-weight: 600;
+}
+
+.metric-box span {
+  display: block;
+  font-size: var(--step-small);
+  color: var(--muted);
+}
+
+.ex-toggle-word {
+  font-size: var(--step-small);
+  font-weight: 600;
+  color: var(--accent);
+  padding-left: 6px;
+}
+
+.ex-body {
+  display: none;
+  padding: 22px;
+  background-color: var(--surface-alt);
+}
+
+.ex-item.open .ex-body {
+  display: block;
+}
+
+.ex-cols {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 820px) {
+  .ex-head {
+    grid-template-columns: 1fr;
+  }
+  .ex-metrics {
+    justify-content: flex-start;
+  }
+  .ex-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detail-block {
+  margin-bottom: 16px;
+}
+
+.detail-block:last-child {
+  margin-bottom: 0;
+}
+
+.detail-heading {
+  font-size: var(--step-small);
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.detail-panel {
+  background-color: var(--bg);
+  padding: 12px 14px;
+  font-size: var(--step-body);
+}
+
+.cues-list {
+  padding-left: 20px;
+  font-size: var(--step-body);
+}
+
+.cues-list li {
+  margin-bottom: 6px;
+}
+
+.subs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sub-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--bg);
+  padding: 8px 12px;
+  font-size: var(--step-small);
+}
+
+/* STAT POSTER FIGURE */
+.big-stat-box {
+  background-color: var(--field-red);
+  color: var(--field-red-ink);
+  padding: 28px 24px;
+  width: 100%;
+}
+
+.big-stat-num {
+  font-family: var(--font-display);
+  font-size: var(--step-display);
+  line-height: 0.9;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* VOLUME BARS */
+.vol-bar-track {
+  position: relative;
+  height: 18px;
+  background-color: var(--surface-alt);
+  width: 100%;
+  min-width: 140px;
+}
+
+.vol-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(53, 88, 108, 0.18);
+}
+
+.vol-fill-direct {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 0;
+  background-color: var(--field-red);
+}
+
+.vol-fill-indirect {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  background-color: var(--accent);
+  opacity: 0.65;
+}
+
+/* SOURCES FILTER & LIST */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  background-color: var(--bg);
+  color: var(--ink);
+  border: none;
+  padding: 8px 14px;
+  font-size: var(--step-small);
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 38px;
+}
+
+.filter-btn.active {
+  background-color: var(--ink);
+  color: var(--bg);
+}
+
+.sources-ol {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 28px;
+  padding-left: 22px;
+  font-size: var(--step-small);
+}
+
+.sources-ol li {
+  padding-block: 4px;
+}
+
+@media (max-width: 760px) {
+  .sources-ol {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER */
+footer.ed-footer {
+  background-color: var(--field-red);
+  color: var(--field-red-ink);
+  padding-block: 72px;
+}
+
+.footer-display {
+  font-family: var(--font-display);
+  font-size: var(--step-display);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  margin-block: 36px;
+}
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: var(--step-small);
+}
+
+/* MOTION LAYER (MASKED HEADLINE + STAGGERED ENTRANCES) */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+
+.line-in {
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .line-in {
+    animation: maskedRise 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .line-in.delay-1 {
+    animation-delay: 110ms;
+  }
+  .hero-fade {
+    animation: softRise 680ms cubic-bezier(0.22, 1, 0.36, 1) 180ms both;
+  }
+  .m-cell {
+    animation: tileSettle 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .m-cell:nth-child(2) { animation-delay: 60ms; }
+  .m-cell:nth-child(3) { animation-delay: 120ms; }
+  .m-cell:nth-child(4) { animation-delay: 180ms; }
+  .m-cell:nth-child(5) { animation-delay: 240ms; }
+  .m-cell:nth-child(6) { animation-delay: 300ms; }
+  .m-cell:nth-child(7) { animation-delay: 360ms; }
+  .m-cell:nth-child(8) { animation-delay: 420ms; }
+}
+
+@keyframes maskedRise {
+  from {
+    transform: translateY(102%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes softRise {
+  from {
+    opacity: 0.01;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tileSettle {
+  from {
+    opacity: 0.01;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media print {
+  body, html {
+    background: #ffffff;
+    color: #111111;
+  }
+  header.topbar, .filter-bar, .calc-widget {
+    display: none !important;
+  }
+  .day-panel, .ex-body {
+    display: block !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="#topo" class="brand-mark">Caderno Anual · Powerbuilding</a>
+  <nav class="main-nav" aria-label="Seções do caderno">
+    <a href="#semana">Semana</a>
+    <a href="#principios">Pilares</a>
+    <a href="#aquecimento">Aquecimento</a>
+    <a href="#treinos">Treinos</a>
+    <a href="#tecnicas">Técnicas</a>
+    <a href="#progressao">Progressão</a>
+    <a href="#volume">Volume</a>
+    <a href="#fontes">Fontes</a>
+  </nav>
+  <button type="button" class="btn-main" onclick="document.getElementById('treinos').scrollIntoView({behavior:'smooth'})">Explorar os 4 treinos</button>
+</header>
+
+<main id="topo">
+  <!-- HERO: MOSAIC MASTHEAD, TITLE ON 42% AXIS -->
+  <section class="hero-section">
+    <div class="mosaic-wrap">
+      <div class="mosaic-band">
+        <div class="m-cell m-photo m-span-col">
+          <img src="https://picsum.photos/id/269/900/600" width="900" height="600" alt="Gaivotas pousadas sobre um muro de concreto diante do mar calmo">
+        </div>
+        <div class="m-cell">
+          <div class="m-tile m-red">
+            <span class="m-figure">4 dias</span>
+            <span class="m-caption">3 S-Tier + 1 SBD</span>
+          </div>
+        </div>
+        <div class="m-cell m-photo">
+          <img src="https://picsum.photos/id/266/700/500" width="700" height="500" alt="Três embarcações no horizonte sobre o oceano sereno">
+        </div>
+        <div class="m-cell m-span-row">
+          <div class="m-tile m-mustard">
+            <span class="m-figure">96 h</span>
+            <span class="m-caption">Entre RDL e Terra</span>
+          </div>
+        </div>
+        <div class="m-cell m-photo m-hide-mobile">
+          <img src="https://picsum.photos/id/255/700/500" width="700" height="500" alt="Caminho de cascalho subindo até árvores no topo da colina">
+        </div>
+        <div class="m-cell">
+          <div class="m-tile m-slate">
+            <span class="m-figure">1 a 2</span>
+            <span class="m-caption">Margem de RIR</span>
+          </div>
+        </div>
+        <div class="m-cell m-photo m-span-col m-hide-mobile">
+          <img src="https://picsum.photos/id/172/900/600" width="900" height="600" alt="Píer de pedra avançando sobre a água imóvel sob neblina">
+        </div>
+        <div class="m-cell">
+          <div class="m-tile m-maroon">
+            <span class="m-figure">34</span>
+            <span class="m-caption">Vídeos do Jeff</span>
+          </div>
+        </div>
+        <div class="m-cell m-photo m-hide-mobile">
+          <img src="https://picsum.photos/id/302/700/500" width="700" height="500" alt="Poste solitário emergindo da água imóvel envolta em neblina">
+        </div>
+      </div>
+    </div>
+
+    <div class="ed-grid hero-axis-row">
+      <div class="ed-col-left hero-fade">
+        <p class="lead-copy">Programa de quatro sessões semanais unindo três dias de hipertrofia pura em máquinas, cabos e Stiff/RDL a uma sexta-feira clássica de força bruta.</p>
+        <button type="button" class="btn-main" onclick="document.getElementById('treinos').scrollIntoView({behavior:'smooth'})">Abrir planilha de exercícios</button>
+      </div>
+      <div class="ed-col-right">
+        <h1>
+          <span class="line-mask"><span class="line-in">Força bruta e</span></span>
+          <span class="line-mask"><span class="line-in delay-1">ciência aplicada</span></span>
+        </h1>
+        <div class="hero-meta-bar hero-fade">
+          <span>Frequência aproximada de 2 estímulos semanais por grupamento</span>
+          <span>Sessões de 60 a 75 minutos · Sábado e domingo livres</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: SEMANA -->
+  <section id="semana" class="ed-section ed-section-surface">
+    <div class="ed-grid">
+      <div class="ed-col-left reveal-item">
+        <h2>A semana</h2>
+        <p>Segunda, terça e quarta concentram exercícios S-Tier de alta estabilidade e sobrecarga em alongamento. A quinta-feira inteira descansa o sistema nervoso central antes do dia de Powerlift na sexta, deixando o sábado e o domingo livres.</p>
+        <figure class="ed-figure">
+          <img src="https://picsum.photos/id/353/800/500" width="800" height="500" alt="Nuvens baixas sobre colinas cobertas de floresta densa">
+          <figcaption>Organização semanal desenhada para eliminar sobreposição de fadiga axial na coluna lombar.</figcaption>
+        </figure>
+      </div>
+
+      <div class="ed-col-right reveal-item">
+        <div class="table-wrap">
+          <table class="ed-table" aria-label="Divisão semanal de treinos">
+            <thead>
+              <tr>
+                <th>Dia</th>
+                <th>Sessão</th>
+                <th>Foco muscular e articular</th>
+                <th class="num-col">Volume</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="clickable-row" data-go="legs">
+                <td><b>Segunda</b></td>
+                <td><b>Legs · Hipertrofia S-Tier</b></td>
+                <td>Quadríceps, posteriores, glúteos, panturrilha e abdômen (Stiff/RDL + Hack Squat + Extensora/Flexora)</td>
+                <td class="num-col">21 séries</td>
+              </tr>
+              <tr class="clickable-row" data-go="push">
+                <td><b>Terça</b></td>
+                <td><b>Push · Hipertrofia S-Tier</b></td>
+                <td>Peitoral superior, peitoral médio, deltoide lateral e três cabeças do tríceps (Inclinado + Cabos/Máquinas)</td>
+                <td class="num-col">19 séries</td>
+              </tr>
+              <tr class="clickable-row" data-go="pull">
+                <td><b>Quarta</b></td>
+                <td><b>Pull · Hipertrofia S-Tier</b></td>
+                <td>Dorsal, espessura de costas, deltoide posterior, bíceps e abdômen inferior (Remada Apoiada + Puxadas)</td>
+                <td class="num-col">21 séries</td>
+              </tr>
+              <tr>
+                <td><b>Quinta</b></td>
+                <td>Descanso programado</td>
+                <td>Recuperação glicogênica e neural completa antes dos cinco levantamentos básicos de sexta-feira</td>
+                <td class="num-col">0 séries</td>
+              </tr>
+              <tr class="clickable-row" data-go="full">
+                <td><b>Sexta</b></td>
+                <td><b>Powerlift · Big 5</b></td>
+                <td>Agachamento Livre, Supino Reto, Levantamento Terra, Desenvolvimento Militar e Barra Fixa (2º estímulo)</td>
+                <td class="num-col">15 séries</td>
+              </tr>
+              <tr>
+                <td><b>Sábado</b></td>
+                <td>Descanso livre</td>
+                <td>Recuperação muscular e sistêmica pós-Powerlift (cardio leve opcional)</td>
+                <td class="num-col">0 séries</td>
+              </tr>
+              <tr>
+                <td><b>Domingo</b></td>
+                <td>Descanso livre</td>
+                <td>Prontidão total para abrir a próxima semana no treino de pernas de segunda-feira</td>
+                <td class="num-col">0 séries</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tone-block-maroon reveal-item">
+          <p><b>Por que esta arquitetura Powerbuilding funciona tão bem:</b> na segunda-feira, usar Hack Squat antes do Stiff/RDL poupa a lombar do Agachamento Livre. Na quarta-feira, sem o Terra, você isola costas e bíceps com apoio no peito. O Agachamento Livre e o Levantamento Terra entram juntos na sexta-feira, a exatas 96 horas de distância do Stiff/RDL, seguidos por 48 horas de descanso no fim de semana.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: PRINCIPIOS (DARK ROWS SPLIT) -->
+  <section id="principios" class="ed-section ed-section-dark">
+    <div class="ed-grid">
+      <div class="ed-col-left reveal-item">
+        <h2>Seis pilares</h2>
+        <p>Cada exercício, faixa de repetições e margem de esforço deste programa responde às conclusões que o Jeff Nippard revisou entre outubro de 2023 e setembro de 2026.</p>
+        <div class="tone-block-mustard">
+          <p><b>Sinergia entre força e hipertrofia:</b> na sexta-feira você pratica os cinco clássicos pesados com barra (15 séries totais). Nos outros três dias, máquinas, cabos e halteres preenchem o que os básicos deixam passar: peitoral superior, deltoide lateral e posterior, cabeça longa do tríceps e do bíceps, reto femoral e flexão do joelho.</p>
+        </div>
+      </div>
+
+      <div class="ed-col-right">
+        <ul class="stack-rows">
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Tensão sob alongamento</span>
+              <span class="row-sub">Critério prioritário nos rankings</span>
+            </div>
+            <div>
+              <p>O músculo cresce mais quando recebe carga alta na fase alongada. Por isso entram extensão de tríceps acima da cabeça (cerca de 40% mais crescimento que o pulley no estudo de Maeo), cadeira flexora sentada (superior à mesa deitada) e cadeira extensora com encosto reclinado.</p>
+              <p class="small-copy" style="margin-top:8px">Fontes: <a href="https://youtu.be/fGm-ef-4PVk" target="_blank">Peito</a> · <a href="https://youtu.be/OpRMRhr0Ycc" target="_blank">Tríceps</a> · <a href="https://youtu.be/hRZ5MM6gmlE" target="_blank">Treino de pernas</a></p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Estabilidade gera estímulo</span>
+              <span class="row-sub">Máquinas, cabos e apoio no peito</span>
+            </div>
+            <div>
+              <p>Quando você não precisa gastar coordenação equilibrando a carga, toda a produção de força vai para as fibras-alvo e você atinge a falha com segurança. A barra guiada (Smith) e o Hack Squat empatam ou superam pesos livres para hipertrofia pura.</p>
+              <p class="small-copy" style="margin-top:8px">Fontes: <a href="https://youtu.be/jLvqKgW-_G8" target="_blank">Costas</a> · <a href="https://youtu.be/kIXcoivzGf8" target="_blank">Quadríceps</a></p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Esforço calibrado por RIR</span>
+              <span class="row-sub">1 a 2 RIR + falha na última série</span>
+            </div>
+            <div>
+              <p>Mantenha as primeiras séries a 1 ou 2 repetições da falha (RIR) e leve a última série até a falha concêntrica nos exercícios seguros (~30% das séries totais). Nos básicos de barra de sexta-feira, preserve 1 a 2 RIR; no levantamento terra, pare sempre em 2 a 3 RIR.</p>
+              <p class="small-copy" style="margin-top:8px">Fontes: <a href="https://youtu.be/ml5uvpfXcLU" target="_blank">Sam Sulek</a> · <a href="https://youtu.be/pi0PQZFFo4A" target="_blank">Science-based is over</a> · <a href="https://youtu.be/EEOjsbQ5wYE" target="_blank">Overrated</a></p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Volume de 8 a 20 séries</span>
+              <span class="row-sub">Zero volume lixo na mesma sessão</span>
+            </div>
+            <div>
+              <p>A janela ideal fica entre 8 e 20 séries semanais por músculo. Passando de 6 a 8 séries para o mesmo grupamento no mesmo dia, o retorno despenca. Em déficit calórico (cutting), cortar as séries pela metade mantendo a carga preservou toda a massa muscular dele.</p>
+              <p class="small-copy" style="margin-top:8px">Fontes: <a href="https://youtu.be/DzjWEn2BS_k" target="_blank">Cortei minhas séries pela metade</a> · <a href="https://youtu.be/MT9ZeE5JJsI" target="_blank">7 coisas p/ ombros</a></p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Cadência e amplitude</span>
+              <span class="row-sub">4 a 12 repetições na base</span>
+            </div>
+            <div>
+              <p>Compostos trabalham entre 3 e 10 repetições; isoladores entre 8 e 20. Controle a fase excêntrica por 1 a 2 segundos sem soltar o peso no fundo e suba com intenção explosiva. Negativas exageradamente lentas (4 segundos ou mais) só reduzem a carga útil.</p>
+              <p class="small-copy" style="margin-top:8px">Fontes: <a href="https://youtu.be/pi0PQZFFo4A" target="_blank">Science-based is over</a> · <a href="https://youtu.be/ml5uvpfXcLU" target="_blank">Sam Sulek</a></p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Caderno de cargas</span>
+              <span class="row-sub">Sobrecarga progressiva real</span>
+            </div>
+            <div>
+              <p>Treinar no improviso é o principal motivo de estagnação em intermediários. Anote todas as cargas e repetições, aplique dupla progressão e mantenha a espinha dorsal de exercícios fixa por blocos mínimos de 8 a 10 semanas.</p>
+              <p class="small-copy" style="margin-top:8px">Fontes: <a href="https://youtu.be/ml5uvpfXcLU" target="_blank">Sam Sulek</a> · <a href="https://youtu.be/MT9ZeE5JJsI" target="_blank">7 coisas p/ ombros</a></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: AQUECIMENTO + CALCULADORA DE RAMPA (DATA-UI) -->
+  <section id="aquecimento" class="ed-section">
+    <div class="ed-grid">
+      <div class="ed-col-left reveal-item">
+        <h2>O aquecimento</h2>
+        <p>O Jeff Nippard rompeu o tendão patelar realizando um teste de força máxima em jejum e sem aquecimento adequado (relatado no vídeo <a href="https://youtu.be/PiYSbR2B85w" target="_blank">365 dias</a>). O protocolo leva menos de 10 minutos e não conta como série de trabalho.</p>
+
+        <div class="calc-widget" data-ui id="calc-widget">
+          <div class="row-title">Calculadora de rampa de aquecimento</div>
+          <p class="small-copy" style="color:var(--field-dark-muted);margin-top:4px">Digite a carga da sua série principal do dia para calcular os pesos exatos de aproximação.</p>
+          <div class="calc-controls">
+            <select id="calc-ex" aria-label="Exercício principal">
+              <option value="bar">Agachamento / Supino / Terra (barra 20 kg)</option>
+              <option value="rdl">Stiff / RDL / Militar (barra 20 kg)</option>
+              <option value="mac">Hack Squat / Chest Press / Remada</option>
+            </select>
+            <input type="number" id="calc-kg" value="100" min="20" max="400" step="2.5" aria-label="Carga de trabalho em quilos">
+          </div>
+          <div class="calc-out" id="calc-out"></div>
+        </div>
+      </div>
+
+      <div class="ed-col-right reveal-item">
+        <div class="table-wrap">
+          <table class="ed-table" aria-label="Tabela de rampa de aquecimento específico">
+            <thead>
+              <tr>
+                <th>Etapa da rampa</th>
+                <th class="num-col">% da carga principal</th>
+                <th class="num-col">Repetições</th>
+                <th>Função biomecânica</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Aquecimento geral</b></td>
+                <td class="num-col">Leve (5 a 8 min)</td>
+                <td class="num-col">Contínuo</td>
+                <td>5 min de bike ou esteira + mobilidade dinâmica curta (círculos de braço, agachamento livre sem peso). Evite alongamento estático longo.</td>
+              </tr>
+              <tr>
+                <td><b>Série de aproximação 1</b></td>
+                <td class="num-col">Barra vazia (~20 kg)</td>
+                <td class="num-col">8 a 10</td>
+                <td>Lubrificar a articulação e ensaiar a trajetória padrão do movimento.</td>
+              </tr>
+              <tr>
+                <td><b>Série de aproximação 2</b></td>
+                <td class="num-col">45% a 50%</td>
+                <td class="num-col">5 a 6</td>
+                <td>Ajustar postura, escápulas ou base dos pés com velocidade alta na subida.</td>
+              </tr>
+              <tr>
+                <td><b>Série de aproximação 3</b></td>
+                <td class="num-col">65% a 70%</td>
+                <td class="num-col">3 a 4</td>
+                <td>Ativar o bracing abdominal e a transferência de força sem gerar acidose.</td>
+              </tr>
+              <tr>
+                <td><b>Série de aproximação 4</b></td>
+                <td class="num-col">80% a 85%</td>
+                <td class="num-col">1 a 2</td>
+                <td>Sentir o peso real nas mãos ou nas costas sem gastar repetições úteis.</td>
+              </tr>
+              <tr>
+                <td><b>Série de aproximação 5</b></td>
+                <td class="num-col">90% (para ≤5 reps)</td>
+                <td class="num-col">1</td>
+                <td>Potencialização pós-ativação neural exclusiva para as top sets de sexta-feira.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <ul class="stack-rows paper-rows">
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Ordem protetora de joelhos e cotovelos</span>
+              <span class="row-sub">Prevenção de tendinite</span>
+            </div>
+            <div>
+              <p>Na segunda-feira (Legs), a cadeira flexora abre o treino antes do Hack Squat para aquecer o complexo do joelho. Na terça-feira (Push), faça sempre 1 série leve de tríceps antes da extensão acima da cabeça no cabo.</p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Economia de rampa e descompressão na sexta</span>
+              <span class="row-sub">Desenvolvimento Militar + Barra Fixa</span>
+            </div>
+            <div>
+              <p>Como o Supino Reto já aquece ombros e tríceps, o Desenvolvimento Militar precisa de apenas 1 a 2 séries rápidas de ajuste. Fechar o treino na Barra Fixa promove um dead hang natural (<a href="https://youtu.be/qpRGnTTcLpo" target="_blank">vídeo 7 exercícios S-tier</a>), descomprimindo a coluna após o Agachamento e o Terra.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: OS QUATRO TREINOS -->
+  <section id="treinos" class="ed-section ed-section-surface">
+    <div class="ed-grid">
+      <div class="ed-col-left reveal-item">
+        <h2>Os quatro treinos</h2>
+        <p>Selecione o dia da semana para inspecionar cada exercício, a distribuição de esforço por série, as dicas técnicas extraídas dos vídeos e três opções de substituição ranqueadas por tier.</p>
+
+        <div class="tone-block-maroon">
+          <p><b>Segurança obrigatória na sexta-feira (Powerlift):</b> execute Agachamento Livre, Supino Reto e Desenvolvimento Militar dentro da gaiola com os pinos de segurança ajustados. Nunca leve o Levantamento Terra até a falha (mantenha 2 RIR). Nos três primeiros levantamentos, trabalhe com 1 Top Set seguida de 2 séries de Back-off (-10% a -15% de carga).</p>
+        </div>
+
+        <figure class="ed-figure">
+          <img src="https://picsum.photos/id/813/800/500" width="800" height="500" alt="Lago azul silencioso com a margem distante envolta em névoa">
+          <figcaption>A combinação de máquinas guiadas nos primeiros três dias preserva o sistema nervoso para os levantamentos livres de sexta.</figcaption>
+        </figure>
+      </div>
+
+      <div class="ed-col-right reveal-item">
+        <div class="day-tabs" id="tabs" role="tablist">
+          <button type="button" class="day-tab active" data-k="legs">Segunda · Legs (Hipertrofia)</button>
+          <button type="button" class="day-tab" data-k="push">Terça · Push (Hipertrofia)</button>
+          <button type="button" class="day-tab" data-k="pull">Quarta · Pull (Hipertrofia)</button>
+          <button type="button" class="day-tab" data-k="full">Sexta · Powerlift (Big 5)</button>
+          <button type="button" class="day-tab" id="toggle-all-btn" style="margin-left:auto">Expandir todos</button>
+        </div>
+
+        <div id="panels" style="width:100%"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: TECNICAS AVANCADAS -->
+  <section id="tecnicas" class="ed-section">
+    <div class="ed-grid">
+      <div class="ed-col-left reveal-item">
+        <h2>Técnicas avançadas</h2>
+        <p>O próprio Jeff Nippard alerta: aplicar técnicas de alta intensidade em todas as séries acumula fadiga central, derruba o volume útil e prejudica a recuperação. Use apenas na última série dos exercícios sinalizados com a etiqueta Técnica.</p>
+      </div>
+
+      <div class="ed-col-right">
+        <ul class="stack-rows paper-rows">
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Parciais alongadas</span>
+              <span class="row-sub">Barra fixa, puxada, remada, flexora, extensora, crucifixo, elevação lateral e rosca Scott</span>
+            </div>
+            <div>
+              <p>Execute a última série com amplitude completa até atingir a falha concêntrica. Sem soltar o peso, continue realizando meias repetições na metade mais alongada do movimento (de 0% a 50% da subida) por mais 3 a 6 repetições. Não aplique em agachamento livre, supino reto, terra ou militar com barra.</p>
+              <p class="small-copy" style="margin-top:8px">Evidência: superou parciais encurtadas em 7 de 8 estudos (<a href="https://youtu.be/ftpH4-xFGQI" target="_blank">Vídeo 1</a> · <a href="https://youtu.be/qxl5mL7gzlg" target="_blank">Vídeo 2</a>).</p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Falha na última série</span>
+              <span class="row-sub">Máquinas, cabos e halteres seguros</span>
+            </div>
+            <div>
+              <p>Mantenha as séries iniciais a 1 ou 2 RIR e leve apenas a última série até a falha concêntrica real (quando a repetição seguinte não sobe mantendo a técnica). O alvo ideal fica próximo de 30% das séries de hipertrofia indo até a falha.</p>
+              <p class="small-copy" style="margin-top:8px">Evidência: meta-análise de Robinson et al. (2023) (<a href="https://youtu.be/ml5uvpfXcLU" target="_blank">Sam Sulek</a> · <a href="https://youtu.be/EEOjsbQ5wYE" target="_blank">Overrated</a>).</p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Negativas auto-assistidas</span>
+              <span class="row-sub">Rosca Scott unilateral e isoladores de cabo</span>
+            </div>
+            <div>
+              <p>Ao atingir a falha na rosca unilateral, use a mão livre para ajudar apenas a subida da carga e desça o peso sozinho controlando por 2 a 3 segundos durante 2 a 3 repetições extras, aproveitando que a fase excêntrica suporta 40% a 50% mais tensão.</p>
+              <p class="small-copy" style="margin-top:8px">Fonte: <a href="https://youtu.be/2qDA86gP_zg" target="_blank">Como parecer enhanced sem esteroides</a>.</p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Alongamento com carga</span>
+              <span class="row-sub">Panturrilha em pé (última repetição)</span>
+            </div>
+            <div>
+              <p>Ao encerrar a quarta série de panturrilha em pé, desça o calcanhar até o ponto máximo de dorsiflexão e sustente o alongamento estático sob carga por 30 segundos contínuos.</p>
+              <p class="small-copy" style="margin-top:8px">Fonte: <a href="https://youtu.be/hRZ5MM6gmlE" target="_blank">Treino de pernas da transformação de 1 ano</a>.</p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Myo-reps (opcional)</span>
+              <span class="row-sub">Elevação lateral, extensora e rosca no cabo</span>
+            </div>
+            <div>
+              <p>Faça uma série de ativação de 12 a 20 repetições até 1 RIR, respire de 3 a 5 vezes, execute uma mini-série de 3 a 5 repetições e repita o ciclo até não completar a mini-série. Ferramenta para intermediários com mais de 6 meses de consistência.</p>
+              <p class="small-copy" style="margin-top:8px">Fonte: <a href="https://youtu.be/OqRvmJ2eyBA" target="_blank">Bulk como um pro</a>.</p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Bi-set antagonista</span>
+              <span class="row-sub">Desenvolvimento Militar + Barra Fixa na sexta</span>
+            </div>
+            <div>
+              <p>Alterne uma série de Desenvolvimento Militar com uma série de Barra Fixa descansando 60 a 90 segundos entre elas. Por recrutarem cadeias opostas (empurrar vertical vs puxar vertical), o desempenho se mantém alto e a sessão economiza 12 minutos.</p>
+              <p class="small-copy" style="margin-top:8px">Fonte: <a href="https://youtu.be/SgyUoY0IZ7A" target="_blank">Melhores e piores exercícios de ombro</a>.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: PROGRESSAO E PERIODIZACAO -->
+  <section id="progressao" class="ed-section ed-section-surface">
+    <div class="ed-grid">
+      <div class="ed-col-left reveal-item">
+        <h2>Como progredir</h2>
+        <p>A evolução de cargas segue regras objetivas semana após semana, adaptando o volume conforme a ingestão calórica (superávit, manutenção ou déficit).</p>
+        <div class="tone-block">
+          <p><b>Fora da academia (diretrizes do Jeff):</b> ingestão proteica entre 1,6 e 2,2 g/kg ao dia; creatina monohidratada 5 g/dia todos os dias sem fase de saturação; superávit conservador no bulking (+5% a +10% das calorias); cardio moderado 2 a 3 vezes na semana longe do treino de pernas; 7 a 9 horas de sono regular; evite imersão em gelo logo após a musculação pois atenua a sinalização hipertrófica.</p>
+        </div>
+      </div>
+
+      <div class="ed-col-right">
+        <ul class="stack-rows surface-rows">
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Dupla progressão nos dias de hipertrofia</span>
+              <span class="row-sub">Segunda, terça e quarta</span>
+            </div>
+            <div>
+              <p>Mantenha o mesmo peso até atingir o limite superior da faixa de repetições em todas as séries (exemplo: 3 séries de 10 repetições na faixa de 6 a 10). Na sessão seguinte, suba a carga em 2 a 2,5 kg (ou uma placa) e volte para a base da faixa.</p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Top set + Back-off nos 5 clássicos</span>
+              <span class="row-sub">Agachamento, Supino, Terra e Militar</span>
+            </div>
+            <div>
+              <p>Na sexta-feira, a primeira série de trabalho é a Top Set pesada (3 a 5 repetições a 1–2 RIR). Em seguida, reduza a carga da barra em 10% a 15% e execute 2 séries de Back-off (5 a 6 repetições) com técnica impecável. Progrida as cargas guiando-se pela Top Set.</p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Mesociclo de 8 a 10 semanas e Deload</span>
+              <span class="row-sub">Gestão de fadiga articular</span>
+            </div>
+            <div>
+              <p>Nas semanas 1 e 2 (adaptação), trabalhe a 2–3 RIR sem ir até a falha e sem parciais alongadas. Da semana 3 à 8, aplique esforço completo (1–2 RIR + falha na última série). A cada 6 a 8 semanas, faça 1 semana de deload com 50% das séries e 3–4 RIR.</p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Intervalos de descanso entre séries</span>
+              <span class="row-sub">Recuperação de ATP-CP</span>
+            </div>
+            <div>
+              <p>Compostos pesados de barra (sexta-feira): 3 a 5 minutos. Compostos em máquinas e Stiff/RDL: 2 a 3 minutos. Isoladores em cabos e halteres: 1 a 2 minutos. Descansar menos que o necessário nos compostos reduz a tonelagem total da série seguinte.</p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Protocolo para fase de Cutting</span>
+              <span class="row-sub">Déficit calórico</span>
+            </div>
+            <div>
+              <p>Baseado no experimento <a href="https://youtu.be/DzjWEn2BS_k" target="_blank">Cortei minhas séries pela metade</a>: reduza de um terço a metade das séries (3 séries passam para 2), mas preserve as cargas altas na barra e mantenha a última série dos isoladores indo até a falha.</p>
+            </div>
+          </li>
+          <li class="stack-row reveal-item">
+            <div>
+              <span class="row-title">Especialização de ponto fraco</span>
+              <span class="row-sub">Apenas em superávit ou manutenção</span>
+            </div>
+            <div>
+              <p>Escolha apenas 1 grupamento muscular atrasado por bloco de 6 semanas e adicione de 2 a 4 séries extras na semana (por exemplo, +3 séries de elevação lateral no cabo no final da sexta-feira), mantendo os demais músculos em manutenção.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: VOLUME SEMANAL POR MUSCULO -->
+  <section id="volume" class="ed-section">
+    <div class="ed-grid">
+      <div class="ed-col-left reveal-item">
+        <h2>Volume semanal</h2>
+        <p>Contabilização de todas as séries diretas de trabalho e do estímulo sinérgico indireto ao longo dos quatro dias. A faixa sombreada nas barras destaca a zona recomendada de 8 a 20 séries semanais.</p>
+        <div class="big-stat-box">
+          <span class="big-stat-num">76 séries</span>
+          <p>Soma total das quatro sessões semanais (21 na segunda, 19 na terça, 21 na quarta e 15 na sexta-feira), distribuídas com frequência de 2 estímulos por grupamento.</p>
+        </div>
+      </div>
+
+      <div class="ed-col-right reveal-item">
+        <div class="table-wrap">
+          <table class="ed-table" aria-label="Volume semanal por grupamento muscular">
+            <thead>
+              <tr>
+                <th>Músculo</th>
+                <th>Distribuição nas sessões</th>
+                <th>Visualização (meta 8 a 20)</th>
+                <th class="num-col">Diretas + Ind.</th>
+              </tr>
+            </thead>
+            <tbody id="vol-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: FONTES ANALISADAS -->
+  <section id="fontes" class="ed-section ed-section-surface">
+    <div class="ed-grid">
+      <div class="ed-col-left reveal-item">
+        <h2>Fontes analisadas</h2>
+        <p>Todos os 34 vídeos longos publicados no canal oficial do Jeff Nippard entre outubro de 2023 e setembro de 2026 tiveram suas transcrições auditadas para compor este caderno. Use os filtros para explorar por tema.</p>
+        <div class="filter-bar" id="src-filters">
+          <button type="button" class="filter-btn active" data-tag="all">Todos (34)</button>
+          <button type="button" class="filter-btn" data-tag="tier list">Tier lists</button>
+          <button type="button" class="filter-btn" data-tag="programação">Programação</button>
+          <button type="button" class="filter-btn" data-tag="exercícios">Exercícios</button>
+          <button type="button" class="filter-btn" data-tag="técnica">Técnica e parciais</button>
+        </div>
+      </div>
+
+      <div class="ed-col-right reveal-item">
+        <ol class="sources-ol" id="srclist"></ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER: FULL-BLEED POST RED -->
+<footer class="ed-footer">
+  <div class="ed-grid">
+    <div class="ed-col-left">
+      <p><b>Caderno Anual · Edição Powerbuilding</b><br>Síntese técnica baseada na literatura científica de hipertrofia e força citada por Jeff Nippard (2023–2026).</p>
+      <a href="#topo" class="btn-main">Voltar ao topo da página</a>
+    </div>
+    <div class="ed-col-right">
+      <div class="footer-display">Powerbuilding · 4 Dias</div>
+      <p>Material estritamente educativo, compilado a partir do acervo público do canal Jeff Nippard e dos estudos revisados por pares que ele referencia. Não substitui avaliação médica, fisioterapêutica ou acompanhamento presencial de um profissional de educação física. Caso sinta desconforto articular em qualquer exercício, utilize imediatamente uma das três substituições listadas no respectivo cartão.</p>
+      <div class="footer-meta">
+        <span>Direção tipográfica: Young Serif &amp; Source Serif 4</span>
+        <span>Fotografias: Jill Heyer, John Maravelakis, Jon Ottosson, Forrest Cavale, Roger Burkhard, Aleksi Tappura (Unsplash / Picsum)</span>
+        <span>Outubro · 2026</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const V = {
+  chest:['fGm-ef-4PVk','Melhores e piores exercícios de peito'],
+  back:['jLvqKgW-_G8','Melhores e piores exercícios de costas'],
+  shoulder:['SgyUoY0IZ7A','Melhores e piores exercícios de ombro'],
+  quad:['kIXcoivzGf8','Melhores e piores de quadríceps'],
+  glute:['3ryh7PNhz3E','Melhores e piores de glúteo'],
+  biceps:['GNO4OtYoCYk','Melhores e piores de bíceps'],
+  triceps:['OpRMRhr0Ycc','Melhores e piores de tríceps'],
+  ex25:['S6rqpxVGKZ4','Os únicos 25 exercícios que você precisa'],
+  up1y:['928aRhhPP8I','Treino de superiores da transformação de 1 ano'],
+  leg1y:['hRZ5MM6gmlE','Treino de pernas da transformação de 1 ano'],
+  sh7:['MT9ZeE5JJsI','7 coisas que fizeram meus ombros crescer'],
+  s7:['qpRGnTTcLpo','7 exercícios S-tier que ninguém faz'],
+  d3:['21lYP86dHW4','Top 3 exercícios p/ deltoide 3D'],
+  part:['ftpH4-xFGQI','A técnica mais inteligente (parciais alongadas)'],
+  abs:['Tn-XvYG9x7w','Abdômen em 60 dias'],
+  gym:['U1zCyaQc91g','Construí a academia mais científica do mundo'],
+  enh:['2qDA86gP_zg','Como parecer enhanced sem esteroides'],
+  crit:['Ykreq4u_Egw','Cientistas criticam treinos de influencers'],
+  nerd:['gunZRs8g6q8','Science nerd vs pro bodybuilders'],
+  sbo:['pi0PQZFFo4A','Science-based lifting is over'],
+  budget:['NS_GeXoboo4','Ficar grande com $10/dia'],
+  y365:['PiYSbR2B85w','Quanto músculo ganhei em 365 dias'],
+};
+const L = k => `<a href="https://youtu.be/${V[k][0]}" target="_blank">${V[k][1]}</a>`;
+
+const DAYS = {
+ legs:{title:'Segunda · Legs (Hipertrofia Pura S-Tier)', time:'60 a 65 min', focus:'Stiff/RDL + Hack Squat + Extensora/Flexora',
+  note:'Como o Agachamento Livre ficou para o dia de Powerlift na sexta-feira, hoje você usa o Agachamento Hack (S+, zero fadiga lombar) antes do seu Stiff/RDL com barra. Assim sua lombar chega 100% descansada para o Stiff/RDL.',
+  ex:[
+  {n:'Cadeira flexora (sentada)', en:'Seated Leg Curl', tier:'S', adv:1, sets:'3', reps:'8–12', rest:'1,5–2 min', warm:'1 série leve',
+   rir:'S1: 1–2 RIR · S2: 1 RIR · S3: falha + parciais alongadas',
+   cues:['Incline o tronco à frente para alongar mais os posteriores, se continuar estável no banco (para o Jeff, estabilidade vem antes do pré-alongamento)','Trave bem a coxa no rolo acolchoado','Desça devagar até estender totalmente os joelhos'],
+   why:'Eleito entre os 25 essenciais (#10). Com o quadril flexionado, os posteriores trabalham alongados, e um estudo de 12 semanas mostrou cerca de 50% mais crescimento que a flexora deitada. Fazer primeiro aquece o joelho para o Hack Squat e pré-ativa os posteriores antes do Stiff/RDL.',
+   advtxt:'Parciais alongadas na última série: quando perder a contração final, continue com meias repetições saindo da posição alongada.',
+   refs:['ex25','leg1y','part'],
+   subs:[['Mesa flexora (deitada)','A'],['Nordic curl','A'],['Flexora unilateral','S']]},
+  {n:'Agachamento Hack (ou Pêndulo / Leg Press 45°)', en:'Machine Hack Squat / Pendulum Squat / 45° Leg Press', tier:'S', adv:1, sets:'3', reps:'6–10', rest:'2,5–3 min', warm:'2–3 séries progressivas',
+   rir:'S1: 2 RIR · S2: 1 RIR · S3: 0–1 RIR (máquina permite chegar perto da falha com segurança)',
+   cues:['Lombar e quadril totalmente colados no encosto durante todo o percurso','Pés um pouco mais baixos na plataforma para maximizar a flexão de joelho (foco nos 3 vastos do quadríceps)','Desça até a máxima amplitude confortável sem descolar o quadril do banco'],
+   why:'Classificado como S+ (Best of the Best) no ranking de quadríceps do Jeff. Como o Agachamento Livre está na sexta-feira (Powerlift), usar o Hack Squat na segunda-feira entrega hipertrofia máxima para os vastos sem gastar a lombar antes do Stiff/RDL.',
+   advtxt:'Opcional na última série: pausa controlada de 1 a 2 segundos no fundo do movimento.',
+   refs:['quad','ex25','leg1y'],
+   subs:[['Agachamento Pêndulo (favorito atual do Jeff)','S'],['Leg Press 45° (pés baixos, amplitude máxima)','A'],['Agachamento na Smith (pés levemente à frente)','S']]},
+  {n:'Stiff / RDL com barra', en:'Barbell Romanian Deadlift / Stiff', must:1, tier:'S', sets:'3', reps:'6–10', rest:'2,5–3 min', warm:'2 séries progressivas',
+   rir:'S1–S3: 1–2 RIR (encerre a série antes de a lombar arredondar)',
+   cues:['Dica do Jeff: empurre o quadril diretamente para trás mantendo as canelas verticais','Leve flexão fixa nos joelhos (~15° no RDL ou quase estendidos no Stiff) sem projetar os joelhos à frente','A barra desce colada nas coxas e canelas; pare logo abaixo dos joelhos (meio da canela) quando o quadril parar de recuar','Use straps para que a força de pegada não limite a sobrecarga nos posteriores'],
+   why:'Quarto colocado entre os 25 exercícios essenciais, escolha número 1 de posteriores do Jeff na transformação de 1 ano e vencedor para glúteo inferior. Trabalha a extensão de quadril sob máximo alongamento a exatas 96 horas de distância do Levantamento Terra de sexta-feira.',
+   refs:['ex25','leg1y','glute','y365'],
+   subs:[['Stiff / RDL com halteres','A'],['Seated cable deadlift (zero fadiga lombar)','S'],['45° back extension com coluna arredondada','S']]},
+  {n:'Cadeira extensora (encosto reclinado)', en:'Leg Extension (seat reclined)', tier:'A', adv:1, sets:'3', reps:'10–15', rest:'1,5 min', warm:'Série de ajuste opcional',
+   rir:'S1: 1–2 RIR · S2: 1 RIR · S3: falha + parciais alongadas',
+   cues:['Recline o encosto o máximo possível para alongar o reto femoral no quadril','Segure firme nas alças puxando o quadril contra o assento','Desça até a maior flexão de joelho que a máquina permitir','Se o joelho for sensível, utilize descida de 3 segundos com carga moderada'],
+   why:'Companheira obrigatória dos agachamentos: o reto femoral é biarticular e quase não muda de comprimento no agachamento ou leg press. O encosto reclinado gerou crescimento significativamente superior do reto femoral (estudo de 2024).',
+   advtxt:'Parciais alongadas na metade inferior da amplitude após atingir a falha na última série.',
+   refs:['quad','leg1y','ex25'],
+   subs:[['Reverse Nordic','A'],['Sissy squat','B'],['Extensora unilateral','A']]},
+  {n:'Abdução de quadril na máquina', en:'Machine Hip Abduction', tier:'S', sets:'2', reps:'12–20', rest:'1 min', warm:'Sem necessidade',
+   rir:'S1: 1 RIR · S2: falha',
+   cues:['Tronco inclinado cerca de 30° à frente para alinhar com as fibras superiores do glúteo e ampliar o alongamento','Alternativa técnica: eleve o quadril do banco (bridge) para focar no glúteo médio','Se zerar a máquina, utilize pino adaptador com anilhas extras'],
+   why:'Classificado como S-tier e principal escolha do Jeff para a porção superior do glúteo (médio e mínimo), plano frontal que agachamento e terra não trabalham diretamente.',
+   refs:['glute','leg1y','gym'],
+   subs:[['Abdução no cabo','B'],['Kickback no cabo (diagonal para fora)','A'],['Elevação pélvica unilateral com halter','A']]},
+  {n:'Panturrilha em pé', en:'Standing Calf Raise (perna estendida)', tier:'A', adv:1, sets:'4', reps:'8–12', rest:'1–1,5 min', warm:'1 série leve',
+   rir:'S1–S3: 1 RIR · S4: falha + 30 s de alongamento com carga',
+   cues:['Mantenha o joelho estendido; com o joelho dobrado o gastrocnêmio perde tensão','Faça pausa de 1 a 2 segundos no fundo, bem alongado, eliminando o reflexo elástico','Suba pressionando a base do dedão (hálux)'],
+   why:'Entre os 25 exercícios essenciais (#23). A versão com joelho estendido alonga o gastrocnêmio e supera com folga a versão sentada. Panturrilha, posteriores e quadríceps são os músculos que mais respondem ao alongamento sob carga.',
+   advtxt:'Alongamento com carga: segure 30 segundos na posição mais baixa ao terminar a última série.',
+   refs:['ex25','leg1y','gym'],
+   subs:[['Panturrilha no leg press','A'],['Donkey calf raise','S'],['Panturrilha na Smith','A']]},
+  {n:'Abdominal na polia', en:'Cable Crunch', tier:'A', sets:'3', reps:'10–15', rest:'1 min', warm:'Sem necessidade',
+   rir:'S1: 1–2 RIR · S2: 1 RIR · S3: falha',
+   cues:['Ajoelhado, segure a corda próxima à cabeça','Arredonde ativamente a coluna torácica e lombar aproximando o esterno da pelve','Evite puxar com os bíceps ou sentar sobre os calcanhares sem dobrar o tronco'],
+   why:'O reto abdominal responde à sobrecarga progressiva exatamente como qualquer outro músculo esquelético. É um dos dois exercícios centrais do protocolo Abdômen em 60 dias.',
+   refs:['abs','ex25'],
+   subs:[['Abdominal com anilha no peito','A'],['Crunch na máquina','A'],['Abdominal no banco declinado com carga','B']]},
+ ]},
+
+ push:{title:'Terça · Push (Hipertrofia Pura de Peito, Ombro e Tríceps)', time:'60 min', focus:'Peito superior + Deltoide lateral + Tríceps',
+  note:'Como o Supino Reto e o Desenvolvimento Militar estão no dia de Powerlift (sexta-feira), hoje o treino usa exclusivamente exercícios S-Tier e A-Tier de máxima estabilidade e alongamento para hipertrofiar peitoral superior, deltoide lateral e as três cabeças do tríceps.',
+  ex:[
+  {n:'Supino inclinado com halteres ou Smith (30–45°)', en:'Incline Dumbbell or Smith Machine Press', tier:'A', sets:'3', reps:'6–10', rest:'2–3 min', warm:'2–3 séries progressivas',
+   rir:'S1: 2 RIR · S2: 1 RIR · S3: 0–1 RIR (na Smith pode ir até a falha)',
+   cues:['Ajuste o banco entre 30° e 45° de inclinação','Com halteres, desça-os bem ao lado do tórax para ampliar o alongamento peitoral (dica destacada na análise do CBum)','Controle a descida em 1 a 2 segundos e suba de forma explosiva','Na máquina Smith, toque suavemente a porção clavicular do peito sem quicar'],
+   why:'Terceiro colocado entre os 25 exercícios essenciais e principal escolha de peito do Jeff na transformação de 1 ano. O estudo de Chavez (2020) demonstra que o inclinado desenvolve o peitoral médio de forma equivalente ao reto enquanto multiplica o crescimento da porção clavicular.',
+   refs:['up1y','ex25','chest'],
+   subs:[['Supino inclinado na máquina','A'],['Supino inclinado com barra','A'],['Paralelas com carga (tronco inclinado)','A']]},
+  {n:'Chest Press em máquina (ou Supino convergente)', en:'Machine Chest Press', tier:'S', adv:1, sets:'3', reps:'8–10', rest:'2 min', warm:'1 série leve',
+   rir:'S1: 1–2 RIR · S2: 1 RIR · S3: falha + parciais alongadas',
+   cues:['Mantenha as escápulas retraídas e deprimidas contra o encosto','Permita que as alças recuem até o limite seguro de alongamento peitoral','Aproveite a guia mecânica para atingir a falha concêntrica real na terceira série'],
+   why:'Classificado como S-tier no ranking de peitoral: combina a capacidade de carga de um supino com estabilidade absoluta, extraindo 100% das unidades motoras sem risco de ficar preso sob a barra.',
+   advtxt:'Parciais alongadas na última série imediatamente após falhar na amplitude completa.',
+   refs:['chest','gym','sbo'],
+   subs:[['Paralelas com carga (Weighted Dips)','A'],['Supino reto com halteres','A'],['Flexão com déficit e carga','A']]},
+  {n:'Crucifixo sentado no cabo', en:'Seated Cable Pec Fly', tier:'S', adv:1, sets:'3', reps:'10–15', rest:'1,5–2 min', warm:'Sem necessidade',
+   rir:'S1: 1–2 RIR · S2: 1 RIR · S3: falha + parciais alongadas',
+   cues:['Posicione o banco ligeiramente à frente das torres de polia','Mantenha cotovelos levemente flexionados e altos, simulando o abraço em um tronco largo','Na fase excêntrica, deixe os cabos abrirem o peitoral em alongamento profundo','Não deixe os cotovelos caírem para junto das costelas'],
+   why:'S-tier e isolador de peito favorito do Jeff: soma a curva de resistência contínua dos cabos com o apoio das costas no banco, direcionando toda a tensão para a adução horizontal.',
+   advtxt:'Parciais alongadas na última série: realize de 3 a 6 meias repetições na metade aberta.',
+   refs:['chest','up1y'],
+   subs:[['Pec deck (voador em máquina)','A'],['Crucifixo com halteres focado na metade inferior','A'],['Cross-over em pé inclinado à frente','A']]},
+  {n:'Elevação lateral no cabo', en:'Cable Lateral Raise (polia na altura do punho)', tier:'S', adv:1, sets:'4', reps:'10–15', rest:'1–1,5 min', warm:'1 série leve',
+   rir:'S1–S3: 1 RIR · S4: falha + parciais alongadas',
+   cues:['Ajuste a polia na altura do punho ou quadril (não no chão) para que o pico de torque ocorra com o deltoide alongado','Inicie o movimento com o cabo cruzando à frente do quadril','Pense em empurrar a mão para longe do corpo, em direção às paredes laterais','Use strap de punho (cuff) se possível para eliminar a fadiga do antebraço'],
+   why:'S+, eleito o melhor exercício absoluto de ombros (#6 dos 25). O deltoide lateral é a prioridade número 1 para construir largura de clavícula e estética em V.',
+   advtxt:'Parciais alongadas na quarta série (metade inicial do movimento).',
+   refs:['shoulder','sh7','d3','ex25'],
+   subs:[['Elevação lateral com halter inclinado (lean-in)','A'],['Máquina de elevação lateral','A+'],['Cable Y-raise cruzado','S']]},
+  {n:'Tríceps francês no cabo (acima da cabeça)', en:'Overhead Cable Triceps Extension', tier:'S', sets:'3', reps:'8–12', rest:'1,5–2 min', warm:'1 série leve para cotovelos',
+   rir:'S1: 1–2 RIR · S2: 1 RIR · S3: falha',
+   cues:['Polia ajustada na altura média/alta; posicione-se de costas com base firme em afundo','Mantenha os cotovelos apontados para a frente e para cima sem abrir','Desça o implemento até sentir o alongamento máximo da cabeça longa atrás da nuca','Prefira barra reta ou W curta para maior estabilidade que a corda'],
+   why:'S+ e oitavo colocado nos 25 essenciais. A cabeça longa do tríceps cruza o ombro e só atinge alongamento máximo com o braço elevado. No estudo de Maeo (2023), esta posição gerou cerca de 40% mais hipertrofia que o tríceps pulley tradicional.',
+   refs:['triceps','ex25','up1y'],
+   subs:[['Skull crusher com barra EZ atrás da cabeça','S'],['Extensão unilateral acima da cabeça com halter','A'],['Katana extension com cabos cruzados','A']]},
+  {n:'Tríceps pulley com barra', en:'Bar Cable Pressdown', tier:'A', sets:'3', reps:'10–15', rest:'1–1,5 min', warm:'Sem necessidade',
+   rir:'S1–S2: 1 RIR · S3: falha',
+   cues:['Utilize barra reta ou barra V rígida (no teste prático do Jeff, a barra permitiu 16 repetições contra 12 na corda com a mesma carga)','Cotovelos fixos ao lado das costelas e tronco levemente inclinado','Trave a extensão completa dos cotovelos na parte inferior'],
+   why:'A-tier. Fecha a combinação ideal para tríceps recomendada pelo Jeff: um exercício em flexão de ombro (foco na cabeça longa) somado a um exercício com o braço ao lado do tronco (foco nas cabeças lateral e medial).',
+   refs:['triceps'],
+   subs:[['Tríceps coice unilateral no cabo','A'],['JM press na máquina Smith','A'],['Paralelas na máquina sentado','A']]},
+ ]},
+
+ pull:{title:'Quarta · Pull (Hipertrofia Pura de Costas, Posterior e Bíceps)', time:'60 min', focus:'100% S-Tier de Costas e Bíceps (sem fadiga lombar)',
+  note:'Com o Levantamento Terra e a Barra Fixa alocados na sexta-feira (Powerlift), a quarta-feira fica dedicada a exercícios S-Tier ultra-estáveis para dorsal, meio das costas, deltoide posterior e bíceps, poupando totalmente os eretores da coluna.',
+  ex:[
+  {n:'Remada com apoio no peito', en:'Chest-Supported Row (T-bar, máquina ou banco inclinado)', tier:'S', adv:1, sets:'3', reps:'8–12', rest:'2–2,5 min', warm:'2 séries progressivas',
+   rir:'S1: 1–2 RIR · S2: 1 RIR · S3: falha + parciais alongadas',
+   cues:['Mantenha o esterno colado no apoio acolchoado durante toda a série','Conduza os cotovelos a cerca de 45° do tronco para recrutar dorsal, trapézio médio, romboides e deltoide posterior em conjunto','Na remada cavalinho (T-bar), prefira anilhas de 10 ou 15 kg para ampliar o curso de movimento','Deixe as escápulas abrirem totalmente na descida antes de puxar novamente'],
+   why:'Classificada pelo Jeff como S+ e padrão-ouro para espessura de costas (#5 dos 25 exercícios): o apoio torácico elimina o gargalo da lombar e permite direcionar 100% do esforço neural para a musculatura dorsal.',
+   advtxt:'Na falha da terceira série, continue com repetições parciais na fase alongada ou Kelso shrugs (retração escapular).',
+   refs:['back','ex25','nerd'],
+   subs:[['Seal row (remada deitado em banco plano)','S'],['Meadows row','S'],['Remada unilateral com halter apoiado','A']]},
+  {n:'Puxada frontal (pegada neutra ou aberta)', en:'Wide or Neutral-Grip Lat Pulldown', tier:'S', adv:1, sets:'3', reps:'8–12', rest:'2 min', warm:'1 série leve',
+   rir:'S1: 1–2 RIR · S2: 1 RIR · S3: falha + parciais alongadas',
+   cues:['Trave firmemente os joelhos sob os rolos de apoio','Mantenha o tronco quase vertical, inclinando apenas 10° a 15° ao final da puxada','Traga os cotovelos em direção às costelas sem jogar o corpo para trás','Permita que os ombros subam no topo para alongar completamente o grande dorsal'],
+   why:'S-tier no ranking de costas. Como a Barra Fixa entra na sexta-feira, a Puxada Frontal na quarta-feira permite isolar a puxada vertical sentado com controle milimétrico e parciais alongadas até a falha.',
+   advtxt:'Parciais alongadas na última série (metade superior do curso com braços semidistendidos).',
+   refs:['back','crit','nerd'],
+   subs:[['Puxada frontal com pegada supinada','S'],['Remada baixa no cabo com triângulo','S'],['Máquina de pullover (Nautilus)','A']]},
+  {n:'Puxada unilateral meio-ajoelhado no cabo (ou Lat Prayer)', en:'Half-Kneeling 1-Arm Lat Pulldown / Cable Lat Pullover', tier:'S', sets:'3', reps:'10–12', rest:'1,5 min', warm:'Sem necessidade',
+   rir:'S1–S2: 1 RIR · S3: falha',
+   cues:['Posicione um joelho no chão diante da polia alta com o tronco levemente inclinado à frente','Deixe o cabo puxar o braço bem alto para alongar as fibras inferiores da dorsal','Traga o cotovelo rente ao corpo em direção ao bolso do quadril','Trabalhar unilateralmente corrige assimetrias de força entre os lados'],
+   why:'S-tier: adiciona volume limpo e específico para o grande dorsal com fadiga sistêmica quase nula.',
+   refs:['back','sbo'],
+   subs:[['Pullover no cabo em pé com corda (Lat Prayer)','A'],['Remada baixa unilateral no cabo','S'],['Pullover com halter focado na metade alongada','A']]},
+  {n:'Crucifixo inverso no cabo cruzado', en:'Reverse Cable Crossover', tier:'S', sets:'3', reps:'12–20', rest:'1–1,5 min', warm:'Sem necessidade',
+   rir:'S1: 1–2 RIR · S2: 1 RIR · S3: falha',
+   cues:['Polias ajustadas na altura dos ombros; segure diretamente nas esferas dos cabos cruzados à frente','Alcance as mãos à frente no início para pré-alongar o deltoide posterior','Mantenha os cotovelos quase estendidos e abra os braços em um arco amplo para os lados','Alterne qual braço cruza por cima a cada série'],
+   why:'S-tier e escolha número 1 do Jeff para deltoide posterior: proporciona alongamento profundo e tensão perpendicular contínua do início ao fim.',
+   refs:['shoulder','d3','s7'],
+   subs:[['Peck deck invertido sentado de lado','S'],['Face pull sentado com apoio','A'],['Crucifixo inverso com halteres no banco inclinado','B']]},
+  {n:'Rosca bayesiana no cabo', en:'Face-Away Bayesian Cable Curl', tier:'S', sets:'3', reps:'8–12', rest:'1–1,5 min', warm:'1 série leve',
+   rir:'S1: 1–2 RIR · S2: 1 RIR · S3: falha',
+   cues:['Polia no ponto mais baixo; posicione-se de costas para a torre dando um passo à frente','Mantenha o cotovelo posicionado atrás da linha do tronco durante toda a execução','Gire o punho para fora (supinação ativa) conforme sobe','Controle a descida até a extensão completa do cotovelo'],
+   why:'S+, eleita o melhor exercício de bíceps (#15 dos 25): coloca pico de tensão exatamente quando o ombro está em hiperextensão e a cabeça longa do bíceps está totalmente alongada.',
+   refs:['biceps','up1y','enh','ex25'],
+   subs:[['Rosca inclinada com halteres (banco a 45°–60°)','A'],['Rosca deitada no banco com halteres','A'],['Rosca direta no cabo em pé','A']]},
+  {n:'Rosca Scott 45°', en:'45° Preacher Curl (barra EZ, halter ou máquina)', tier:'S', adv:1, sets:'3', reps:'8–12', rest:'1–1,5 min', warm:'Sem necessidade',
+   rir:'S1–S2: 1 RIR · S3: falha + negativas auto-assistidas ou parciais',
+   cues:['Encaixe a axila no topo do banco Scott sem deixar espaço vazio','Desça controlando até estender o cotovelo completamente na base','Com halter unilateral, utilize a mão livre para aplicar negativas auto-assistidas na última série'],
+   why:'Exercício de bíceps número 1 do Jeff na lista dos 25 essenciais (#7). Enquanto a rosca bayesiana trabalha o bíceps com o braço atrás do corpo, a Scott isola a flexão com o braço à frente e maior torque nos primeiros graus da subida.',
+   advtxt:'Negativas auto-assistidas (unilateral): após a falha, ajude a subida com a outra mão e desça o peso sozinho em 3 segundos por mais 2 a 3 repetições.',
+   refs:['biceps','ex25','enh'],
+   subs:[['Rosca Scott na máquina','S'],['Rosca martelo ou Zottman invertida','S'],['Rosca com barra EZ em pé','A']]},
+  {n:'Elevação de pernas na cadeira romana', en:'Roman Chair / Captain Chair Leg Raise', tier:'A', sets:'3', reps:'10–20', rest:'1 min', warm:'Sem necessidade',
+   rir:'S1–S2: 1 RIR · S3: falha',
+   cues:['Mantenha a lombar pressionada contra o encosto traseiro evitando balanço','Suba os joelhos enrolando a pelve para cima (retroversão pélvica), não apenas dobrando o quadril','Adapte dobrando os joelhos caso ainda não alcance a faixa de repetições com pernas estendidas'],
+   why:'Segundo pilar do protocolo Abdômen em 60 dias: enfatiza a porção inferior do reto abdominal sem sobrecarregar a coluna lombar para a sexta-feira.',
+   refs:['abs'],
+   subs:[['Elevação de pernas pendurado na barra','B'],['Elevação de pernas deitado no banco (progressão Dragon Flag)','A'],['Abdominal na polia alta','A']]},
+ ]},
+
+ full:{title:'Sexta · Powerlift Day — Os 5 Clássicos (Força e 2º Estímulo)', time:'70 a 75 min', focus:'Agachamento · Supino · Terra · Militar · Barra Fixa',
+  note:'Vindo da quinta-feira inteira de descanso e com o sábado e domingo livres pela frente. Segue a ordem oficial do Powerlifting (Agachamento, Supino e Terra) onde o Supino descansa pernas e lombar antes do Terra, encerrando com Desenvolvimento Militar e Barra Fixa. Apenas 3 séries de trabalho por levantamento (15 séries na sessão).',
+  ex:[
+  {n:'Agachamento livre (barra alta, profundo)', en:'High-Bar Barbell Back Squat', must:1, tier:'S', sets:'3', reps:'1×3–5 + 2×5–6', rest:'3–4 min', warm:'Rampa completa (4 a 5 séries)',
+   rir:'Top set: 3–5 reps @ 1–2 RIR · Back-off (-10% a -15%): 2 × 5–6 @ 2 RIR · Pinos de segurança sempre',
+   cues:['Apoie a barra no trapézio superior e mantenha o centro de massa sobre o meio do pé','Desça o mais fundo que sua mobilidade confortável permitir; maior profundidade recruta mais quadríceps e glúteos','Permita que os joelhos avancem naturalmente à frente da ponta dos pés','Inspire fundo (bracing 360°) antes de iniciar cada descida'],
+   why:'Eleito pelo Jeff o número 1 absoluto dos 25 exercícios essenciais ("o rei"). Abre a sexta-feira com o sistema nervoso 100% renovado da quinta-feira e entrega o segundo estímulo pesado da semana para quadríceps e glúteos.',
+   refs:['quad','ex25','sbo'],
+   subs:[['Agachamento barra baixa (Low-Bar, estilo competição)','A'],['Agachamento na Smith','S'],['Agachamento Hack','S+']]},
+  {n:'Supino reto com barra', en:'Flat Barbell Bench Press', must:1, tier:'A', sets:'3', reps:'1×3–5 + 2×5–6', rest:'3–4 min', warm:'Rampa completa (3 a 4 séries)',
+   rir:'Top set: 3–5 reps @ 1–2 RIR · Back-off (-10% a -15%): 2 × 5–6 @ 1–2 RIR · Pinos de segurança ou spotter',
+   cues:['Pegada ligeiramente mais aberta que a largura dos ombros com escápulas retraídas no banco','Pés firmes no chão gerando tensão contínua de leg drive','Desça a barra de forma controlada até tocar o esterno sem quicar','Empurre a barra para cima e levemente para trás, em direção aos ganchos do suporte'],
+   why:'Décimo primeiro colocado entre os 25 exercícios essenciais. Posicioná-lo como o segundo levantamento (ordem oficial SBD) concede 15 a 20 minutos de descanso para as pernas e para a lombar entre o Agachamento Livre e o Levantamento Terra.',
+   refs:['chest','ex25','enh'],
+   subs:[['Supino reto com pausa de 1 segundo no peito','A'],['Supino reto na máquina Smith','A'],['Supino reto com halteres','A']]},
+  {n:'Levantamento terra convencional', en:'Conventional Barbell Deadlift', must:1, tier:'B', sets:'3', reps:'1×3–5 + 2×5', rest:'3–5 min', warm:'3 a 4 séries de rampa',
+   rir:'Top set: 3–5 reps @ 2 RIR · Back-off (-10%): 2 × 5 @ 2–3 RIR · Nunca leve até a falha',
+   cues:['Posicione a barra sobre o meio dos pés e encoste as canelas na barra sem rolá-la','Trave a coluna neutra, estufe o peito e tire a folga da barra (pull the slack) antes de arrancar do chão','Empurre o chão com os pés enquanto quadril e ombros sobem na mesma velocidade','Controle a descida para aproveitar o estímulo excêntrico em posteriores e glúteos','Use straps ou pegada mista/hook grip nas séries de trabalho'],
+   why:'Décimo quarto entre os 25 exercícios essenciais. Entra no ponto biomecanicamente ideal da semana: como segundo estímulo pesado de posteriores, glúteos e eretores (96 horas após o Stiff/RDL de segunda) e seguido por 48 horas livres no fim de semana.',
+   refs:['ex25','back','glute'],
+   subs:[['Levantamento terra sumô','B'],['Levantamento terra na barra hexagonal (Trap Bar)','B'],['Stiff / RDL pesado com barra','S']]},
+  {n:'Desenvolvimento militar em pé com barra', en:'Standing Barbell Overhead Press', must:1, tier:'B', ss:1, sets:'3', reps:'1×4–6 + 2×6–8', rest:'2–3 min (ou alternado c/ Barra Fixa)', warm:'1 a 2 séries rápidas (já aquecido pelo Supino)',
+   rir:'Top set: 4–6 reps @ 1–2 RIR · Back-off (-10%): 2 × 6–8 @ 1–2 RIR',
+   cues:['Pegada logo fora da linha dos ombros com antebraços perpendiculares ao chão','Contraia fortemente glúteos e abdômen para proteger a lombar','Empurre a barra verticalmente passando a cabeça à frente ("pela janela") assim que a barra passar da testa','Desça até a altura da clavícula em todas as repetições para alongar deltoides e tríceps'],
+   why:'Décimo terceiro entre os 25 exercícios essenciais ("a demonstração de força bruta que mais me impressiona", diz o Jeff). Aproveita o aquecimento prévio do Supino Reto e completa o estímulo semanal de ombros e tríceps.',
+   refs:['shoulder','ex25','gym','sh7'],
+   subs:[['Push Press com barra','B'],['Desenvolvimento sentado com barra ou halteres','A'],['Desenvolvimento em máquina articulada','A+']]},
+  {n:'Barra fixa (com peso ou peso corporal)', en:'Wide or Neutral-Grip Pull-Up', must:1, tier:'S', adv:1, ss:1, sets:'3', reps:'6–10', rest:'2–3 min (ou alternado c/ Militar)', warm:'1 série leve',
+   rir:'S1: 1–2 RIR · S2: 1 RIR · S3: falha + parciais alongadas · Acima de 10 reps adicione carga no cinto',
+   cues:['Pense em puxar o esterno em direção à barra conduzindo os cotovelos para baixo','Faça uma breve pausa no fundo com os ombros totalmente alongados (dead hang) sem gangorrar','Ao terminar a terceira série, permaneça pendurado por 30 segundos relaxando a lombar'],
+   why:'Segundo colocado entre todos os 25 exercícios essenciais (S-Tier). Encerrar o Powerlift Day na Barra Fixa cumpre duplo papel: entrega o segundo estímulo semanal de dorsal e bíceps e promove a descompressão axial da coluna vertebral após o Agachamento e o Terra.',
+   advtxt:'Parciais alongadas na última série seguidas de 30 segundos de Dead Hang para descomprimir a coluna.',
+   refs:['ex25','up1y','part','s7'],
+   subs:[['Chin-up com pegada supinada (maior foco em bíceps)','A'],['Barra fixa no Graviton (máquina assistida)','S'],['Puxada frontal pesada','S']]},
+ ]},
+};
+
+function renderCard(e) {
+  const tags = [
+    e.must ? '<span class="tag-pill tag-must">Clássico obrigatório</span>' : '',
+    `<span class="tag-pill ${e.tier === 'S' ? 'tag-s' : ''}">Tier ${e.tier}</span>`,
+    e.adv ? '<span class="tag-pill tag-adv">Técnica na última série</span>' : '',
+    e.ss ? '<span class="tag-pill">Bi-set antagonista opcional</span>' : ''
+  ].filter(Boolean).join(' ');
+
+  return `<article class="ex-item">
+    <button type="button" class="ex-head" onclick="toggleEx(this)">
+      <div class="ex-title-group">
+        <div class="ex-name-line"><span>${e.n}</span> ${tags}</div>
+        <div class="ex-en">${e.en}</div>
+      </div>
+      <div class="ex-metrics">
+        <div class="metric-box"><b>${e.sets}</b><span>séries</span></div>
+        <div class="metric-box"><b>${e.reps}</b><span>reps</span></div>
+        <div class="metric-box"><b>${e.rest}</b><span>pausa</span></div>
+        <span class="ex-toggle-word">Detalhes</span>
+      </div>
+    </button>
+    <div class="ex-body">
+      <div class="ex-cols">
+        <div>
+          <div class="detail-block">
+            <div class="detail-heading">Esforço por série (RIR = repetições em reserva)</div>
+            <div class="detail-panel">${e.rir}</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-heading">Aquecimento específico</div>
+            <div class="detail-panel">${e.warm}</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-heading">Pontos de execução</div>
+            <ul class="cues-list">${e.cues.map(c => `<li>${c}</li>`).join('')}</ul>
+          </div>
+        </div>
+        <div>
+          <div class="detail-block">
+            <div class="detail-heading">Justificativa científica (acervo Jeff Nippard)</div>
+            <div class="detail-panel">
+              <p>${e.why}</p>
+              <p class="small-copy" style="margin-top:8px">Vídeos de referência: ${e.refs.map(L).join(' · ')}</p>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-heading">Substituições equivalentes</div>
+            <div class="subs-list">${e.subs.map(s => `<div class="sub-row"><span>${s[0]}</span><b>Tier ${s[1]}</b></div>`).join('')}</div>
+          </div>
+          ${e.advtxt ? `<div class="detail-block"><div class="detail-heading">Técnica de intensidade</div><div class="detail-panel">${e.advtxt}</div></div>` : ''}
+        </div>
+      </div>
+    </div>
+  </article>`;
+}
+
+function toggleEx(btn) {
+  const item = btn.closest('.ex-item');
+  item.classList.toggle('open');
+}
+
+const panelsEl = document.getElementById('panels');
+panelsEl.innerHTML = Object.entries(DAYS).map(([k, d]) => {
+  const totalSets = d.ex.reduce((a, e) => a + parseInt(e.sets, 10), 0);
+  return `<div class="day-panel" data-k="${k}" style="${k === 'legs' ? '' : 'display:none'}">
+    <div class="day-banner">
+      <div class="day-banner-top">
+        <div class="day-banner-title">${d.title}</div>
+        <div class="day-stats-strip">
+          <span>Duração: ${d.time}</span>
+          <span>${d.ex.length} exercícios</span>
+          <span>${totalSets} séries de trabalho</span>
+          <span>Foco: ${d.focus}</span>
+        </div>
+      </div>
+      <p class="small-copy" style="color:var(--field-dark-muted)">${d.note}</p>
+    </div>
+    <div class="ex-list" style="margin-top:12px">
+      ${d.ex.map(e => renderCard(e)).join('')}
+    </div>
+  </div>`;
+}).join('');
+
+// Open first two exercises of each day by default
+document.querySelectorAll('.day-panel').forEach(p => {
+  const items = p.querySelectorAll('.ex-item');
+  if (items[0]) items[0].classList.add('open');
+  if (items[1]) items[1].classList.add('open');
+});
+
+function showDay(k) {
+  document.querySelectorAll('#tabs .day-tab[data-k]').forEach(t => t.classList.toggle('active', t.dataset.k === k));
+  document.querySelectorAll('.day-panel').forEach(p => {
+    p.style.display = p.dataset.k === k ? '' : 'none';
+  });
+}
+
+document.querySelectorAll('#tabs .day-tab[data-k]').forEach(t => {
+  t.addEventListener('click', () => showDay(t.dataset.k));
+});
+
+document.querySelectorAll('[data-go]').forEach(row => {
+  row.addEventListener('click', () => {
+    showDay(row.dataset.go);
+    const target = document.getElementById('treinos');
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+let allExpanded = false;
+document.getElementById('toggle-all-btn').addEventListener('click', function() {
+  allExpanded = !allExpanded;
+  document.querySelectorAll('.ex-item').forEach(el => el.classList.toggle('open', allExpanded));
+  this.textContent = allExpanded ? 'Recolher todos' : 'Expandir todos';
+});
+
+// WARMUP RAMP CALCULATOR
+function updateCalc() {
+  const type = document.getElementById('calc-ex').value;
+  const raw = parseFloat(document.getElementById('calc-kg').value) || 100;
+  const round25 = v => Math.max(0, Math.round(v / 2.5) * 2.5);
+  const steps = type === 'bar'
+    ? [
+        ['Série 1 (barra vazia)', '20 kg', '8 a 10 reps'],
+        ['Série 2 (50%)', round25(raw * 0.5) + ' kg', '5 a 6 reps'],
+        ['Série 3 (70%)', round25(raw * 0.7) + ' kg', '3 a 4 reps'],
+        ['Série 4 (82%)', round25(raw * 0.82) + ' kg', '1 a 2 reps'],
+        ['Série 5 (90% pré-Top Set)', round25(raw * 0.9) + ' kg', '1 rep']
+      ]
+    : type === 'rdl'
+    ? [
+        ['Série 1 (barra vazia)', '20 kg', '8 a 10 reps'],
+        ['Série 2 (55%)', round25(raw * 0.55) + ' kg', '5 a 6 reps'],
+        ['Série 3 (78%)', round25(raw * 0.78) + ' kg', '2 a 3 reps']
+      ]
+    : [
+        ['Série 1 (45%)', round25(raw * 0.45) + ' kg', '8 reps'],
+        ['Série 2 (68%)', round25(raw * 0.68) + ' kg', '4 a 5 reps'],
+        ['Série 3 (85%)', round25(raw * 0.85) + ' kg', '1 a 2 reps']
+      ];
+  document.getElementById('calc-out').innerHTML = steps.map(s =>
+    `<div class="calc-line"><span>${s[0]}</span><b>${s[1]} · ${s[2]}</b></div>`
+  ).join('');
+}
+document.getElementById('calc-ex').addEventListener('change', updateCalc);
+document.getElementById('calc-kg').addEventListener('input', updateCalc);
+updateCalc();
+
+// VOLUME TABLE
+const VOL = [
+  ['Peitoral', 12, 0, 'Terça (Inclinado 3 · Chest Press 3 · Crucifixo Cabo 3) + Sexta (Supino Reto 3)'],
+  ['Costas (dorsal e meio)', 12, 3, 'Quarta (Remada Apoiada 3 · Puxada 3 · Unilateral 3) + Sexta (Barra Fixa 3 + Terra 3 ind.)'],
+  ['Quadríceps', 9, 0, 'Segunda (Hack Squat 3 · Extensora Reclinada 3) + Sexta (Agachamento Livre 3)'],
+  ['Posteriores de coxa', 9, 0, 'Segunda (Cadeira Flexora 3 · Stiff/RDL 3) + Sexta (Levantamento Terra 3)'],
+  ['Glúteos', 2, 12, 'Segunda (Abdução 2 + Hack 3 + Stiff/RDL 3) + Sexta (Agachamento 3 + Terra 3)'],
+  ['Deltoide lateral', 4, 3, 'Terça (Elevação Lateral Cabo 4) + Sexta (Desenvolvimento Militar 3)'],
+  ['Deltoide posterior', 3, 9, 'Quarta (Crucifixo Inverso Cabo 3) + Remadas e Barra Fixa (9 ind.)'],
+  ['Deltoide anterior', 3, 9, 'Sexta (Desenvolvimento Militar 3) + Supinos e Chest Press (9 ind.)'],
+  ['Tríceps', 6, 12, 'Terça (Francês Cabo 3 · Pulley Barra 3) + Supinos e Militar (12 ind.)'],
+  ['Bíceps', 6, 12, 'Quarta (Rosca Bayesiana 3 · Rosca Scott 3) + Barra Fixa e Puxadas (12 ind.)'],
+  ['Panturrilha', 4, 0, 'Segunda (Panturrilha em Pé 4)'],
+  ['Abdômen', 6, 0, 'Segunda (Abdominal na Polia 3) + Quarta (Elevação de Pernas 3)'],
+];
+const MAX_V = 24;
+document.getElementById('vol-tbody').innerHTML = VOL.map(([name, d, ind, detail]) => {
+  const zl = (8 / MAX_V) * 100;
+  const zw = (12 / MAX_V) * 100;
+  const dw = (Math.min(d, MAX_V) / MAX_V) * 100;
+  const iw = (Math.min(ind, MAX_V - d) / MAX_V) * 100;
+  return `<tr>
+    <td><b>${name}</b></td>
+    <td><span class="small-copy">${detail}</span></td>
+    <td>
+      <div class="vol-bar-track">
+        <div class="vol-zone" style="left:${zl}%;width:${zw}%"></div>
+        <div class="vol-fill-direct" style="width:${dw}%"></div>
+        <div class="vol-fill-indirect" style="left:${dw}%;width:${iw}%"></div>
+      </div>
+    </td>
+    <td class="num-col"><b>${d}</b>${ind ? ` <span class="small-copy">(+${ind} ind.)</span>` : ''}</td>
+  </tr>`;
+}).join('');
+
+// SOURCES LIST + FILTER
+const SRC = [
+  ['H6SiAe-VObA','Peptides Are Insane','programação'],
+  ['TBrlPpviaqY','How Ripped Can I Get My Brother In 100 Days?','programação'],
+  ['S6rqpxVGKZ4','The Only 25 Exercises You Ever Need','exercícios'],
+  ['MT9ZeE5JJsI','7 Things That Helped My Shoulders Grow','exercícios'],
+  ['5K9QhkPww44','What Every Body Fat % Actually Looks Like','programação'],
+  ['DzjWEn2BS_k','I Cut The Number Of Sets I Do In Half','programação'],
+  ['qpRGnTTcLpo','7 Amazing Exercises No One Does (ALL S TIER)','exercícios'],
+  ['U1zCyaQc91g',"I Built The World's Most Scientific Gym",'exercícios'],
+  ['rvtZs_nTqr0','How To Tell If Someone Is On Steroids','programação'],
+  ['2qDA86gP_zg','How To Look Enhanced Without Steroids','técnica'],
+  ['hRZ5MM6gmlE','The Leg Workout I Followed For My 1 Year Transformation','exercícios'],
+  ['928aRhhPP8I','The Upper Body Workout I Followed For My 1 Year Transformation','exercícios'],
+  ['PiYSbR2B85w','How Much Muscle Did I Gain In 365 Days?','programação'],
+  ['3ryh7PNhz3E','The Best & Worst Glute Exercises','tier list'],
+  ['Ykreq4u_Egw','Exercise Scientists Critique Fitness Influencer Workouts','técnica'],
+  ['NS_GeXoboo4','How To Get Jacked For $10/Day','exercícios'],
+  ['pi0PQZFFo4A','Science-Based Lifting Is Over (My Bad)','programação'],
+  ['OqRvmJ2eyBA','How To Bulk Like A Pro','programação'],
+  ['GNO4OtYoCYk','The Best And Worst Biceps Exercises','tier list'],
+  ['qxl5mL7gzlg',"Everyone Thinks I'm Wrong About Training",'técnica'],
+  ['SgyUoY0IZ7A','The Best And Worst Shoulder Exercises','tier list'],
+  ['EWC8_vp-bWI','Do Muscles Really Make You More Attractive?','programação'],
+  ['kIXcoivzGf8','The Best & Worst QUAD Exercises','tier list'],
+  ['lmClPGvdWTI','Steroids Are Awesome','programação'],
+  ['OpRMRhr0Ycc','The Best & Worst TRICEPS Exercises','tier list'],
+  ['gunZRs8g6q8','Science Nerd Vs Pro Bodybuilders','técnica'],
+  ['fGm-ef-4PVk','The Best And Worst Chest Exercises','tier list'],
+  ['ml5uvpfXcLU',"The Science Behind Sam Sulek's Training",'programação'],
+  ['jLvqKgW-_G8','The Best And Worst Back Exercises','tier list'],
+  ['Tn-XvYG9x7w','Get Abs In 60 Days','exercícios'],
+  ['EEOjsbQ5wYE','OVERRATED: The Worst Fitness Advice Ever','técnica'],
+  ['21lYP86dHW4','Top 3 Shoulder Exercises For 3D Delts','exercícios'],
+  ['ftpH4-xFGQI',"The World's Smartest Muscle Building Technique",'técnica'],
+  ['71op1DQ2gyo','How To Train For Pure Muscle Growth *','programação'],
+];
+
+function renderSources(filterTag) {
+  const list = filterTag === 'all' ? SRC : SRC.filter(s => s[2] === filterTag);
+  document.getElementById('srclist').innerHTML = list.map(([id, title, tag]) =>
+    `<li><a href="https://youtu.be/${id}" target="_blank">${title}</a> <span class="small-copy">(${tag})</span></li>`
+  ).join('');
+}
+renderSources('all');
+
+document.querySelectorAll('#src-filters .filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#src-filters .filter-btn').forEach(b => b.classList.toggle('active', b === btn));
+    renderSources(btn.dataset.tag);
+  });
+});
+
+// SCROLL REVEAL CHOREOGRAPHY (RESPECTING PREFERS-REDUCED-MOTION)
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const revealEls = document.querySelectorAll('.reveal-item');
+  revealEls.forEach((el) => {
+    el.style.opacity = '0.86';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'transform 560ms cubic-bezier(0.22, 1, 0.36, 1), opacity 560ms cubic-bezier(0.22, 1, 0.36, 1)';
+  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0px)';
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+}
+</script>
+</body>
+</html>

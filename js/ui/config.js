@@ -3,7 +3,7 @@ import {
   isValidProgram, isValidLogs, idbDelete, getDefaultCfg, DATA_VERSION
 } from '../store.js';
 import { DEFAULT_PROGRAM } from '../defaults.js';
-import { jumpToWeekDay, getWorkoutPlan } from '../plan.js';
+import { jumpToWeekDay, getWorkoutPlan, defaultDayId, weeksTotal, dayLabel } from '../plan.js';
 import { pageHeader, toast, todayISO } from '../utils.js';
 import { backfillPerformedMeta } from '../performed.js';
 
@@ -34,8 +34,8 @@ export function renderConfig() {
   el.innerHTML = pageHeader('Configurações', 'Preferências e backup dos dados') +
     reminder +
     '<div class="config-section"><h3>Programa</h3>' +
-    '<p class="about-text">BBTS Beginner · Semana ' + (state.cfg.currentWeek || 1) +
-    '/12 · Dia: ' + (state.cfg.currentDay || 'upper') +
+    '<p class="about-text">' + (state.plan?.name || 'Powerbuilding · 4 dias') + ' · Semana ' + (state.cfg.currentWeek || 1) +
+    '/' + weeksTotal() + ' · Dia: ' + dayLabel(state.cfg.currentDay || defaultDayId()) +
     '<br>Início: ' + started + '</p></div>' +
     '<div class="config-section"><h3>Aparência</h3>' +
     toggleHtml('toggle-theme', state.cfg.theme === 'light', 'Tema claro') +
@@ -54,7 +54,7 @@ export function renderConfig() {
     '<div class="btn-group"><button class="btn btn-secondary btn-block" id="import-backup">Importar backup</button></div>' +
     '<div class="btn-group"><button class="btn btn-danger btn-block" id="reset-data">Resetar dados</button></div></div>' +
     '<div class="config-section"><h3>Sobre</h3>' +
-    '<p class="about-text">Treino Tracker v4 · Bodybuilding Transformation System (Beginner) · Offline-first. Atualizações do PWA não apagam seu histórico.</p></div>';
+    '<p class="about-text">Treino Tracker · Powerbuilding 4 dias · Offline-first. Atualizações do PWA não apagam seu histórico. O caderno completo fica na aba Consulta.</p></div>';
 }
 
 async function exportBackup() {
@@ -109,10 +109,9 @@ async function importBackup(file, onRenderAll) {
       if (!data || typeof data !== 'object') throw new Error('invalid');
 
       if (data.plan !== undefined) {
-        if (!isValidProgram(data.plan) || data.plan.id !== 'bbts-beginner-2025') {
-          // Always reinstall BBTS; keep logs if valid
+        if (!isValidProgram(data.plan)) {
           state.plan = structuredClone(DEFAULT_PROGRAM);
-          toast('Plano antigo ignorado — programa BBTS reinstado');
+          toast('Plano antigo ignorado — programa Powerbuilding reinstado');
         } else {
           state.plan = data.plan;
         }
@@ -148,9 +147,9 @@ async function importBackup(file, onRenderAll) {
         await saveMeta();
       }
 
-      jumpToWeekDay(state.cfg.currentWeek || 1, state.cfg.currentDay || 'upper');
+      jumpToWeekDay(state.cfg.currentWeek || 1, state.cfg.currentDay || defaultDayId());
       if (!getWorkoutPlan(state.selectedWorkout)) {
-        jumpToWeekDay(1, 'upper');
+        jumpToWeekDay(1, defaultDayId());
       }
       if (backfillPerformedMeta(state.logs, state.sessions, state.plan)) {
         await saveLogs();
@@ -167,7 +166,7 @@ async function importBackup(file, onRenderAll) {
 }
 
 async function resetData(onRenderAll) {
-  if (!confirm('Isso apaga histórico e configurações e reinstala o BBTS Beginner. Continuar?')) return;
+  if (!confirm('Isso apaga histórico e configurações e reinstala o plano Powerbuilding de 4 dias. Continuar?')) return;
   for (const key of Object.values(KEYS)) {
     localStorage.removeItem(key);
     await idbDelete(key);
@@ -180,14 +179,14 @@ async function resetData(onRenderAll) {
   };
   state.sessions = [];
   state.meta = { dataVersion: DATA_VERSION, migratedAt: new Date().toISOString() };
-  state.selectedWorkout = 'upper';
+  state.selectedWorkout = defaultDayId();
   state.browseWeek = 1;
-  state.browseDay = 'upper';
+  state.browseDay = defaultDayId();
   state.draftSets = {};
   state.substituteChoice = {};
   await Promise.all([savePlan(), saveLogs(), saveCfg(), saveSessions(), saveMeta()]);
   onRenderAll();
-  toast('Dados resetados · BBTS Beginner');
+  toast('Dados resetados · Powerbuilding 4 dias');
 }
 
 export function bindConfigEvents(root, { onRenderAll }) {

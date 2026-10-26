@@ -207,7 +207,7 @@ export function detectPRs(exerciseId, sets, performedKey) {
   const ex = (() => {
     const weeks = state.plan?.weeks || {};
     for (const wk of Object.keys(weeks)) {
-      for (const dayId of ['upper', 'lower', 'pull', 'push', 'legs']) {
+      for (const dayId of Object.keys(weeks[wk] || {})) {
         const found = (weeks[wk][dayId]?.exercises || []).find(e => e.id === exerciseId);
         if (found) return found;
       }

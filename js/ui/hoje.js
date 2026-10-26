@@ -1,8 +1,8 @@
 import { state, saveLogs, saveCfg, saveSessions } from '../store.js';
 import {
   getRotation, shortWorkoutName, getWorkoutPlan,
-  getDraftKey, initDraftForDay, workingSetsCount,
-  advanceSchedule, resolveExerciseDisplay, dayLabel,
+  getDraftKey, initDraftForDay, workingSetsForWeek, isDeloadWeek,
+  advanceSchedule, restartCycle, resolveExerciseDisplay, dayLabel, weeksTotal,
   currentPerformed, lastPerformedLabel, isDraftUntouched, seedDraftFromLast
 } from '../plan.js';
 import {
@@ -13,10 +13,13 @@ import {
 } from '../session.js';
 import {
   esc, escAttr, pageHeader, ICON_HISTORY, toast, lightHaptic,
-  formatDate, todayISO, openModal, closeModal,
-  youtubeDropdownHtml, hydrateYoutubeEmbeds, bindYoutubeDropdown
+  formatDate, todayISO, openModal, closeModal
 } from '../utils.js';
+import {
+  exerciseDetailsButton, planBadgesHtml, setsRepsLabel, showExerciseDetails, substituteOptionLabel
+} from './exercise-details.js';
 import { workingSets } from '../performed.js';
+import { deloadCardHtml, restartCardHtml } from './cycle.js';
 import { getExerciseStats } from '../charts.js';
 
 function unit() { return state.cfg.unit || 'kg'; }
@@ -149,7 +152,7 @@ function renderSetRow(ex, key, s, i, isLastWorking) {
   const targetRpe = isLastWorking && ex.lastSetRpe ? ex.lastSetRpe : (ex.earlySetRpe || '');
   return '<div class="set-row-v2' + (done ? ' done' : '') + (isLastWorking ? ' last-working' : '') + '" data-key="' + key + '" data-set="' + i + '">' +
     '<div class="set-row-top">' +
-      '<span class="set-num">' + (i + 1) + (isLastWorking ? ' · last' : '') + '</span>' +
+      '<span class="set-num">' + (i + 1) + (isLastWorking ? ' · última' : '') + '</span>' +
       '<div class="set-actions-row">' +
         (i > 0 ? '<button type="button" class="chip-btn" data-action="copy-prev" data-key="' + key + '" data-set="' + i + '">Copiar ant.</button>' : '') +
         '<button type="button" class="set-check' + (done ? ' on' : '') + '" data-action="toggle-done" data-key="' + key + '" data-set="' + i + '" data-ex="' + escAttr(ex.id) + '" aria-label="Marcar série">' + (done ? '✓' : '') + '</button>' +
@@ -178,14 +181,15 @@ function sessionBarHtml(dayPlan) {
     '<button class="btn btn-secondary btn-sm" id="end-session-only">Encerrar</button></div>';
 }
 
-function prescribedMeta(ex) {
+function prescribedMeta(ex, week) {
   const parts = [];
-  parts.push('WU ' + (ex.warmupSets || '—'));
-  parts.push(workingSetsCount(ex) + '×' + ex.reps);
-  if (ex.earlySetRpe) parts.push('Early RPE ' + ex.earlySetRpe);
-  if (ex.lastSetRpe) parts.push('Last RPE ' + ex.lastSetRpe);
+  parts.push('Aquecimento ' + (ex.warmupSets || '—'));
+  parts.push(setsRepsLabel(ex, workingSetsForWeek(ex, week)));
   if (ex.rest) parts.push(ex.rest);
-  return parts.join(' · ');
+  let html = esc(parts.join(' · '));
+  if (isDeloadWeek(week)) html += '<br>' + esc('Deload: ' + (state.plan?.deload?.effort || '3–4 RIR'));
+  else if (ex.effort) html += '<br>' + esc(ex.effort);
+  return html;
 }
 
 function exerciseCard(dayPlan, ex, stagger) {
@@ -197,10 +201,9 @@ function exerciseCard(dayPlan, ex, stagger) {
 
   const setsHtml = draft.map((s, i) => renderSetRow(ex, key, s, i, i === lastWorkingIdx)).join('');
 
-  const yt = youtubeDropdownHtml(display.youtubeUrl, 'hoje:' + ex.id);
-
-  const inten = ex.intensityTechnique
-    ? '<span class="badge inten">' + esc(ex.intensityTechnique) + '</span>'
+  const detailsBtn = exerciseDetailsButton(ex);
+  const en = !display.usingSubstitute && ex.nameEn
+    ? '<div class="exercise-en">' + esc(ex.nameEn) + '</div>'
     : '';
 
   const lastLabel = lastPerformedLabel(ex);
@@ -208,13 +211,13 @@ function exerciseCard(dayPlan, ex, stagger) {
   const bookSelected = choice == null || choice === '';
   const markLast = (name) => lastLabel && lastLabel === name ? ' · última vez' : '';
   const subs = (ex.substitutes || []).length
-    ? '<div class="form-group sub-picker" style="margin:8px 0 0"><label>Substitute</label>' +
+    ? '<div class="form-group sub-picker" style="margin:8px 0 0"><label>Substituição</label>' +
       '<select data-action="pick-sub" data-ex="' + escAttr(ex.id) + '">' +
       '<option value=""' + (bookSelected ? ' selected' : '') + '>' +
-        esc(ex.name) + ' (livro)' + markLast(ex.name) + '</option>' +
+        esc(ex.name) + ' (plano)' + markLast(ex.name) + '</option>' +
       ex.substitutes.map((s, i) =>
         '<option value="' + i + '"' + (String(choice) === String(i) ? ' selected' : '') + '>' +
-        esc(s.name) + markLast(s.name) + '</option>'
+        esc(substituteOptionLabel(s)) + markLast(s.name) + '</option>'
       ).join('') +
       '</select>' +
       (lastLabel ? '<div class="last-variant-hint">Última vez: ' + esc(lastLabel) + '</div>' : '') +
@@ -238,11 +241,12 @@ function exerciseCard(dayPlan, ex, stagger) {
       '<span class="card-title">' + esc(display.name) +
         (display.usingSubstitute ? ' <span class="sub-tag">sub</span>' : '') +
       '</span>' +
-      '<span class="badge accent">' + workingSetsCount(ex) + '×' + esc(ex.reps) + '</span>' +
+      '<span class="badge accent">' + esc(setsRepsLabel(ex, workingSetsForWeek(ex, dayPlan.week))) + '</span>' +
     '</div>' +
-    (inten ? '<div class="ex-meta-row">' + inten + '</div>' : '') +
-    '<div class="prescribed">' + esc(prescribedMeta(ex)) + '</div>' +
-    yt +
+    en +
+    planBadgesHtml(ex) +
+    '<div class="prescribed">' + prescribedMeta(ex, dayPlan.week) + '</div>' +
+    detailsBtn +
     subs +
     notes +
     compareHtml +
@@ -264,8 +268,11 @@ function restDayHtml(dayPlan) {
   return '<div class="card rest-day-card">' +
     '<div class="card-title" style="font-size:1.25rem;margin-bottom:8px">Dia de descanso</div>' +
     '<p class="subtitle" style="margin-bottom:16px">Semana ' + (state.cfg.currentWeek || 1) +
-    '/12 · recupere bem. Próximo: <strong>' + esc(next) + '</strong>.</p>' +
-    '<button class="btn btn-primary btn-block" id="advance-rest">Avançar para ' + esc(next) + '</button>' +
+    '/' + weeksTotal() + ' · ' + esc(dayPlan.note || 'Recupere bem.') +
+    ' Próximo: <strong>' + esc(next) + '</strong>.</p>' +
+    (state.cfg.awaitingCycleRestart
+      ? ''
+      : '<button class="btn btn-primary btn-block" id="advance-rest">Avançar para ' + esc(next) + '</button>') +
   '</div>';
 }
 
@@ -275,7 +282,7 @@ export function renderHoje() {
   const dayPlan = getWorkoutPlan(state.selectedWorkout);
 
   const chips = getRotation().map(id => {
-    const isCurrent = id === (state.cfg.currentDay || 'upper');
+    const isCurrent = id === (state.cfg.currentDay || 'legs');
     const isSelected = id === state.selectedWorkout;
     return '<button class="day-chip' + (isSelected ? ' active' : '') + (isCurrent ? ' current-day' : '') +
       '" data-workout="' + id + '">' + esc(shortWorkoutName(id)) + '</button>';
@@ -303,13 +310,18 @@ export function renderHoje() {
     ? (dayPlan.short || dayLabel(dayPlan.id)) + (dayPlan.focus ? ' · ' + dayPlan.focus : '')
     : null;
   const dateStr = new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
-  const headerSub = 'Semana ' + week + '/12' + (dayPlan?.block ? ' · ' + dayPlan.block : '');
+  const headerSub = 'Semana ' + week + '/' + weeksTotal() + (dayPlan?.block ? ' · ' + dayPlan.block : '');
 
   el.innerHTML = pageHeader('Hoje', headerSub, focusLine) +
     '<p class="subtitle hoje-date">' + esc(dateStr) + '</p>' +
-    '<div class="day-picker-wrap"><div class="day-picker">' + chips + '</div></div>' + content;
+    restartCardHtml() +
+    deloadCardHtml(week) +
+    '<div class="day-picker-wrap"><div class="day-picker">' + chips + '</div></div>' +
+    (dayPlan && !dayPlan.isRest && dayPlan.note
+      ? '<p class="subtitle day-note">' + esc(dayPlan.note) + '</p>'
+      : '') +
+    content;
 
-  hydrateYoutubeEmbeds(el);
   syncRestToast();
 
   if (activeSession.startedAt) {
@@ -359,7 +371,9 @@ export async function handleAdvanceRest() {
   const next = advanceSchedule();
   await saveCfg();
   hapticIfEnabled();
-  toast('Descanso registrado · próximo: ' + dayLabel(next.dayId));
+  toast(next.awaitingRestart
+    ? 'Ciclo concluído. Você pode voltar para a semana 1.'
+    : 'Descanso registrado · próximo: ' + dayLabel(next.dayId));
   renderHoje();
 }
 
@@ -436,7 +450,8 @@ export async function handleSaveSession() {
 
     // Only advance if saving the scheduled current day
     if (dayPlan.id === state.cfg.currentDay) {
-      advanceSchedule();
+      const next = advanceSchedule();
+      if (next.awaitingRestart) toast('Ciclo concluído. Você pode voltar para a semana 1.');
     } else {
       state.cfg.lastWorkoutId = dayPlan.id;
     }
@@ -492,7 +507,6 @@ function handleRestToastClick(e) {
 }
 
 export function bindHojeEvents(root, { onRenderAll }) {
-  bindYoutubeDropdown(root);
   const restToast = document.getElementById('rest-toast');
   if (restToast && !restToast.dataset.bound) {
     restToast.dataset.bound = '1';
@@ -500,6 +514,29 @@ export function bindHojeEvents(root, { onRenderAll }) {
   }
 
   root.addEventListener('click', async (e) => {
+    const restartBtn = e.target.closest('[data-action="restart-cycle"]');
+    if (restartBtn) {
+      restartCycle();
+      await saveCfg();
+      toast('Semana 1');
+      onRenderAll?.();
+      return;
+    }
+    const deloadBtn = e.target.closest('[data-action="toggle-deload"]');
+    if (deloadBtn) {
+      const week = Number(deloadBtn.dataset.week);
+      state.cfg.deloadWeek = Number(state.cfg.deloadWeek) === week ? null : week;
+      await saveCfg();
+      onRenderAll?.();
+      return;
+    }
+    const detailsBtn = e.target.closest('[data-action="ex-details"]');
+    if (detailsBtn) {
+      const dayPlan = getWorkoutPlan(state.selectedWorkout);
+      const ex = (dayPlan?.exercises || []).find((item) => item.id === detailsBtn.dataset.ex);
+      showExerciseDetails(ex);
+      return;
+    }
     const chip = e.target.closest('.day-chip');
     if (chip) {
       state.selectedWorkout = chip.dataset.workout;
