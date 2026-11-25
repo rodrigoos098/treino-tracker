@@ -31,11 +31,8 @@ export function renderPlano() {
   }).join('');
 
   let body = '';
-  if (!day) {
+  if (!day || day.isRest) {
     body = '<div class="empty-state">Semana inválida.</div>';
-  } else if (day.isRest) {
-    body = '<div class="card rest-day-card"><div class="card-title">' + esc(day.name || 'Descanso') + '</div>' +
-      '<p class="subtitle">' + esc(day.note || 'Sem exercícios prescritos neste dia.') + '</p></div>';
   } else {
     body = '<div class="plan-day">' +
       '<div class="plan-day-header"><div class="plan-day-title">' + esc(day.name) + '</div></div>' +

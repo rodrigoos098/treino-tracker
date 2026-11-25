@@ -257,24 +257,6 @@ function exerciseCard(dayPlan, ex, stagger) {
   '</div>';
 }
 
-function restDayHtml(dayPlan) {
-  const next = (() => {
-    const schedule = getRotation();
-    const idx = schedule.indexOf(dayPlan.id);
-    const nextId = schedule[(idx + 1) % schedule.length];
-    return dayLabel(nextId);
-  })();
-  return '<div class="card rest-day-card">' +
-    '<div class="card-title" style="font-size:1.25rem;margin-bottom:8px">Dia de descanso</div>' +
-    '<p class="subtitle" style="margin-bottom:16px">Semana ' + (state.cfg.currentWeek || 1) +
-    '/' + weeksTotal() + ' · ' + esc(dayPlan.note || 'Recupere bem.') +
-    ' Próximo: <strong>' + esc(next) + '</strong>.</p>' +
-    (state.cfg.awaitingCycleRestart
-      ? ''
-      : '<button class="btn btn-primary btn-block" id="advance-rest">Avançar para ' + esc(next) + '</button>') +
-  '</div>';
-}
-
 export function renderHoje() {
   const el = document.getElementById('screen-hoje');
   const week = state.cfg.currentWeek || 1;
@@ -288,11 +270,8 @@ export function renderHoje() {
   }).join('');
 
   let content = '';
-  if (!dayPlan) {
+  if (!dayPlan || dayPlan.isRest) {
     content = '<div class="empty-state">Programa não carregado.</div>';
-  } else if (dayPlan.isRest) {
-    // Keep session controls visible if a workout session is still running
-    content = (activeSession.startedAt ? sessionBarHtml(dayPlan) : '') + restDayHtml(dayPlan);
   } else {
     initDraftForDay(dayPlan);
     const doStagger = lastStaggerWorkout !== state.selectedWorkout;
@@ -341,37 +320,6 @@ export async function handleStartSession() {
   }
   hapticIfEnabled();
   toast('Sessão iniciada');
-  renderHoje();
-}
-
-export async function handleAdvanceRest() {
-  const dayPlan = getWorkoutPlan(state.selectedWorkout);
-  if (!dayPlan || !dayPlan.isRest) return;
-  if (dayPlan.id !== state.cfg.currentDay) {
-    toast('Este não é o dia atual do programa. Use “Treinar este dia” na aba Programa.');
-    return;
-  }
-
-  const record = buildSessionRecord({
-    workoutId: 'rest',
-    workoutName: 'Descanso · Semana ' + (state.cfg.currentWeek || 1),
-    startedAt: Date.now(),
-    endedAt: Date.now(),
-    exercises: [],
-    week: state.cfg.currentWeek,
-    dayId: 'rest',
-    isRest: true
-  });
-  state.sessions.unshift(record);
-  if (state.sessions.length > 200) state.sessions.length = 200;
-  await saveSessions();
-
-  const next = advanceSchedule();
-  await saveCfg();
-  hapticIfEnabled();
-  toast(next.awaitingRestart
-    ? 'Ciclo concluído. Você pode voltar para a semana 1.'
-    : 'Descanso registrado · próximo: ' + dayLabel(next.dayId));
   renderHoje();
 }
 
@@ -535,7 +483,6 @@ export function bindHojeEvents(root, { onRenderAll }) {
     }
     if (e.target.id === 'start-session') { await handleStartSession(); return; }
     if (e.target.id === 'save-session') { await handleSaveSession(); onRenderAll?.(); return; }
-    if (e.target.id === 'advance-rest') { await handleAdvanceRest(); onRenderAll?.(); return; }
     if (e.target.id === 'end-session-only') {
       await endSession();
       toast('Sessão encerrada');

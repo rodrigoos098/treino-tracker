@@ -2,10 +2,17 @@ import { state } from './store.js';
 import { todayISO } from './utils.js';
 import { collectLogSessions, lastSlotLog, substituteIndexFromLog, performedFromChoice } from './performed.js';
 
-export const SCHEDULE = ['legs', 'push', 'pull', 'rest-qui', 'power', 'rest-sab', 'rest-dom'];
+export const SCHEDULE = ['legs', 'push', 'pull', 'power'];
+
+const REST_DAY_IDS = new Set(['rest', 'rest-qui', 'rest-sab', 'rest-dom']);
+
+export function isRestDayId(dayId) {
+  return REST_DAY_IDS.has(dayId);
+}
 
 export function getSchedule() {
-  return state.plan?.schedule || SCHEDULE;
+  const schedule = state.plan?.schedule || SCHEDULE;
+  return schedule.filter((id) => !isRestDayId(id));
 }
 
 export function defaultDayId() {
@@ -21,10 +28,7 @@ export function dayLabel(dayId) {
     legs: 'Legs',
     push: 'Push',
     pull: 'Pull',
-    'rest-qui': 'Qui',
-    power: 'Power',
-    'rest-sab': 'Sáb',
-    'rest-dom': 'Dom'
+    power: 'Power'
   };
   return labels[dayId] || dayId;
 }
@@ -48,7 +52,7 @@ export function getDayWorkout(weekNum, dayId) {
     block: day.block || null,
     note: day.note || null,
     exercises: day.exercises || [],
-    isRest: dayId === 'rest' || day.isRest === true || !(day.exercises || []).length
+    isRest: day.isRest === true || isRestDayId(dayId)
   };
 }
 
@@ -85,7 +89,7 @@ export function nextDayInSchedule(dayId) {
   return { weekDelta: 0, dayId: schedule[idx + 1] };
 }
 
-/** Advance cfg after completing a workout or rest day. */
+/** Advance cfg after completing a training day. */
 export function advanceSchedule() {
   const curDay = state.cfg.currentDay || defaultDayId();
   const curWeek = state.cfg.currentWeek || 1;
@@ -300,7 +304,7 @@ export function seedDraftFromLast(dayId, ex) {
 }
 
 export function initDraftForDay(day) {
-  if (!day || day.isRest) return;
+  if (!day || day.isRest || isRestDayId(day.id)) return;
   pruneDrafts();
   day.exercises.forEach(ex => {
     ensureSlotSubstitute(ex);
