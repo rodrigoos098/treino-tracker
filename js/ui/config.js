@@ -1,6 +1,7 @@
 import {
   state, KEYS, savePlan, saveLogs, saveCfg, saveSessions, saveMeta,
-  isValidProgram, isValidLogs, idbDelete, getDefaultCfg, DATA_VERSION
+  isValidProgram, isValidLogs, idbDelete, getDefaultCfg, DATA_VERSION,
+  stripRestDaysFromProgram
 } from '../store.js';
 import { DEFAULT_PROGRAM } from '../defaults.js';
 import { jumpToWeekDay, getWorkoutPlan, defaultDayId, weeksTotal, dayLabel } from '../plan.js';
@@ -147,6 +148,7 @@ async function importBackup(file, onRenderAll) {
         await saveMeta();
       }
 
+      stripRestDaysFromProgram(state.plan, state.cfg);
       jumpToWeekDay(state.cfg.currentWeek || 1, state.cfg.currentDay || defaultDayId());
       if (!getWorkoutPlan(state.selectedWorkout)) {
         jumpToWeekDay(1, defaultDayId());

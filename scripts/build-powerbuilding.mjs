@@ -105,31 +105,7 @@ const WEEK = {
   legs: trainingDay('legs', 'Legs'),
   push: trainingDay('push', 'Push'),
   pull: trainingDay('pull', 'Pull'),
-  'rest-qui': {
-    name: 'Quinta · Descanso programado',
-    short: 'Qui',
-    focus: 'Recuperação',
-    block: 'Descanso',
-    note: 'Recuperação glicogênica e neural completa antes dos cinco levantamentos básicos de sexta-feira.',
-    exercises: []
-  },
-  power: trainingDay('full', 'Power'),
-  'rest-sab': {
-    name: 'Sábado · Descanso livre',
-    short: 'Sáb',
-    focus: 'Recuperação',
-    block: 'Descanso',
-    note: 'Recuperação muscular e sistêmica pós-Powerlift (cardio leve opcional).',
-    exercises: []
-  },
-  'rest-dom': {
-    name: 'Domingo · Descanso livre',
-    short: 'Dom',
-    focus: 'Recuperação',
-    block: 'Descanso',
-    note: 'Prontidão total para abrir a próxima semana no treino de pernas de segunda-feira.',
-    exercises: []
-  }
+  power: trainingDay('full', 'Power')
 };
 
 const ids = new Set();
@@ -148,15 +124,12 @@ const program = {
   name: 'Powerbuilding · 4 dias',
   level: 'Powerbuilding',
   weeksTotal: 12,
-  schedule: ['legs', 'push', 'pull', 'rest-qui', 'power', 'rest-sab', 'rest-dom'],
+  schedule: ['legs', 'push', 'pull', 'power'],
   dayLabels: {
     legs: 'Legs',
     push: 'Push',
     pull: 'Pull',
-    'rest-qui': 'Qui',
-    power: 'Power',
-    'rest-sab': 'Sáb',
-    'rest-dom': 'Dom'
+    power: 'Power'
   },
   weeks: { '1': WEEK }
 };

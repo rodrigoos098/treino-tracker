@@ -202,6 +202,66 @@ function freshProgram() {
   return structuredClone(DEFAULT_PROGRAM);
 }
 
+const REST_DAY_IDS = new Set(['rest', 'rest-qui', 'rest-sab', 'rest-dom']);
+
+function isStoredRestDay(dayId) {
+  return REST_DAY_IDS.has(dayId);
+}
+
+function nextTrainingAfter(schedule, dayId) {
+  const list = Array.isArray(schedule) ? schedule : [];
+  const training = list.filter((id) => !isStoredRestDay(id));
+  const fallback = training[0] || 'legs';
+  const idx = list.indexOf(dayId);
+  if (idx < 0) return { dayId: fallback, weekDelta: 0 };
+  for (let i = idx + 1; i < list.length; i++) {
+    if (!isStoredRestDay(list[i])) return { dayId: list[i], weekDelta: 0 };
+  }
+  return { dayId: fallback, weekDelta: 1 };
+}
+
+/** Tira dias de descanso do programa salvo e avança o dia atual para o próximo treino. */
+export function stripRestDaysFromProgram(plan, cfg) {
+  if (!plan || typeof plan !== 'object') return;
+  const oldSchedule = Array.isArray(plan.schedule) ? plan.schedule.slice() : [];
+  const hadRest = oldSchedule.some(isStoredRestDay);
+
+  if (Array.isArray(plan.schedule)) {
+    plan.schedule = plan.schedule.filter((id) => !isStoredRestDay(id));
+  }
+  if (plan.dayLabels && typeof plan.dayLabels === 'object') {
+    for (const id of Object.keys(plan.dayLabels)) {
+      if (isStoredRestDay(id)) delete plan.dayLabels[id];
+    }
+  }
+  const weeks = plan.weeks;
+  if (weeks && typeof weeks === 'object') {
+    for (const week of Object.values(weeks)) {
+      if (!week || typeof week !== 'object' || Array.isArray(week)) continue;
+      for (const id of Object.keys(week)) {
+        if (isStoredRestDay(id)) delete week[id];
+      }
+    }
+  }
+
+  if (!cfg || typeof cfg !== 'object' || !hadRest) return;
+  if (isStoredRestDay(cfg.lastWorkoutId)) cfg.lastWorkoutId = null;
+  if (!isStoredRestDay(cfg.currentDay)) return;
+
+  const moved = nextTrainingAfter(oldSchedule, cfg.currentDay);
+  const total = plan.weeksTotal || 12;
+  const week = Number(cfg.currentWeek) || 1;
+  if (moved.weekDelta && week >= total) {
+    const training = oldSchedule.filter((id) => !isStoredRestDay(id));
+    cfg.currentWeek = total;
+    cfg.currentDay = training[training.length - 1] || moved.dayId;
+    cfg.awaitingCycleRestart = true;
+    return;
+  }
+  if (moved.weekDelta) cfg.currentWeek = week + moved.weekDelta;
+  cfg.currentDay = moved.dayId;
+}
+
 function migrateToV3(cfg, meta, plan) {
   const nextCfg = { ...DEFAULT_CFG, ...(cfg && typeof cfg === 'object' ? cfg : {}) };
   const nextMeta = {
@@ -211,6 +271,7 @@ function migrateToV3(cfg, meta, plan) {
 
   const swapped = !isValidProgram(plan);
   const nextPlan = swapped ? freshProgram() : plan;
+  if (!swapped) stripRestDaysFromProgram(nextPlan, nextCfg);
   const schedule = nextPlan.schedule || ['legs'];
   const firstDay = schedule[0] || 'legs';
 
