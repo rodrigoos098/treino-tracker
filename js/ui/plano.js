@@ -1,11 +1,11 @@
 import { state, saveCfg } from '../store.js';
 import {
-  getDayWorkout, getSchedule, dayLabel, jumpToWeekDay, workingSetsForWeek, isDeloadWeek,
+  getDayWorkout, getSchedule, dayLabel, jumpToWeekDay, workingSetsCount,
   shortWorkoutName, weeksTotal, restartCycle
 } from '../plan.js';
 import { esc, pageHeader, toast } from '../utils.js';
 import { exerciseDetailsButton, planBadgesHtml, setsRepsLabel, showExerciseDetails } from './exercise-details.js';
-import { deloadCardHtml, restartCardHtml } from './cycle.js';
+import { restartCardHtml } from './cycle.js';
 
 export function renderPlano() {
   const el = document.getElementById('screen-plano');
@@ -18,11 +18,9 @@ export function renderPlano() {
   const weekChips = Array.from({ length: totalWeeks }, (_, i) => {
     const w = i + 1;
     const isProg = w === (state.cfg.currentWeek || 1);
-    const deload = isDeloadWeek(w);
     return '<button type="button" class="day-chip' + (w === week ? ' active' : '') +
-      (isProg ? ' current-day' : '') + (deload ? ' deload-week' : '') +
-      '" data-browse-week="' + w + '"' +
-      (deload ? ' aria-label="Semana ' + w + ', deload"' : '') + '>' + w + '</button>';
+      (isProg ? ' current-day' : '') +
+      '" data-browse-week="' + w + '">' + w + '</button>';
   }).join('');
 
   const dayChips = schedule.map(id => {
@@ -54,12 +52,10 @@ export function renderPlano() {
             en +
             planBadgesHtml(ex) +
             '<div class="exercise-meta">Aquecimento ' + esc(String(ex.warmupSets || '—')) +
-              ' · ' + esc(setsRepsLabel(ex, workingSetsForWeek(ex, week))) +
+              ' · ' + esc(setsRepsLabel(ex, workingSetsCount(ex))) +
               (ex.rest ? ' · ' + esc(ex.rest) : '') +
             '</div>' +
-            (isDeloadWeek(week)
-              ? '<div class="exercise-meta">Deload: ' + esc(state.plan?.deload?.effort || '3–4 RIR') + '</div>'
-              : (ex.effort ? '<div class="exercise-meta">' + esc(ex.effort) + '</div>' : '')) +
+            (ex.effort ? '<div class="exercise-meta">' + esc(ex.effort) + '</div>' : '') +
             exerciseDetailsButton(ex) +
             subs +
           '</div></div>';
@@ -72,7 +68,6 @@ export function renderPlano() {
 
   el.innerHTML = pageHeader('Programa', (state.plan?.name || 'Powerbuilding · 4 dias') + ' · somente leitura') +
     restartCardHtml() +
-    deloadCardHtml(week) +
     '<button type="button" class="btn btn-secondary btn-block consulta-entry" id="open-consulta">Consulta do caderno</button>' +
     '<div class="program-nav">' +
       '<div class="session-meta">Semana</div>' +
@@ -102,14 +97,6 @@ export function bindPlanoEvents(root, { onRenderAll }) {
       restartCycle();
       await saveCfg();
       toast('Semana 1');
-      onRenderAll?.();
-      return;
-    }
-    const deloadBtn = e.target.closest('[data-action="toggle-deload"]');
-    if (deloadBtn) {
-      const marked = Number(deloadBtn.dataset.week);
-      state.cfg.deloadWeek = Number(state.cfg.deloadWeek) === marked ? null : marked;
-      await saveCfg();
       onRenderAll?.();
       return;
     }
