@@ -124,20 +124,7 @@ export function jumpToWeekDay(week, dayId) {
   state.browseDay = d;
 }
 
-/** Caderno: 1 semana de deload a cada 6 a 8 semanas, sem número fixo. */
-export function isDeloadWeek(weekNum) {
-  const week = Number(weekNum || state.cfg.currentWeek || 1);
-  return Number(state.cfg.deloadWeek) === week;
-}
-
-export function workingSetsForWeek(ex, weekNum) {
-  const base = workingSetsCount(ex);
-  if (!isDeloadWeek(weekNum)) return base;
-  return Math.max(1, Math.round(base * 0.5));
-}
-
 export function restartCycle() {
-  state.cfg.deloadWeek = null;
   jumpToWeekDay(1, defaultDayId());
 }
 
@@ -280,7 +267,7 @@ function lastSessionForPerformed(ex) {
 
 export function seedDraftFromLast(dayId, ex) {
   const key = getDraftKey(dayId, ex.id);
-  const target = workingSetsForWeek(ex);
+  const target = workingSetsCount(ex);
   const date = todayISO();
   const { key: performedKey } = currentPerformed(ex);
   const todayLog = (state.logs[ex.id] || []).find(s => s.date === date);
@@ -322,7 +309,7 @@ export function initDraftForDay(day) {
   day.exercises.forEach(ex => {
     ensureSlotSubstitute(ex);
     const key = getDraftKey(day.id, ex.id);
-    const target = workingSetsForWeek(ex, day.week);
+    const target = workingSetsCount(ex);
     if (state.draftSets[key]) {
       syncDraftLength(state.draftSets[key], target, ex.bodyweight);
       return;

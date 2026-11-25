@@ -2220,12 +2220,6 @@ export const POWERBUILDING_4D = {
   "name": "Powerbuilding · 4 dias",
   "level": "Powerbuilding",
   "weeksTotal": 12,
-  "deload": {
-    "when": "A cada 6 a 8 semanas, faça 1 semana de deload",
-    "sets": "50% das séries",
-    "effort": "3–4 RIR",
-    "load": "A carga não muda"
-  },
   "schedule": ["legs","push","pull","power"],
   "dayLabels": {
   "legs": "Legs",

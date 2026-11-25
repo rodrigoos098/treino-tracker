@@ -293,6 +293,9 @@ function migrateToV3(cfg, meta, plan) {
     }
   }
 
+  delete nextCfg.deloadWeek;
+  if (nextPlan && typeof nextPlan === 'object') delete nextPlan.deload;
+
   nextMeta.dataVersion = DATA_VERSION;
   return { plan: nextPlan, cfg: nextCfg, meta: nextMeta };
 }

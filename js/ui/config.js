@@ -115,6 +115,7 @@ async function importBackup(file, onRenderAll) {
           toast('Plano antigo ignorado — programa Powerbuilding reinstado');
         } else {
           state.plan = data.plan;
+          if (state.plan && typeof state.plan === 'object') delete state.plan.deload;
         }
         await savePlan();
       }
@@ -132,6 +133,7 @@ async function importBackup(file, onRenderAll) {
           return;
         }
         state.cfg = { ...getDefaultCfg(), ...data.cfg };
+        delete state.cfg.deloadWeek;
         if (!state.cfg.programStartedAt) state.cfg.programStartedAt = new Date().toISOString();
         await saveCfg();
       }

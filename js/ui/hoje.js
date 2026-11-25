@@ -1,7 +1,7 @@
 import { state, saveLogs, saveCfg, saveSessions } from '../store.js';
 import {
   getRotation, shortWorkoutName, getWorkoutPlan,
-  getDraftKey, initDraftForDay, workingSetsForWeek, isDeloadWeek,
+  getDraftKey, initDraftForDay, workingSetsCount,
   advanceSchedule, restartCycle, resolveExerciseDisplay, dayLabel, weeksTotal,
   currentPerformed, lastPerformedLabel, isDraftUntouched, seedDraftFromLast
 } from '../plan.js';
@@ -19,7 +19,7 @@ import {
   exerciseDetailsButton, planBadgesHtml, setsRepsLabel, showExerciseDetails, substituteOptionLabel
 } from './exercise-details.js';
 import { workingSets } from '../performed.js';
-import { deloadCardHtml, restartCardHtml } from './cycle.js';
+import { restartCardHtml } from './cycle.js';
 import { getExerciseStats } from '../charts.js';
 
 function unit() { return state.cfg.unit || 'kg'; }
@@ -181,14 +181,13 @@ function sessionBarHtml(dayPlan) {
     '<button class="btn btn-secondary btn-sm" id="end-session-only">Encerrar</button></div>';
 }
 
-function prescribedMeta(ex, week) {
+function prescribedMeta(ex) {
   const parts = [];
   parts.push('Aquecimento ' + (ex.warmupSets || '—'));
-  parts.push(setsRepsLabel(ex, workingSetsForWeek(ex, week)));
+  parts.push(setsRepsLabel(ex, workingSetsCount(ex)));
   if (ex.rest) parts.push(ex.rest);
   let html = esc(parts.join(' · '));
-  if (isDeloadWeek(week)) html += '<br>' + esc('Deload: ' + (state.plan?.deload?.effort || '3–4 RIR'));
-  else if (ex.effort) html += '<br>' + esc(ex.effort);
+  if (ex.effort) html += '<br>' + esc(ex.effort);
   return html;
 }
 
@@ -241,11 +240,11 @@ function exerciseCard(dayPlan, ex, stagger) {
       '<span class="card-title">' + esc(display.name) +
         (display.usingSubstitute ? ' <span class="sub-tag">sub</span>' : '') +
       '</span>' +
-      '<span class="badge accent">' + esc(setsRepsLabel(ex, workingSetsForWeek(ex, dayPlan.week))) + '</span>' +
+      '<span class="badge accent">' + esc(setsRepsLabel(ex, workingSetsCount(ex))) + '</span>' +
     '</div>' +
     en +
     planBadgesHtml(ex) +
-    '<div class="prescribed">' + prescribedMeta(ex, dayPlan.week) + '</div>' +
+    '<div class="prescribed">' + prescribedMeta(ex) + '</div>' +
     detailsBtn +
     subs +
     notes +
@@ -294,7 +293,6 @@ export function renderHoje() {
   el.innerHTML = pageHeader('Hoje', headerSub, focusLine) +
     '<p class="subtitle hoje-date">' + esc(dateStr) + '</p>' +
     restartCardHtml() +
-    deloadCardHtml(week) +
     '<div class="day-picker-wrap"><div class="day-picker">' + chips + '</div></div>' +
     (dayPlan && !dayPlan.isRest && dayPlan.note
       ? '<p class="subtitle day-note">' + esc(dayPlan.note) + '</p>'
@@ -467,14 +465,6 @@ export function bindHojeEvents(root, { onRenderAll }) {
       restartCycle();
       await saveCfg();
       toast('Semana 1');
-      onRenderAll?.();
-      return;
-    }
-    const deloadBtn = e.target.closest('[data-action="toggle-deload"]');
-    if (deloadBtn) {
-      const week = Number(deloadBtn.dataset.week);
-      state.cfg.deloadWeek = Number(state.cfg.deloadWeek) === week ? null : week;
-      await saveCfg();
       onRenderAll?.();
       return;
     }
